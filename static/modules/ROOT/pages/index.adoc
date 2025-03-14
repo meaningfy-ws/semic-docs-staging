@@ -1,0 +1,9 @@
+= SEMIC Documentation (public preview)
+
+[.banner]
+
+This website hosts development versions of SEMIC documents. It consolidates two independently developed SEMIC documents: the https://semiceu.github.io/style-guide/[SEMIC Style Guide] and the https://semiceu.github.io/core-vocs-handbook[SEMIC Core Vocabularies Handbook]. The website serves two purposes: provides a public review version for collecting feedback and supports editors in their work, particularly for internal pull requests. 
+
+Specific documents can be accessed using the panel on the left or the drop-down list in the lower left corner.
+
+The website publishes multiple development versions, including those from the _develop_ and _feature_ branches, for each document source. The documentation is built with a GitHub action that needs to be triggered manually. A new build can be triggered by following the link here. As a result, versions from the source repository branches will appear on this website.

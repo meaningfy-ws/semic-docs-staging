@@ -1,0 +1,6 @@
+
+* xref:index.adoc[Home]
+
+* xref:core-vocs-handbook::index.adoc[Core Vocabularies Handbook]
+* xref:style-guide::index.adoc[Style Guide]
+

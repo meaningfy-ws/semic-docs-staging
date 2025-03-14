@@ -1,2 +1,2 @@
-# semic-docs-gh-pages
-A dev/staging environment for publishing SEMIC documentation.
+# semic-docs-staging
+A development/staging environment for publishing SEMIC documentation consolidated from two sources.

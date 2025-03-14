@@ -1,0 +1,99 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+env:
+  SOURCES: ["https://github.com/SEMICeu/core-vocs-handbook.git", "https://github.com/SEMICeu/style-guide.git"]
+
+jobs:
+  fetch_and_configure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Process each source and branch
+        run: |
+          remote_content=$(mktemp)
+          for source in "${SOURCES[@]}"; do
+              repo_name=$(basename -s .git "$source")
+              echo "=> Processing source: $source"
+
+              # Fetch all branches from the first source repository
+              git ls-remote --heads "$source" | awk '{print $2}' | sed 's|refs/heads/||' > branches.txt
+              # Inner loop: Iterate over branches
+              while read branch; do
+                  if [[ ! "$branch" =~ ^(develop|feature/*) ]]; then
+                      continue
+                  fi
+                  branch_slug=$(basename "${branch##*/}")
+                  echo "==> Processing branch: $branch for source: $repo_name"
+
+                  # Create directory for the source and branch
+                  mkdir -p sources/$repo_name/$branch_slug
+
+                  # Clone specific branch for the current source
+                  git clone --branch $branch --single-branch $source sources/$repo_name/$branch_slug
+
+                  # Modify antora.yml
+                  sed -i'' 's/version: .*$/version: '"$branch_slug"'/g' sources/$repo_name/$branch_slug/docs/antora.yml
+                  sed -i'' 's/name: *ROOT$/name: '"$repo_name"'/g' sources/$repo_name/$branch_slug/docs/antora.yml
+
+                  # Generate snippet and append to remote_content.txt
+                  cat <<EOL >> "$remote_content"
+  ### $repo_name:$branch
+  - url: .
+    start_path: sources/$repo_name/$branch_slug/docs
+EOL
+              done < branches.txt
+          done
+
+      - name: Construct antora-playbook.yml
+        run: |
+          sources=$(<$remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
+  
+  build_site:
+    name: "Build site with Antora"
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - name: "Install Node 16"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+      - name: "Install Antora"
+        run: make install-antora
+      - name: "Generate site using antora site action"
+        run: make build-site
+      - name: "Upload generated site"
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: "${{ github.workspace }}/build/${{ env.SITE_DIR }}"
+
+  deploy_site:
+    runs-on: [ ubuntu-latest ]
+    needs: [ build_site ]
+    name: "Deploy GitHub Pages"
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+    steps:
+      - name: "Install Node 16"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download generated site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: "${{ github.workspace }}/${{ env.SITE_DIR }}"
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          GITHUB_TOKEN: "${{ github.token}}"
+          FOLDER: "${{ env.SITE_DIR }}"
+          BRANCH: "${{ env.TARGET_BRANCH }}"
+          COMMIT_MESSAGE: "[CI] Publish Documentation for ${{ github.sha }}"
