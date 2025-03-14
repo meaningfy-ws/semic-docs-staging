@@ -1,10 +1,7 @@
 name: Generate Documentation
 
 on:
-  push:
-    branches:
-      - main
-      - develop
+  workflow_dispatch:
 
 env:
   SOURCES: "https://github.com/SEMICeu/core-vocs-handbook.git https://github.com/SEMICeu/style-guide.git"
