@@ -7,18 +7,13 @@ env:
   SOURCES: "https://github.com/SEMICeu/core-vocs-handbook.git https://github.com/SEMICeu/style-guide.git"
 
 jobs:
-  checkout:
-    name: "Checkout"
-    runs-on: [ ubuntu-latest ]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
   fetch_and_configure:
     name: "Fetch and configure sources"
-    needs: [ checkout ]
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Process each source and branch
         run: |
           remote_content=$(mktemp)
@@ -61,12 +56,24 @@ jobs:
           tree .
           sources=$(cat $remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
         shell: bash
+      - name: "Upload configured sources"
+        uses: actions/upload-artifact@v4
+        with:
+          name: workdir
+          path: "${{ github.workspace }}"
   
   build_site:
     name: "Build site with Antora"
     runs-on: [ ubuntu-latest ]
     needs: [ fetch_and_configure ]
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     steps:
+      - name: Download configured sources
+        uses: actions/download-artifact@v4
+        with:
+          name: workdir
+          path: "${{ github.workspace }}"
       - name: "Install Node 16"
         uses: actions/setup-node@v4
         with:
