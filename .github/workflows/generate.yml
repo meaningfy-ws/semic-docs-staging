@@ -7,7 +7,7 @@ on:
       - develop
 
 env:
-  SOURCES: ["https://github.com/SEMICeu/core-vocs-handbook.git", "https://github.com/SEMICeu/style-guide.git"]
+  SOURCES: "https://github.com/SEMICeu/core-vocs-handbook.git https://github.com/SEMICeu/style-guide.git"
 
 jobs:
   fetch_and_configure:
@@ -17,7 +17,7 @@ jobs:
       - name: Process each source and branch
         run: |
           remote_content=$(mktemp)
-          for source in "${SOURCES[@]}"; do
+          for source in $SOURCES; do
               repo_name=$(basename -s .git "$source")
               echo "=> Processing source: $source"
 
