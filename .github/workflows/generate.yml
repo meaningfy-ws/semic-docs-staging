@@ -57,6 +57,8 @@ jobs:
 
       - name: Construct antora-playbook.yml
         run: |
+          pwd
+          tree .
           sources=$(cat $remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
         shell: bash
   
