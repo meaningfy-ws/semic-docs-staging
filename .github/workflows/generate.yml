@@ -7,6 +7,12 @@ env:
   SOURCES: "https://github.com/SEMICeu/core-vocs-handbook.git https://github.com/SEMICeu/style-guide.git"
 
 jobs:
+  checkout:
+    name: "Checkout"
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
   fetch_and_configure:
     name: "Fetch and configure sources"
     runs-on: ubuntu-latest
