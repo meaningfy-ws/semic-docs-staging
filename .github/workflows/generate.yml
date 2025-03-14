@@ -11,6 +11,7 @@ env:
 
 jobs:
   fetch_and_configure:
+  - name: "Fetch and configure sources"
     runs-on: ubuntu-latest
 
     steps:
@@ -48,10 +49,12 @@ jobs:
                   echo "    start_path: sources/$repo_name/$branch_slug/docs" >> "$remote_content"
               done < branches.txt
           done
+        shell: bash
 
       - name: Construct antora-playbook.yml
         run: |
           sources=$(<$remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
+        shell: bash
   
   build_site:
     name: "Build site with Antora"
