@@ -50,7 +50,7 @@ jobs:
 
       - name: Construct antora-playbook.yml
         run: |
-          sources=$(<$remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
+          sources=$(cat $remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
         shell: bash
   
   build_site:
