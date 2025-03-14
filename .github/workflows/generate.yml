@@ -8,7 +8,7 @@ env:
 
 jobs:
   fetch_and_configure:
-  - name: "Fetch and configure sources"
+    name: "Fetch and configure sources"
     runs-on: ubuntu-latest
 
     steps:
