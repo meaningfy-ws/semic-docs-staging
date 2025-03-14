@@ -42,11 +42,10 @@ jobs:
                   sed -i'' 's/name: *ROOT$/name: '"$repo_name"'/g' sources/$repo_name/$branch_slug/docs/antora.yml
 
                   # Generate snippet and append to remote_content.txt
-                  cat <<EOL >> "$remote_content"
-  ### $repo_name:$branch
-  - url: .
-    start_path: sources/$repo_name/$branch_slug/docs
-EOL
+                  remote_content=/tmp/testtest
+                  echo "  ### $repo_name:$branch" >> "$remote_content"
+                  echo "  - url: ." >> "$remote_content"
+                  echo "    start_path: sources/$repo_name/$branch_slug/docs" >> "$remote_content"
               done < branches.txt
           done
 
