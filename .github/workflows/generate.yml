@@ -1,63 +1,81 @@
 name: Generate Documentation
 
 on:
-  push:
-    branches:
-      - main
-      - develop
+  workflow_dispatch:
 
 env:
-  SOURCES: ["https://github.com/SEMICeu/core-vocs-handbook.git", "https://github.com/SEMICeu/style-guide.git"]
+  SOURCES: "https://github.com/SEMICeu/core-vocs-handbook.git https://github.com/SEMICeu/style-guide.git"
+  SITE_DIR: "site"
+  TARGET_BRANCH: "gh-pages"
 
 jobs:
   fetch_and_configure:
+    name: "Fetch and configure sources"
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Process each source and branch
         run: |
           remote_content=$(mktemp)
-          for source in "${SOURCES[@]}"; do
+          for source in $SOURCES; do
               repo_name=$(basename -s .git "$source")
               echo "=> Processing source: $source"
 
-              # Fetch all branches from the first source repository
+              # Fetch all branches from the source repository
               git ls-remote --heads "$source" | awk '{print $2}' | sed 's|refs/heads/||' > branches.txt
               # Inner loop: Iterate over branches
               while read branch; do
+                  # Process only develop and feature branches 
                   if [[ ! "$branch" =~ ^(develop|feature/*) ]]; then
                       continue
                   fi
                   branch_slug=$(basename "${branch##*/}")
                   echo "==> Processing branch: $branch for source: $repo_name"
 
-                  # Create directory for the source and branch
+                  # Create directory for the source and the branch
                   mkdir -p sources/$repo_name/$branch_slug
 
                   # Clone specific branch for the current source
-                  git clone --branch $branch --single-branch $source sources/$repo_name/$branch_slug
+                  git clone --branch $branch --depth 1 --single-branch $source sources/$repo_name/$branch_slug
 
-                  # Modify antora.yml
+                  # Modify antora.yml: set version and name based on the repo and the branch
                   sed -i'' 's/version: .*$/version: '"$branch_slug"'/g' sources/$repo_name/$branch_slug/docs/antora.yml
                   sed -i'' 's/name: *ROOT$/name: '"$repo_name"'/g' sources/$repo_name/$branch_slug/docs/antora.yml
 
-                  # Generate snippet and append to remote_content.txt
-                  cat <<EOL >> "$remote_content"
-  ### $repo_name:$branch
-  - url: .
-    start_path: sources/$repo_name/$branch_slug/docs
-EOL
+                  # Generate snippet and append to remote_content
+                  echo "  ### $repo_name:$branch" >> "$remote_content"
+                  echo "  - url: ." >> "$remote_content"
+                  echo "    start_path: sources/$repo_name/$branch_slug/docs" >> "$remote_content"
               done < branches.txt
           done
 
-      - name: Construct antora-playbook.yml
-        run: |
-          sources=$(<$remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
+          # tree -I 'node_modules'
+          
+          # Generate playbook file from template to include avery fetched branch
+          sources=$(cat $remote_content) envsubst < antora-playbook.yml.template > antora-playbook.yml
+        shell: bash
+      - name: "Upload configured sources"
+        uses: actions/upload-artifact@v4
+        with:
+          name: workdir
+          path: "${{ github.workspace }}"
   
   build_site:
     name: "Build site with Antora"
     runs-on: [ ubuntu-latest ]
+    needs: [ fetch_and_configure ]
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download configured sources
+        uses: actions/download-artifact@v4
+        with:
+          name: workdir
+          path: "${{ github.workspace }}"
       - name: "Install Node 16"
         uses: actions/setup-node@v4
         with:
