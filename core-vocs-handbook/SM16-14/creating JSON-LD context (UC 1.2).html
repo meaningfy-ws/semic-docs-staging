@@ -224,232 +224,123 @@ By extending CPSV-AP and using JSON-LD, public administrations can better organi
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>{ "@context":{
-   "Service": "http://data.europa.eu/m8g/cpsvap#Service",
-   "RequiredEvidence": "http://data.europa.eu/m8g/cpsvap#RequiredEvidence"  }</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>}</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Shape the Structure
-Once you&#8217;ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardized and machine-readable format.<br>
-Let’s look at an example where we define a Service and some of its key properties, such as contactPoint, description, name and hasRequiredEvidence.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="literalblock">
-<div class="content">
-<pre>"@context":</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>{
-    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld",</p>
-</div>
-<div class="paragraph">
-<p>"Service": "http://data.europa.eu/m8g/cpsvap#Service",</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"Service.hasRequiredEvidence": {</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"@container": "@set",</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"@id": "http://data.europa.eu/m8g/cpsvap#RequiredEvidence"</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>},</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    "Service.description":
-{
-      "@container": "@set",</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"@id": "http://purl.org/dc/terms/description",</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>},</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    "Service.contactPoint":
-{
-      "@container": "@set",</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"@id": "http://data.europa.eu/m8g/contactPoint",</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>  "@type": "@id"
-},</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"Service.name":</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>{
-      "@container": "@set",</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"@id": "http://purl.org/dc/terms/title",</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>  "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+<pre> { "@context":{
+    "Service": "http://data.europa.eu/m8g/cpsvap#Service",
+    "RequiredEvidence": "http://data.europa.eu/m8g/cpsvap#RequiredEvidence"  }
 }</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>}</p>
 </div>
+<div class="sect3">
+<h4 id="_shape_the_structure"><a class="anchor" href="#_shape_the_structure"></a>Shape the Structure</h4>
 <div class="paragraph">
-<p>}</p>
+<p>Once you&#8217;ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardized and machine-readable format.<br>
+Let’s look at an example where we define a Service and some of its key properties, such as contactPoint, description, name and hasRequiredEvidence.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">===== Explanation of JSON-LD Keywords Used</p>
-<p class="tableblock">* <strong>@context</strong>: Defines the mapping between terms (e.g., PublicService) and their corresponding IRIs.
-* <strong>@container</strong>: Specifies how values are structured. For instance,
-<strong>*  @set: Explicitly defines a property as an *array of values</strong>. It ensures that even if the data includes just one value, it will still be treated as an array by JSON-LD processors. This makes post-processing of JSON-LD documents easier as the data is always in array form, even if the array only contains a single value
-* <strong>@id</strong>: Provides the unique identifier (IRI) for a term or property.
-* <strong>@type</strong>: Specifies the type of a value. Commonly used for linking to classes or data types.
-* <strong>@import</strong>:  Imports another JSON-LD context, allowing reuse of its terms.</p>
-<p class="tableblock">==== Example of a simple Service Instance
-After defining the context and structure, you can now describe an actual Service instance by referencing the terms you defined earlier.</p>
-<p class="tableblock">===== Example Scenario</p>
-<p class="tableblock">Let’s assume a public administration offers a service called <strong>"Health Insurance Registration"</strong>. This service allows citizens to register for health insurance, which requires certain documents (evidence) to complete the process. Citizens might need to contact the administration for guidance, and the service details should be structured in a way that makes it easy to share and integrate across systems.<br>
+<div class="literalblock">
+<div class="content">
+<pre>  "@context":
+    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld",
+     "Service": "http://data.europa.eu/m8g/cpsvap#Service",
+     "Service.hasRequiredEvidence": {
+      "@container": "@set",
+      "@id": "http://data.europa.eu/m8g/cpsvap#RequiredEvidence"},
+    "Service.description":{
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"},
+    "Service.contactPoint":{
+      "@container": "@set",
+      "@id": "http://data.europa.eu/m8g/contactPoint",
+      "@type": "@id" },
+    "Service.name":{
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+} }</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_explanation_of_json_ld_keywords_used"><a class="anchor" href="#_explanation_of_json_ld_keywords_used"></a>Explanation of JSON-LD Keywords Used</h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>@context</strong>: Defines the mapping between terms (e.g., PublicService) and their corresponding IRIs.</p>
+</li>
+<li>
+<p><strong>@container</strong>: Specifies how values are structured. For instance,</p>
+<div class="ulist">
+<ul>
+<li>
+<p>@set: Explicitly defines a property as an <strong>array of values</strong>. It ensures that even if the data includes just one value, it will still be treated as an array by JSON-LD processors. This makes post-processing of JSON-LD documents easier as the data is always in array form, even if the array only contains a single value</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>@id</strong>: Provides the unique identifier (IRI) for a term or property.</p>
+</li>
+<li>
+<p><strong>@type</strong>: Specifies the type of a value. Commonly used for linking to classes or data types.</p>
+</li>
+<li>
+<p><strong>@import</strong>:  Imports another JSON-LD context, allowing reuse of its terms.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_of_a_simple_service_instance"><a class="anchor" href="#_example_of_a_simple_service_instance"></a>Example of a simple Service Instance</h4>
+<div class="paragraph">
+<p>After defining the context and structure, you can now describe an actual Service instance by referencing the terms you defined earlier.</p>
+</div>
+<div class="sect4">
+<h5 id="_example_scenario"><a class="anchor" href="#_example_scenario"></a>Example Scenario</h5>
+<div class="paragraph">
+<p>Let’s assume a public administration offers a service called <strong>"Health Insurance Registration"</strong>. This service allows citizens to register for health insurance, which requires certain documents (evidence) to complete the process. Citizens might need to contact the administration for guidance, and the service details should be structured in a way that makes it easy to share and integrate across systems.<br>
 To illustrate this, we’ve created a JSON-LD context  representation of this service, highlighting</p>
-<p class="tableblock">* The required evidence for registration (e.g., Proof of Address).
-* The service&#8217;s name and description for clarity.
-* Contact information for users who may need assistance.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|
-{
-  "@context":</p>
 </div>
-<div class="paragraph">
-<p>{
-    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"</p>
-</div>
-<div class="paragraph">
-<p>},</p>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The required evidence for registration (e.g., Proof of Address).</p>
+</li>
+<li>
+<p>The service&#8217;s name and description for clarity.</p>
+</li>
+<li>
+<p>Contact information for users who may need assistance.</p>
 <div class="literalblock">
 <div class="content">
-<pre>"Service": {
-  "Service.hasRequiredEvidence": [
+<pre>{"@context": { "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"},
+"Service": {
+"Service.hasRequiredEvidence": [
     "http://example.org/RequiredEvidence/ProofOfAddress"
-  ],</pre>
+  ],
+"Service.name": "Health Insurance Registration",
+  "Service.description": "A service for registering for health insurance.",
+  "Service.contactPoint":{
+    "@type": "ContactPoint",
+    "hasTelephone": "+420776723338"
+ } } }</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>"Service.name": "Health Insurance Registration",</pre>
+</li>
+</ul>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>"Service.description": "A service for registering for health insurance.",</pre>
 </div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    "Service.contactPoint":
-{
-      "@type": "ContactPoint",</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>  "hasTelephone": "+420776723338"
-}</pre>
-</div>
-</div>
+<div class="sect3">
+<h4 id="_extend_the_context_by_reusing_terms_from_core_vocabularies"><a class="anchor" href="#_extend_the_context_by_reusing_terms_from_core_vocabularies"></a>Extend the Context by reusing terms from Core Vocabularies</h4>
 <div class="paragraph">
-<p>}</p>
-</div>
-<div class="paragraph">
-<p>}</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Extend the Context by reusing terms from Core Vocabularies
-To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organization, and ContactPoint, to enrich your <strong>Service</strong> descriptions.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|{
-  "@context":</p>
-</div>
-<div class="paragraph">
-<p>[
-    {</p>
+<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organization, and ContactPoint, to enrich your <strong>Service</strong> descriptions.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>"@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>},</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>{</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"@import": "https://raw.githubusercontent.com/SEMICeu/Core-Business-Vocabulary/master/releases/2.2.0/context/core-business-ap.jsonld"}  ]}</pre>
+<pre>{"@context": [ {
+    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld" },
+  { "@import": "https://raw.githubusercontent.com/SEMICeu/Core-Business-Vocabulary/master/releases/2.2.0/context/core-business-ap.jsonld"}  ]}</pre>
 </div>
 </div>
 </div>
