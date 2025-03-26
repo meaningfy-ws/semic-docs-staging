@@ -305,7 +305,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="sec:create-a-new-json-ld-context-definition"><a class="anchor" href="#sec:create-a-new-json-ld-context-definition"></a>Create a new JSON-LD context definition</h3>
+<h3 id="sec:create-a-new-json-ld-context-definition"><a class="anchor" href="#sec:create-a-new-json-ld-context-definition"></a>Methodology to create a new JSON-LD context definition</h3>
 <div class="paragraph">
 <p>This section provides detailed instructions for addressing use case <a href="use-cases.html#sec:uc12" class="xref page">UC1.2</a>.</p>
 </div>
@@ -410,20 +410,11 @@ By extending CPSV-AP and using JSON-LD, public administrations can better organi
 <div class="paragraph">
 <p>Since CPSV-AP provides an existing JSON-LD context, we can import it in our own JSON-LD context using the @import statement. For example, in case of <a href="https://github.com/SEMICeu/CPSV-AP/blob/master/releases/3.2.0/context/cpsv-ap.jsonld">CPSV-AP version 3.2.0</a>, the context can be directly reused like this:</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color:  #f5f8fc;"><p class="tableblock">{
-  "@context":</p>
-<p class="tableblock">{
-    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"
-  }</p></td>
-</tr>
-</tbody>
-</table>
+<div class="literalblock">
+<div class="content">
+<pre>"@context":{ @import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"} "</pre>
+</div>
+</div>
 <div class="paragraph">
 <p>If a context that we can reuse does not exist, define the elements explicitly. For example, CPSV-AP uses specific terms like PublicService and ContactPoint. These terms must be mapped to URIs.</p>
 </div>
