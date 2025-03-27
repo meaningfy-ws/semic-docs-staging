@@ -179,19 +179,19 @@
 <div class="sect2">
 <h3 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h3>
 <div class="paragraph">
-<p>Public administrations often need to share information about their services with other organizations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases.<br>
-The Core Public Service Vocabulary Application Profile (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>) provides a generic framework to describe public services in a machine-readable way. It helps public administrations share and organize information about services. However, sometimes CPSV-AP needs to be extended with new concepts or restrictions to address more general or specific use cases.<br>
+<p>Public administrations often need to share information about their services with other organisations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases.<br>
+The Core Public Service Vocabulary Application Profile (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>) provides a generic framework to describe public services in a machine-readable way. It helps public administrations share and organise information about services. However, sometimes CPSV-AP needs to be extended with new concepts or restrictions to address more general or specific use cases.<br>
 For example, the terms Service and RequiredEvidence were introduced in <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a> to extend the CPSV-AP model such that it can fulfil the specific needs identified in Norway, where:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Service allows for describing not only public services but also general ones, enabling the representation of services provided through partnerships or private organizations.</p>
+<p>Service allows for describing not only public services but also general ones, enabling the representation of services provided through partnerships or private organisations.</p>
 </li>
 <li>
 <p>RequiredEvidence provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for health insurance registration.
 To make CPSV-AP more flexible and useful, creating a JSON-LD context is essential. JSON-LD helps structure the data so it can be easily shared and understood by different systems. This tutorial addresses the use case <a href="https://semiceu.github.io/core-vocs-handbook/public-review/use-cases.html#:~:text=Use%20Case%20UC1.2%3A%20Create%20a%20new%20JSON%2DLD%20context%20definition">UC1.2</a>, and will show how to create a JSON-LD context for an Application Profile that extends CPSV-AP with new concepts like <strong>Service</strong> and <strong>RequiredEvidence</strong>, which are defined by reusing concepts from the Core Business Vocabulary (CBV), following ideas from CPSV-AP-NO.<br>
-By extending CPSV-AP and using JSON-LD, public administrations can better organize their data, making it easier to share and integrate across systems while supporting a wider range of use cases.</p>
+By extending CPSV-AP and using JSON-LD, public administrations can better organise their data, making it easier to share and integrate across systems while supporting a wider range of use cases.</p>
 </li>
 </ol>
 </div>
@@ -234,7 +234,7 @@ By extending CPSV-AP and using JSON-LD, public administrations can better organi
 <div class="sect3">
 <h4 id="_shape_the_structure"><a class="anchor" href="#_shape_the_structure"></a>Shape the Structure</h4>
 <div class="paragraph">
-<p>Once you&#8217;ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardized and machine-readable format.<br>
+<p>Once you&#8217;ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardised and machine-readable format.<br>
 Let’s look at an example where we define a Service and some of its key properties, such as contactPoint, description, name and hasRequiredEvidence.</p>
 </div>
 <div class="literalblock">
@@ -334,7 +334,7 @@ To illustrate this, we’ve created a JSON-LD context  representation of this se
 <div class="sect3">
 <h4 id="_extend_the_context_by_reusing_terms_from_core_vocabularies"><a class="anchor" href="#_extend_the_context_by_reusing_terms_from_core_vocabularies"></a>Extend the Context by reusing terms from Core Vocabularies</h4>
 <div class="paragraph">
-<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organization, and ContactPoint, to enrich your <strong>Service</strong> descriptions.</p>
+<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organisation, and ContactPoint, to enrich your <strong>Service</strong> descriptions.</p>
 </div>
 <div class="literalblock">
 <div class="content">
