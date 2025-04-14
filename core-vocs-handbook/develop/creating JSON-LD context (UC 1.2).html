@@ -27,7 +27,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="core-vocs-handbook" data-version="SM16-14">
+<div class="nav-container" data-component="core-vocs-handbook" data-version="develop">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -183,7 +183,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">SEMIC Core Vocabularies Handbook</span>
-    <span class="version">SM16-14</span>
+    <span class="version">develop</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -201,11 +201,11 @@
         <li class="version">
           <a href="../SM16-31/index.html">SM16-31</a>
         </li>
-        <li class="version is-current">
-          <a href="index.html">SM16-14</a>
-        </li>
         <li class="version">
-          <a href="../develop/index.html">develop</a>
+          <a href="../SM16-14/index.html">SM16-14</a>
+        </li>
+        <li class="version is-current">
+          <a href="index.html">develop</a>
         </li>
       </ul>
     </li>
@@ -237,16 +237,16 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">SM16-14</button>
+  <button class="version-menu-toggle" title="Show other versions of page">develop</button>
   <div class="version-menu">
     <a class="version is-missing" href="../SM16-32/index.html">SM16-32</a>
     <a class="version is-missing" href="../SM16-31-1/index.html">SM16-31-1</a>
     <a class="version is-missing" href="../SM16-31/index.html">SM16-31</a>
-    <a class="version is-current" href="creating%20JSON-LD%20context%20(UC%201.2).html">SM16-14</a>
-    <a class="version" href="../develop/creating%20JSON-LD%20context%20(UC%201.2).html">develop</a>
+    <a class="version" href="../SM16-14/creating%20JSON-LD%20context%20(UC%201.2).html">SM16-14</a>
+    <a class="version is-current" href="creating%20JSON-LD%20context%20(UC%201.2).html">develop</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/meaningfy-ws/semic-docs-staging/edit/main/sources/core-vocs-handbook/SM16-14/docs/modules/ROOT/pages/creating%20JSON-LD%20context%20(UC%201.2).adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/meaningfy-ws/semic-docs-staging/edit/main/sources/core-vocs-handbook/develop/docs/modules/ROOT/pages/creating%20JSON-LD%20context%20(UC%201.2).adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -259,19 +259,19 @@
 <div class="sect2">
 <h3 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h3>
 <div class="paragraph">
-<p>Public administrations often need to share information about their services with other organizations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases.<br>
-The Core Public Service Vocabulary Application Profile (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>) provides a generic framework to describe public services in a machine-readable way. It helps public administrations share and organize information about services. However, sometimes CPSV-AP needs to be extended with new concepts or restrictions to address more general or specific use cases.<br>
+<p>Public administrations often need to share information  about their services with other organisations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases.<br>
+The Core Public Service Vocabulary Application Profile (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>) provides a generic framework to describe public services in a machine-readable way. It helps public administrations share and organise information about services. However, sometimes CPSV-AP needs to be extended with new concepts or restrictions to address more general or specific use cases.<br>
 For example, the terms Service and RequiredEvidence were introduced in <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a> to extend the CPSV-AP model such that it can fulfil the specific needs identified in Norway, where:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Service allows for describing not only public services but also general ones, enabling the representation of services provided through partnerships or private organizations.</p>
+<p>Service allows for describing not only public services but also general ones, enabling the representation of services provided through partnerships or private organisations.</p>
 </li>
 <li>
 <p>RequiredEvidence provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for health insurance registration.
 To make CPSV-AP more flexible and useful, creating a JSON-LD context is essential. JSON-LD helps structure the data so it can be easily shared and understood by different systems. This tutorial addresses the use case <a href="https://semiceu.github.io/core-vocs-handbook/public-review/use-cases.html#:~:text=Use%20Case%20UC1.2%3A%20Create%20a%20new%20JSON%2DLD%20context%20definition">UC1.2</a>, and will show how to create a JSON-LD context for an Application Profile that extends CPSV-AP with new concepts like <strong>Service</strong> and <strong>RequiredEvidence</strong>, which are defined by reusing concepts from the Core Business Vocabulary (CBV), following ideas from CPSV-AP-NO.<br>
-By extending CPSV-AP and using JSON-LD, public administrations can better organize their data, making it easier to share and integrate across systems while supporting a wider range of use cases.</p>
+By extending CPSV-AP and using JSON-LD, public administrations can better organise their data, making it easier to share and integrate across systems while supporting a wider range of use cases.</p>
 </li>
 </ol>
 </div>
@@ -285,11 +285,8 @@ By extending CPSV-AP and using JSON-LD, public administrations can better organi
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>  {
-  "@context": {
-    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"
-  }
-}</pre>
+<pre>"@context": {
+  "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -297,12 +294,9 @@ By extending CPSV-AP and using JSON-LD, public administrations can better organi
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>  {
-  "@context": {
-    "PublicService": "http://purl.org/vocab/cpsv#PublicService",
-    "ContactPoint": "http://data.europa.eu/m8g/ContactPoint"
-  }
-}</pre>
+<pre>"{ "@context":{
+   "PublicService": "http://purl.org/vocab/cpsv#PublicService",
+  "ContactPoint": "http://data.europa.eu/m8g/ContactPoint"} }</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -310,11 +304,9 @@ By extending CPSV-AP and using JSON-LD, public administrations can better organi
 </div>
 <div class="literalblock">
 <div class="content">
-<pre> {
-  "@context": {
-    "Service": "http://example.com/cpsvap#Service",
-    "RequiredEvidence": "http://example.com/cpsvap#RequiredEvidence"
-  }
+<pre> { "@context":{
+    "Service": "http://data.europa.eu/m8g/cpsvap#Service",
+    "RequiredEvidence": "http://data.europa.eu/m8g/cpsvap#RequiredEvidence"  }
 }</pre>
 </div>
 </div>
@@ -322,36 +314,30 @@ By extending CPSV-AP and using JSON-LD, public administrations can better organi
 <div class="sect3">
 <h4 id="_shape_the_structure"><a class="anchor" href="#_shape_the_structure"></a>Shape the Structure</h4>
 <div class="paragraph">
-<p>Once you&#8217;ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardized and machine-readable format.<br>
-Let’s look at an <a href="https://tinyurl.com/2794ygga">example</a> where we define a Service and some of its key properties, such as contactPoint, description, name and hasRequiredEvidence.</p>
+<p>Once you&#8217;ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardised and machine-readable format.<br>
+Let’s look at an example where we define a Service and some of its key properties, such as contactPoint, description, name and hasRequiredEvidence.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>  {
-  "@context": {
+<pre>  "@context":
     "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld",
-    "Service": "http://example.com/cpsvap#Service",
-    "Service.hasRequiredEvidence": {
-      "@id": "http://example.com/cpsvap#RequiredEvidence",
-      "@container": "@set"
-    },
-    "Service.description": {
+     "Service": "http://data.europa.eu/m8g/cpsvap#Service",
+     "Service.hasRequiredEvidence": {
+      "@container": "@set",
+      "@id": "http://data.europa.eu/m8g/cpsvap#RequiredEvidence"},
+    "Service.description":{
+      "@container": "@set",
       "@id": "http://purl.org/dc/terms/description",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-      "@container": "@set"
-    },
-    "Service.name": {
-      "@id": "http://purl.org/dc/terms/title",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-      "@container": "@set"
-    },
-    "Service.contactPoint": {
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"},
+    "Service.contactPoint":{
+      "@container": "@set",
       "@id": "http://data.europa.eu/m8g/contactPoint",
-      "@type": "@id",
-      "@container": "@set"
-    }
-  }
-}</pre>
+      "@type": "@id" },
+    "Service.name":{
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+} }</pre>
 </div>
 </div>
 <div class="sect4">
@@ -393,7 +379,7 @@ Let’s look at an <a href="https://tinyurl.com/2794ygga">example</a> where we d
 <h5 id="_example_scenario"><a class="anchor" href="#_example_scenario"></a>Example Scenario</h5>
 <div class="paragraph">
 <p>Let’s assume a public administration offers a service called <strong>"Health Insurance Registration"</strong>. This service allows citizens to register for health insurance, which requires certain documents (evidence) to complete the process. Citizens might need to contact the administration for guidance, and the service details should be structured in a way that makes it easy to share and integrate across systems.<br>
-To illustrate this, we’ve created a JSON-LD context  <a href="https://tinyurl.com/4wnt6aap">representation</a> of this service, highlighting</p>
+To illustrate this, we’ve created a JSON-LD context  representation of this service, highlighting</p>
 </div>
 <div class="ulist">
 <ul>
@@ -407,22 +393,17 @@ To illustrate this, we’ve created a JSON-LD context  <a href="https://tinyurl.
 <p>Contact information for users who may need assistance.</p>
 <div class="literalblock">
 <div class="content">
-<pre>  {
-  "@context": {
-    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"
-  },
-  "Service": {
-    "Service.name": "Health Insurance Registration",
-    "Service.description": "A service for registering for health insurance.",
-    "Service.hasRequiredEvidence": [
-      "http://example.org/RequiredEvidence/ProofOfAddress"
-    ],
-    "Service.contactPoint": {
-      "@type": "ContactPoint",
-      "hasTelephone": "+420776723338"
-    }
-  }
-}</pre>
+<pre>{"@context": { "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"},
+"Service": {
+"Service.hasRequiredEvidence": [
+    "http://example.org/RequiredEvidence/ProofOfAddress"
+  ],
+"Service.name": "Health Insurance Registration",
+  "Service.description": "A service for registering for health insurance.",
+  "Service.contactPoint":{
+    "@type": "ContactPoint",
+    "hasTelephone": "+420776723338"
+ } } }</pre>
 </div>
 </div>
 </li>
@@ -433,20 +414,13 @@ To illustrate this, we’ve created a JSON-LD context  <a href="https://tinyurl.
 <div class="sect3">
 <h4 id="_extend_the_context_by_reusing_terms_from_core_vocabularies"><a class="anchor" href="#_extend_the_context_by_reusing_terms_from_core_vocabularies"></a>Extend the Context by reusing terms from Core Vocabularies</h4>
 <div class="paragraph">
-<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organization, and ContactPoint, to enrich your <strong>Service</strong> descriptions.</p>
+<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organisation, and ContactPoint, to enrich your <strong>Service</strong> descriptions.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>  {
-  "@context": [
-    {
-      "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"
-    },
-    {
-      "@import": "https://raw.githubusercontent.com/SEMICeu/Core-Business-Vocabulary/master/releases/2.2.0/context/core-business-ap.jsonld"
-    }
-  ]
-}</pre>
+<pre>{"@context": [ {
+    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld" },
+  { "@import": "https://raw.githubusercontent.com/SEMICeu/Core-Business-Vocabulary/master/releases/2.2.0/context/core-business-ap.jsonld"}  ]}</pre>
 </div>
 </div>
 </div>
@@ -457,44 +431,36 @@ To illustrate this, we’ve created a JSON-LD context  <a href="https://tinyurl.
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>  {
-  "@context": {
-    "Service.providedBy": {
-      "@id": "http://example.com/legal#providedBy",
-      "@type": "http://example.com/legal#LegalEntity"
-    },
-    "LegalEntity": "http://example.com/legal#LegalEntity"
-  }
-}</pre>
+<pre>{"@context": {
+  "Service": "http://data.europa.eu/m8g/cpsvap#Service",
+  "LegalEntity": "http://www.w3.org/ns/legal#LegalEntity",
+  "Service.providedBy": {
+    "@id": "http://www.w3.org/ns/legal#providedBy",
+   "@type": "LegalEntity"
+   } } }</pre>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_map_extended_properties_in_a_service_instance"><a class="anchor" href="#_map_extended_properties_in_a_service_instance"></a>Map Extended Properties in a Service Instance:</h4>
 <div class="paragraph">
-<p>Use the extended properties to describe more aspects of <strong>Service</strong> instances. For <a href="https://tinyurl.com/4f9pykuw">example</a>:</p>
+<p>Use the extended properties to describe more aspects of <strong>Service</strong> instances. For example:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>  {
-  "@context": {
-    "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"
+<pre>{ "@context": {
+   "@import": "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld" },
+   "Service": {
+  "Service.hasRequiredEvidence": [
+    "http://example.org/RequiredEvidence/ProofOfAddress"],
+  "Service.name": "Health Insurance Registration",
+  "Service.description": "A service for registering for health insurance.",
+  "Service.contactPoint": {
+    "@type": "ContactPoint",
+    "hasTelephone": "+420776723338"
   },
-  "Service": {
-    "Service.name": "Health Insurance Registration",
-    "Service.description": "A service for registering for health insurance.",
-    "Service.hasRequiredEvidence": [
-      "http://example.org/RequiredEvidence/ProofOfAddress"
-    ],
-    "Service.contactPoint": {
-      "@type": "ContactPoint",
-      "hasTelephone": "+420776723338"
-    },
-    "Service.providedBy": {
-      "@id": "http://example.org/legalEntity/healthDepartment"
-    }
-  }
-}</pre>
+ "Service.providedBy": { "@id": "http://example.org/legalEntity/healthDepartment" }
+      }  }</pre>
 </div>
 </div>
 </div>
