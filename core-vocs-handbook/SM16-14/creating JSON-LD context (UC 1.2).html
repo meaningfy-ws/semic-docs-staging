@@ -409,46 +409,32 @@ To illustrate this, we’ve created a JSON-LD context representation  of this se
 </li>
 <li>
 <p>Contact information for users who may need assistance.
-Try this in JSON-LD Playground <a href="https://tinyurl.com/instance-ex">here</a></p>
+Try this in JSON-LD Playground <a href="https://tinyurl.com/3azpbtyj">here</a></p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json"> {
-  "@context": {
-    "cpsv": "http://purl.org/vocab/cpsv#",
-    "dct": "http://purl.org/dc/terms/",
-    "PublicService": "cpsv:PublicService",
-    "title": "dct:title",
-    "description": "dct:description",
-     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "hasRequiredEvidence": {
-      "@id": "cpsv:hasRequiredEvidence",
-      "@type": "@id"
-    },
-    "contactPoint": {
-      "@id": "cpsv:contactPoint"
-    },
-    "hasTelephone": {
-      "@id": "http://example.org/vocab/hasTelephone",
-      "@type": "xsd:string"
-    }
-  },
+  "@context":
+   [ "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld"
+  ],
   "@id": "http://example.org/service/healthInsuranceRegistration",
-  "@type": "PublicService",
-  "title": "Health Insurance Registration",
-  "description": "A service for registering for health insurance.",
-  "hasRequiredEvidence": {
+  "@type": "cpsv:PublicService",
+  "dct:title": "Health Insurance Registration",
+  "dct:description": "A service for registering for health insurance.",
+  "cpsv:hasRequiredEvidence": {
     "@id": "http://example.org/RequiredEvidence/ProofOfAddress",
-    "title": "Proof of Address"
+    "dct:title": "Proof of Address"
   },
-  "contactPoint": {
+  "cpsv:contactPoint": {
     "@type": "cpsv:ContactPoint",
-    "hasTelephone": "+420776723338"
-  }
-}</code></pre>
+    "http://example.org/vocab/hasTelephone": "+420776723338"
+  }</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>}</p>
 </div>
 </div>
 </div>
@@ -535,49 +521,30 @@ Try this in JSON-LD Playground <a href="https://tinyurl.com/instance-ex">here</a
 <div class="sect3">
 <h4 id="_map_extended_properties_in_a_service_instance"><a class="anchor" href="#_map_extended_properties_in_a_service_instance"></a>Map extended properties in a service instance:</h4>
 <div class="paragraph">
-<p>Use the extended properties to describe more aspects of <strong>Service</strong> instances. For <a href="https://json-ld.org/playground/?startTab=tab-expanded&amp;json-ld=%7B%22%40context%22%3A%7B%22%40import%22%3A%22https%3A%2F%2Fraw.githubusercontent.com%2FSEMICeu%2FCPSV-AP%2Fmaster%2Freleases%2F3.2.0%2Fcontext%2Fcpsv-ap.jsonld%22%7D%2C%22%40id%22%3A%22http%3A%2F%2Fexample.org%2Fservice%2FhealthInsuranceRegistration%22%2C%22%40type%22%3A%22cpsv%3APublicService%22%2C%22name%22%3A%22Health%20Insurance%20Registration%22%2C%22description%22%3A%22A%20service%20for%20registering%20for%20health%20insurance.%22%2C%22hasRequiredEvidence%22%3A%5B%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2FRequiredEvidence%2FProofOfAddress%22%2C%22name%22%3A%22Proof%20of%20Address%22%7D%5D%2C%22contactPoint%22%3A%7B%22%40type%22%3A%22cpsv%3AContactPoint%22%2C%22hasTelephone%22%3A%22%2B420776723338%22%7D%2C%22providedBy%22%3A%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2FlegalEntity%2FhealthDepartment%22%7D%7D">example</a>:</p>
+<p>Use the extended properties to describe more aspects of <strong>Service</strong> instances. For <a href="https://tinyurl.com/jdv5z62t">example</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  "@context": {
-    "cpsv": "http://purl.org/vocab/cpsv#",
-    "LegalEntity": "http://example.com/legal#LegalEntity",
-    "dct": "http://purl.org/dc/terms/",
-    "PublicService": "cpsv:PublicService",
-    "title": "dct:title",
-    "description": "dct:description",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "hasRequiredEvidence": {
-      "@id": "cpsv:hasRequiredEvidence",
-      "@type": "@id"
-    },
-    "contactPoint": {
-      "@id": "cpsv:contactPoint"
-    },
-    "hasTelephone": {
-      "@id": "http://example.org/vocab/hasTelephone",
-      "@type": "xsd:string"
-    },
-    "providedBy": {
-      "@id": "cpsv:providedBy",
-      "@type": "@id"
-    }
-  },
+  "@context": [
+    "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld",
+    "https://raw.githubusercontent.com/SEMICeu/Core-Business-Vocabulary/master/releases/2.2.0/context/core-business-ap.jsonld"
+  ],
   "@id": "http://example.org/service/healthInsuranceRegistration",
-  "@type": "PublicService",
-  "title": "Health Insurance Registration",
-  "description": "A service for registering for health insurance.",
-  "hasRequiredEvidence": {
+  "@type": "cpsv:PublicService",
+  "dct:title": "Health Insurance Registration",
+  "dct:description": "A service for registering for health insurance.",
+  "cpsv:hasRequiredEvidence": {
     "@id": "http://example.org/RequiredEvidence/ProofOfAddress",
-    "title": "Proof of Address"
+    "dct:title": "Proof of Address"
   },
-  "contactPoint": {
+  "cpsv:contactPoint": {
     "@type": "cpsv:ContactPoint",
     "hasTelephone": "+420776723338"
   },
-  "providedBy": {
-    "@id": "http://example.org/legalEntity/healthDepartment"
+  "cpsv:providedBy": {
+    "@id": "http://example.org/legalEntity/healthDepartment",
+    "@type": "legal:LegalEntity"
   }
 }</code></pre>
 </div>
