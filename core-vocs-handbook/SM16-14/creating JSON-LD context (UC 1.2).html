@@ -560,10 +560,11 @@ Try this in JSON-LD Playground <a href="https://tinyurl.com/3azpbtyj">here</a></
 <img src="_images/image-2025-04-14-14-25-55-451.png" alt="image 2025 04 14 14 25 55 451">
 </div>
 </div>
-<div class="sect4">
-<h5 id="_error_example"><a class="anchor" href="#_error_example"></a>Error example:</h5>
+</div>
+<div class="sect3">
+<h4 id="_error_example"><a class="anchor" href="#_error_example"></a>Error example:</h4>
 <div class="paragraph">
-<p>If the @import URLs for external contexts are incorrect or unavailable, the validation tool may display an error such as:</p>
+<p>If the <code>@import</code> URLs for external contexts are incorrect or unavailable, the validation tool may display an error such as:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -577,20 +578,26 @@ Try this in JSON-LD Playground <a href="https://tinyurl.com/3azpbtyj">here</a></
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">  {"@context":[ { @import": "https://invalid-url/cpsv-ap.jsonld" }  ] }</code></pre>
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "@context": [
+    { "@import": "https://invalid-url/cpsv-ap.jsonld" }
+  ]
+}</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>These errors typically occur when the referenced context URL is malformed or unreachable, as shown in the following figure:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/image-2025-04-22-22-04-11-289.png" alt="image 2025 04 22 22 04 11 289">
+<img src="_images/image-2025-04-22-22-04-11-289.png" alt="Example error shown in the validator interface">
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_how_to_fix"><a class="anchor" href="#_how_to_fix"></a>How to fix:</h5>
+<div class="sect3">
+<h4 id="_how_to_fix"><a class="anchor" href="#_how_to_fix"></a>How to fix:</h4>
 <div class="paragraph">
 <p>Ensure that the @import URLs point to valid and accessible JSON-LD contexts. Verify the links in a browser or test them in a cURL command to ensure they return the correct JSON-LD data. Update the URLs to the correct ones.</p>
-</div>
 </div>
 </div>
 </div>
