@@ -190,12 +190,9 @@
       <div class="title"><a href="../../index.html">Home</a></div>
     </li>
     <li class="component is-current">
-      <div class="title"><a href="../SM16-43-1/index.html">SEMIC Core Vocabularies Handbook</a></div>
+      <div class="title"><a href="../SM16-32/index.html">SEMIC Core Vocabularies Handbook</a></div>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../SM16-43-1/index.html">SM16-43-1</a>
-        </li>
-        <li class="version">
           <a href="../SM16-32/index.html">SM16-32</a>
         </li>
         <li class="version">
@@ -203,9 +200,6 @@
         </li>
         <li class="version">
           <a href="../SM16-31/index.html">SM16-31</a>
-        </li>
-        <li class="version">
-          <a href="../SM16-14-1/index.html">SM16-14-1</a>
         </li>
         <li class="version is-current">
           <a href="index.html">develop</a>
@@ -243,11 +237,9 @@
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">develop</button>
   <div class="version-menu">
-    <a class="version" href="../SM16-43-1/UC1.2-description.html">SM16-43-1</a>
     <a class="version is-missing" href="../SM16-32/index.html">SM16-32</a>
     <a class="version" href="../SM16-31-1/UC1.2-description.html">SM16-31-1</a>
     <a class="version is-missing" href="../SM16-31/index.html">SM16-31</a>
-    <a class="version" href="../SM16-14-1/UC1.2-description.html">SM16-14-1</a>
     <a class="version is-current" href="UC1.2-description.html">develop</a>
   </div>
 </div>
@@ -618,13 +610,9 @@ To illustrate this, we’ve created a JSON-LD context representation  of this se
       "@id": "http://example.com/legal#providedBy",
       "@type": "http://example.com/legal#LegalEntity"
     },
-    "LegalEntity": "http://www.w3.org/ns/legal#LegalEntity"</code></pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>  }
-}</pre>
+    "LegalEntity": "http://www.w3.org/ns/legal#LegalEntity"
+  }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -635,27 +623,7 @@ To illustrate this, we’ve created a JSON-LD context representation  of this se
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json"> {
-  "@context": [
-    "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld",
-        "https://raw.githubusercontent.com/SEMICeu/Core-Business-Vocabulary/master/releases/2.2.0/context/core-business-ap.jsonld",
-    {"cpsv":"http://purl.org/vocab/cpsv#"}
-  ],
- "@id": "http://example.org/service/healthInsuranceRegistration",
-  "@type": "PublicService",
-  "PublicService.name": {
-    "@value": "Health Insurance Registration",
-    "@language": "en"
-  },
-  "PublicService.description": {
-    "@value": "A service for registering for health insurance.",
-    "@language": "en"
-  },
-  "cpsv:providedBy": {
-    "@id": "http://example.org/legalEntity/healthDepartment",
-    "@type": "LegalEntity"
-  }
-}{
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
   "@context": [
     "https://raw.githubusercontent.com/SEMICeu/CPSV-AP/master/releases/3.2.0/context/cpsv-ap.jsonld",
     "https://raw.githubusercontent.com/SEMICeu/Core-Business-Vocabulary/master/releases/2.2.0/context/core-business-ap.jsonld",
