@@ -1,6 +1,7 @@
 # semic-docs-staging
 A development/staging environment for publishing SEMIC documentation consolidated from two sources.
-
+The workflow builds documentation for the `develop` and `feature/*` branches in the source repositories.
+It supports https://github.com/SEMICeu/core-vocs-handbook and https://github.com/SEMICeu/style-guide repositories.
 The published documentation can be accessed here: https://meaningfy-ws.github.io/semic-docs-staging
 
 ## Usage
