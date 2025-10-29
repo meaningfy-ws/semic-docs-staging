@@ -1124,23 +1124,23 @@ Such activity can be done by semantic engineers based on input from domain exper
 <h3 id="sec:create-data-model-from-cv"><a class="anchor" href="#sec:create-data-model-from-cv"></a>2. Creating a new data model from an existing Core Vocabulary</h3>
 <div class="paragraph">
 <p>Technologies rise and decline in popularity, yet one of the red threads through the computational techniques over the decades is the <strong>management of structured data</strong>. Data needs to be stored, processed, acted upon, shared, integrated, presented, and more, all mediated by software. This also means that the structure of the data needs to be machine-readable far beyond the simple scanned hard-copy administrative forms or legal documents. Structured data mediates between entities in the real world and their representation in the software. <br>
-For instance, to represent the fact “govtDep#1 subcontracts comp#2”, we might have</p>
+For instance, to represent the fact “<span class="custom-highlight">govtDep#1 subcontracts comp#2</span>”, we might have</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>a table with government departments that also contains a row with govtDep#1;</p>
+<p>a table with government departments that also contains a row with <span class="custom-highlight">govtDep#1</span>;</p>
 </li>
 <li>
-<p>a table with companies and their identifying data including comp#2; and</p>
+<p>a table with companies and their identifying data including <span class="custom-highlight">comp#2</span>; and</p>
 </li>
 <li>
-<p>a table with subcontracting relationships between instances, including (GovtDep#1,Comp#2).</p>
+<p>a table with subcontracting relationships between instances, including <span class="custom-highlight">(GovtDep#1,Comp#2)</span>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A mechanism to capture the sort of structured and semi-structured data which may be stored and managed in the system is called a <strong>data model</strong> at the level of the technical implementation and <em>conceptual data model</em> or <em>vocabulary</em> as part of a <strong>semantic data specification</strong> when it is implementation-independent. Such models represent the entity types, such as GovernmentDepartment, Company, and its more generic type Organisation from our example, along with relationships between entity types, such as Subcontracting. Data models typically also implement business rules or constraints that apply to the particular organisation. For instance, one rule might state that each government department <em>is permitted to subcontract at most 15</em> companies in country#3 whereas there may be no upper bound to subcontracting in country#4 and a prohibition on subcontracting (i.e., <em>is permitted to subcontract at most 0</em>) in country#5. These variations require different data models or application profiles, although they may use the same vocabulary.</p>
+<p>A mechanism to capture the sort of structured and semi-structured data which may be stored and managed in the system is called a <strong>data model</strong> at the level of the technical implementation and <em>conceptual data model</em> or <em>vocabulary</em> as part of a <strong>semantic data specification</strong> when it is implementation-independent. Such models represent the entity types, such as <span class="custom-highlight">GovernmentDepartment</span>, <span class="custom-highlight">Company</span>, and its more generic type <span class="custom-highlight">Organisation</span> from our example, along with relationships between entity types, such as <span class="custom-highlight">Subcontracting</span>. Data models typically also implement business rules or constraints that apply to the particular organisation. For instance, one rule might state that each government department <em>is permitted to subcontract at most 15</em> companies in <span class="custom-highlight">country#3</span> whereas there may be no upper bound to subcontracting in <span class="custom-highlight">country#4</span> and a prohibition on subcontracting (i.e., <em>is permitted to subcontract at most 0</em>) in <span class="custom-highlight">country#5</span>. These variations require different data models or application profiles, although they may use the same vocabulary.</p>
 </div>
 <div class="paragraph">
 <p>This raises a number of questions:</p>
@@ -1273,7 +1273,7 @@ Unfortunately, not one of them made their schema available.</p>
 <p>Reusing elements and types from the Core Vocabulary improves interoperability and alignment with EU data standards, yet also imposes some limitations.</p>
 </div>
 <div class="paragraph">
-<p>Since reuse occurs at the syntactic level, element names and structures, including complex types, from the Core Vocabulary can be <strong>extended</strong>, but not easily <em>restricted</em> (for instance, limiting Organization to a single sub-organization would require creating a new complex type).</p>
+<p>Since reuse occurs at the syntactic level, element names and structures, including complex types, from the Core Vocabulary can be <strong>extended</strong>, but not easily <em>restricted</em> (for instance, limiting <span class="custom-highlight">Organization</span> to a single sub-organization would require creating a new complex type).</p>
 </div>
 <div class="paragraph">
 <p>These trade-offs between semantic interoperability and technical consistency are discussed in the <a href="introduction.html#sec:Why_Core_Vocabulary" class="xref page">Why Core Vocabularies</a> section.</p>
@@ -1418,7 +1418,7 @@ For example, CBV comes with <a href="https://github.com/SEMICeu/XML-schema/tree/
 <div class="paragraph">
 <p>If the XSD schema of the CV does not suffice, in that you need additional elements beyond the XSD schema, then you have to define those yourself in the XSD schema you are developing. This might be an element from the CV associated with the XSD, or possibly elements from another CV or semantic artefact.<br>
 These new elements need to <strong>adhere to the Core Vocabulary&#8217;s namespace</strong> to maintain consistency. <br>
-For example, the LegalEntity element could be defined as follows if no XSD is provided for it:</p>
+For example, the <span class="custom-highlight">LegalEntity</span> element could be defined as follows if no XSD is provided for it:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1438,8 +1438,8 @@ For example, the LegalEntity element could be defined as follows if no XSD is pr
 <p><em>Venetian Blind Pattern</em></p>
 </div>
 <div class="paragraph">
-<p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as LegalEntity, serves as the entry point, as seen in CBV. This pattern fits well with API design, where you typically request information about a central concept (such as LegalEntity), and the response includes nested elements, including LegalName and RegisteredAddress, which are all organised under the main entity.<br>
-Here’s an example, where LegalEntity serves as the main entry point:</p>
+<p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as <span class="custom-highlight">LegalEntity</span>, serves as the entry point, as seen in CBV. This pattern fits well with API design, where you typically request information about a central concept (such as <span class="custom-highlight">LegalEntity</span>), and the response includes nested elements, including <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>, which are all organised under the main entity.<br>
+Here’s an example, where <span class="custom-highlight">LegalEntity</span> serves as the main entry point:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1468,7 +1468,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <p>LegalEntity is the global entry point.</p>
 </li>
 <li>
-<p>It uses LegalEntityType, which contains various properties such as LegalName and RegisteredAddress.</p>
+<p>It uses <span class="custom-highlight">LegalEntityType</span>, which contains various properties such as <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>.</p>
 </li>
 </ul>
 </div>
@@ -1476,7 +1476,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <p><em>Garden of Eden Pattern</em></p>
 </div>
 <div class="paragraph">
-<p>In the Garden of Eden pattern, there are multiple entry points in the XML document. This is more flexible and is suitable when no central class is inherently the main starting point. The elements that are declared <em>directly under</em> <code>&lt;xs:schema&gt;</code> qualify as such entry points. In CBV these include LegalEntity, Organization etc., whereas nested elements, such as RegisteredAddress or ContactPoint, are defined <em>inside</em> those complex types and <em>cannot</em> start a document on their own.</p>
+<p>In the Garden of Eden pattern, there are multiple entry points in the XML document. This is more flexible and is suitable when no central class is inherently the main starting point. The elements that are declared <em>directly under</em> <code>&lt;xs:schema&gt;</code> qualify as such entry points. In CBV these include <span class="custom-highlight">LegalEntity</span>, <span class="custom-highlight">Organization</span> etc., whereas nested elements, such as <span class="custom-highlight">RegisteredAddress</span> or <span class="custom-highlight">ContactPoint</span>, are defined <em>inside</em> those complex types and <em>cannot</em> start a document on their own.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1490,10 +1490,10 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <p><em>Define Complex Types</em></p>
 </div>
 <div class="paragraph">
-<p>After importing or defining the basic elements and structuring your XML document with patterns, the next step in creating an XSD schema is to define <strong>complex types</strong>. Complex types are used to represent business entities that contain multiple properties or relationships. For CBV, these types often model entities like LegalEntity or Organization, which have both simple and complex elements. For example, the LegalEntityType and OrganizationType, as follows.</p>
+<p>After importing or defining the basic elements and structuring your XML document with patterns, the next step in creating an XSD schema is to define <strong>complex types</strong>. Complex types are used to represent business entities that contain multiple properties or relationships. For CBV, these types often model entities like <span class="custom-highlight">LegalEntity</span> or <span class="custom-highlight">Organization</span>, which have both simple and complex elements. For example, the <span class="custom-highlight">LegalEntityType</span> and <span class="custom-highlight">OrganizationType</span>, as follows.</p>
 </div>
 <div class="paragraph">
-<p>A LegalEntity might contain multiple child elements, such as LegalName modelled as a simple string, RegisteredAddress (also a complex type), and other related elements. Here&#8217;s how LegalEntityType is defined:</p>
+<p>A <span class="custom-highlight">LegalEntity</span> might contain multiple child elements, such as <span class="custom-highlight">LegalName</span> modelled as a simple string, <span class="custom-highlight">RegisteredAddress</span> (also a complex type), and other related elements. Here&#8217;s how <span class="custom-highlight">LegalEntityType</span> is defined:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1530,7 +1530,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Similar to the LegalEntityType complex type, the BusinessAgentType defines a concept with multiple properties and relationships. However, for BusinessAgentType, we define it as a complex type that contains hierarchical relationships, such as HeadOf and MemberOf.</p>
+<p>Similar to the <span class="custom-highlight">LegalEntityType</span> complex type, the <span class="custom-highlight">BusinessAgentType</span> defines a concept with multiple properties and relationships. However, for <span class="custom-highlight">BusinessAgentType</span>, we define it as a complex type that contains hierarchical relationships, such as <span class="custom-highlight">HeadOf</span> and <span class="custom-highlight">MemberOf</span>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1617,7 +1617,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced RequiredEvidence, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
+<p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced <span class="custom-highlight">RequiredEvidence</span>, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
 </div>
 <div class="paragraph">
 <p>Happy with the outcome, Nora emailed the municipalities so that each city and town would be able to upgrade their system in the same way with CPSV-AP-NO, and so that DiTFor could still collect and integrate the data at the national level.</p>
@@ -1844,7 +1844,7 @@ A context can be defined per class, allowing property names such as <span class=
 </div>
 </div>
 <div class="paragraph">
-<p>If a context needs to be extended, define the new elements explicitly. For example, if we need new terms (classes), such as Service and RequiredEvidence, which are not in CPSV-AP these terms must be mapped to URIs (the examples are inspired by <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>):</p>
+<p>If a context needs to be extended, define the new elements explicitly. For example, if we need new terms (classes), such as <span class="custom-highlight">Service</span> and <span class="custom-highlight">RequiredEvidence</span>, which are not in CPSV-AP these terms must be mapped to URIs (the examples are inspired by <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1860,7 +1860,7 @@ A context can be defined per class, allowing property names such as <span class=
 <p>Once you’ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardised and machine-readable format.</p>
 </div>
 <div class="paragraph">
-<p>Let’s look at an <a href="https://tinyurl.com/2794ygga">example</a> where we define a Service and some of its key properties, such as contactPoint, description, name and hasRequiredEvidence:</p>
+<p>Let’s look at an <a href="https://tinyurl.com/2794ygga">example</a> where we define a <span class="custom-highlight">Service</span> and some of its key properties, such as <span class="custom-highlight">contactPoint</span>, <span class="custom-highlight">description</span>, <span class="custom-highlight">name</span> and <span class="custom-highlight">hasRequiredEvidence</span>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1897,7 +1897,7 @@ A context can be defined per class, allowing property names such as <span class=
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>@context</code></strong>: Defines the mapping between terms (e.g., PublicService) and their corresponding IRIs.</p>
+<p><strong><code>@context</code></strong>: Defines the mapping between terms (e.g., <span class="custom-highlight">PublicService</span>) and their corresponding IRIs.</p>
 </li>
 <li>
 <p><strong><code>@container</code><strong></strong>:</strong> Specifies how values are structured. For instance,</p>
@@ -1924,7 +1924,7 @@ A context can be defined per class, allowing property names such as <span class=
 <p><em>Example of a simple service instance</em></p>
 </div>
 <div class="paragraph">
-<p>After defining the context and structure, you can now describe an actual Service instance by referencing the terms you defined earlier.</p>
+<p>After defining the context and structure, you can now describe an actual <span class="custom-highlight">Service</span> instance by referencing the terms you defined earlier.</p>
 </div>
 <div class="paragraph">
 <p><em>Example scenario</em></p>
@@ -1972,7 +1972,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Aliasing keywords for API compatibility (REST API example)</em></p>
 </div>
 <div class="paragraph">
-<p>When working with REST APIs, it is often beneficial to alias certain JSON-LD keywords for simpler or more consistent representations in client applications. For example, you might alias JSON-LD&#8217;s <code>@id</code> to url and <code>@type</code> to type to make the data more intuitive for API consumers, especially when working with legacy systems or client-side frameworks that use specific naming conventions.</p>
+<p>When working with REST APIs, it is often beneficial to alias certain JSON-LD keywords for simpler or more consistent representations in client applications. For example, you might alias JSON-LD&#8217;s <code>@id</code> to <span class="custom-highlight">url</span> and <code>@type</code> to <span class="custom-highlight">type</span> to make the data more intuitive for API consumers, especially when working with legacy systems or client-side frameworks that use specific naming conventions.</p>
 </div>
 <div class="paragraph">
 <p><em>Example of aliasing keywords</em></p>
@@ -1995,7 +1995,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 </div>
 <div class="paragraph">
-<p>In this example, url is an alias for <code>@id</code> and type is an alias for <code>@type</code>.</p>
+<p>In this example, <span class="custom-highlight">url</span> is an alias for <code>@id</code> and <span class="custom-highlight">type</span> is an alias for <code>@type</code>.</p>
 </div>
 <div class="paragraph">
 <p>By aliasing these terms, the API responses are simplified and more familiar to the developers interacting with the service, especially if they are accustomed to a different JSON structure.</p>
@@ -2004,7 +2004,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Extend the context by reusing terms from Core Vocabularies</em></p>
 </div>
 <div class="paragraph">
-<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organisation, and ContactPoint, to enrich your Service<strong> </strong>descriptions.</p>
+<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as <span class="custom-highlight">LegalEntity</span>, <span class="custom-highlight">Organisation</span>, and <span class="custom-highlight">ContactPoint</span>, to enrich your <span class="custom-highlight">Service</span><strong> </strong>descriptions.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2024,7 +2024,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Define additional properties from the Core Business Vocabulary</em></p>
 </div>
 <div class="paragraph">
-<p>Add CBV terms to enhance the description of the Service entity by reusing existing concepts such as LegalEntity, which helps to specify who provided the service.</p>
+<p>Add CBV terms to enhance the description of the <span class="custom-highlight">Service</span> entity by reusing existing concepts such as <span class="custom-highlight">LegalEntity</span>, which helps to specify who provided the service.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2043,7 +2043,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Map extended properties in a service instance</em></p>
 </div>
 <div class="paragraph">
-<p>Use the extended properties to describe more aspects of Service instances. For <a href="https://tinyurl.com/chtayj3h">example</a>:</p>
+<p>Use the extended properties to describe more aspects of <span class="custom-highlight">Service</span> instances. For <a href="https://tinyurl.com/chtayj3h">example</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2506,7 +2506,7 @@ For this tutorial, we aim to map <a href="http://Schema.org">Schema.org</a> to t
 <p><strong>Define scope of the mapping for the model and selected CV</strong>: What parts of the Core Business Vocabulary need to be mapped to Schema.org? Are there specific concepts (e.g., contact point, organisation) that must be represented? Which version of each ontology or vocabulary will be mapped?</p>
 </li>
 <li>
-<p><strong>Set specific goals of what the mapping needs to achieve</strong>: Define the intended specific outcomes of the mapping. Besides ensuring semantic alignment between CBV and Schema.org entities, a key goal may be to clarify the relationship between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/#Legal%20Entity">legal:LegalEntity</a> and <a href="https://schema.org/Organization">schema:Organization</a> (Issue <a href="https://github.com/SEMICeu/Core-Business-Vocabulary/issues/38">#38</a>), or to declare a particular equivalence between a CBV and a Schema.org entity to query across information systems to retrieve data.</p>
+<p><strong>Set specific goals of what the mapping needs to achieve</strong>: Define the intended specific outcomes of the mapping. Besides ensuring semantic alignment between CBV and Schema.org entities, a key goal may be to clarify the relationship between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/" class="bare">https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/</a><mark>Legal%20Entity[[.custom-highlight]#legal:LegalEntity</mark>] and <a href="https://schema.org/Organization"><span class="custom-highlight">schema:Organization</span></a> (Issue <a href="https://github.com/SEMICeu/Core-Business-Vocabulary/issues/38">#38</a>), or to declare a particular equivalence between a CBV and a Schema.org entity to query across information systems to retrieve data.</p>
 </li>
 </ol>
 </div>
@@ -2546,7 +2546,7 @@ For this tutorial, we aim to map <a href="http://Schema.org">Schema.org</a> to t
 <p><em>Procedure for CBV and Schema.org</em></p>
 </div>
 <div class="paragraph">
-<p>The purpose, scope, and goals are determined by the stakeholders, including domain experts and knowledge engineers. First, the domain experts’ input is needed to demarcate the scope especially, indicating what the (sub-)topic of interest is, ideally augmented with key terms. For CBV and Schema.org, these may include terms such as: legal:LegalEntity versus schema:Organization. It may also need to take into account ‘externalities’, such as regulatory compliance that may dictate the use of one version of a schema over another for some business reason. For the current exercise, there are no regulatory compliance requirements in place. Therefore, the latest official releases of both vocabularies will be used (Schema.org version 29.1 and CBV version 2.2.0). Next, clear mapping goals should be established. For this exercise, the primary goal is to identify direct relationships between the two vocabularies. These relationships will then be expressed in a machine-readable format, enabling seamless data transformation between the CBV and Schema.org.</p>
+<p>The purpose, scope, and goals are determined by the stakeholders, including domain experts and knowledge engineers. First, the domain experts’ input is needed to demarcate the scope especially, indicating what the (sub-)topic of interest is, ideally augmented with key terms. For CBV and Schema.org, these may include terms such as: <span class="custom-highlight">legal:LegalEntity</span> versus <span class="custom-highlight">schema:Organization</span>. It may also need to take into account ‘externalities’, such as regulatory compliance that may dictate the use of one version of a schema over another for some business reason. For the current exercise, there are no regulatory compliance requirements in place. Therefore, the latest official releases of both vocabularies will be used (Schema.org version 29.1 and CBV version 2.2.0). Next, clear mapping goals should be established. For this exercise, the primary goal is to identify direct relationships between the two vocabularies. These relationships will then be expressed in a machine-readable format, enabling seamless data transformation between the CBV and Schema.org.</p>
 </div>
 <div id="sec:Characterisation" class="paragraph">
 <p><strong><em>Phase 2: Characterisation (Defining Source and Target models)</em></strong></p>
@@ -2752,10 +2752,10 @@ The selected features are presented  in a table below, where for each feature th
 <div class="ulist">
 <ul>
 <li>
-<p>Example: An existing alignment for LegalEntity to Organization was evaluated. However, it was missing relationships for properties like schema:legalName and schema:taxID. So, the original alignment was extended to include new mappings for these properties. There may also be new alignments when existing resources are not suitable, which is the case for this tutorial.</p>
+<p>Example: An existing alignment for LegalEntity to Organization was evaluated. However, it was missing relationships for properties like <span class="custom-highlight">schema:legalName</span> and <span class="custom-highlight">schema:taxID</span>. So, the original alignment was extended to include new mappings for these properties. There may also be new alignments when existing resources are not suitable, which is the case for this tutorial.</p>
 </li>
 <li>
-<p>Example: Add alignment to answer the question: What is the relation between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/#Legal%20Entity">legal:LegalEntity</a> and <a href="https://schema.org/Organization">schema:Organization</a>?</p>
+<p>Example: Add alignment to answer the question: What is the relation between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/" class="bare">https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/</a><mark>Legal%20Entity[[.custom-highlight]#legal:LegalEntity</mark>] and <a href="https://schema.org/Organization"><span class="custom-highlight">schema:Organization</span></a>?</p>
 </li>
 </ul>
 </div>
@@ -2837,7 +2837,7 @@ The selected features are presented  in a table below, where for each feature th
 <p><em>Manual Alignment Process</em></p>
 </div>
 <div class="paragraph">
-<p>Even though the automated tool did not produce any alignments, we can use our domain knowledge to suggest potential mappings based on the descriptions and attributes of the entities. For example, CBV’s LegalEntity (that is an org:Organization) maps to Schema.org’s Organization based on their similar roles in representing business-related concepts, and likewise for CBV’s Address (imported from Core Location Vocabulary) with Schema.org PostalAddress. These kinds of alignments are made by examining the entity definitions and considering the context of their use in each ontology.</p>
+<p>Even though the automated tool did not produce any alignments, we can use our domain knowledge to suggest potential mappings based on the descriptions and attributes of the entities. For example, CBV’s <span class="custom-highlight">LegalEntity</span> (that is an <span class="custom-highlight">org:Organization</span>) maps to Schema.org’s <span class="custom-highlight">Organization</span> based on their similar roles in representing business-related concepts, and likewise for CBV’s <span class="custom-highlight">Address</span> (imported from Core Location Vocabulary) with Schema.org <span class="custom-highlight">PostalAddress</span>. These kinds of alignments are made by examining the entity definitions and considering the context of their use in each ontology.</p>
 </div>
 <div class="paragraph">
 <p><strong><em>Phase 5: Validate Alignments</em></strong></p>
@@ -2898,7 +2898,7 @@ The selected features are presented  in a table below, where for each feature th
 <p><em>Review Proposed Alignments</em></p>
 </div>
 <div class="paragraph">
-<p>Each candidate correspondence is checked for correctness and relevance. For CBV and Schema.org, we use a manual inspection by ontology engineers first, which includes cross-referencing documentation or definitions. CBV’s LegalEntity is “<em>A self-employed person, company, or organisation that has legal rights and obligations</em>” and Schema.org’s Organization is “<em>An organization such as a school, NGO, corporation, club, etc.</em>”. For Address, the descriptions are as follows: <em>“A spatial object that in a human-readable way identifies a fixed location”</em> with a usage note indicating it to be understood as a postal address, and “<em>The mailing address</em>”, respectively.</p>
+<p>Each candidate correspondence is checked for correctness and relevance. For CBV and Schema.org, we use a manual inspection by ontology engineers first, which includes cross-referencing documentation or definitions. CBV’s <span class="custom-highlight">LegalEntity</span> is “<em>A self-employed person, company, or organisation that has legal rights and obligations</em>” and Schema.org’s <span class="custom-highlight">Organization</span> is “<em>An organization such as a school, NGO, corporation, club, etc.</em>”. For <span class="custom-highlight">Address</span>, the descriptions are as follows: <em>“A spatial object that in a human-readable way identifies a fixed location”</em> with a usage note indicating it to be understood as a postal address, and “<em>The mailing address</em>”, respectively.</p>
 </div>
 <div class="paragraph">
 <p><em>Decide the Appropriate Semantic Relation</em></p>
@@ -2907,7 +2907,7 @@ The selected features are presented  in a table below, where for each feature th
 <p>For each validated candidate pair, determine the type of semantic relation.</p>
 </div>
 <div class="paragraph">
-<p>For our running example, CBV’s LegalEntity is almost the same as Schema.org’s Organization, but the latter does not have the “legal rights” constraint, and therefore, the appropriate semantic relation is that of <em>subsumption</em>. For the respective addresses, while CBV’s imported Address’ definition is broader than PostalAddress, and therefore suggesting a subsumption alignment as well, taking into account CBV’s usage note, it can be an <em>equivalence</em> alignment.</p>
+<p>For our running example, CBV’s <span class="custom-highlight">LegalEntity</span> is almost the same as Schema.org’s <span class="custom-highlight">Organization</span>, but the latter does not have the “legal rights” constraint, and therefore, the appropriate semantic relation is that of <em>subsumption</em>. For the respective addresses, while CBV’s imported <span class="custom-highlight">Address</span>’ definition is broader than <span class="custom-highlight">PostalAddress</span>, and therefore suggesting a subsumption alignment as well, taking into account CBV’s usage note, it can be an <em>equivalence</em> alignment.</p>
 </div>
 <div class="paragraph">
 <p><em>Formalise the Alignment</em></p>
@@ -3007,10 +3007,10 @@ We assume:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A data file (<code>core-business-ap.ttl</code>) contains an instance of legal:LegalEntity</p>
+<p>A data file (<code>core-business-ap.ttl</code>) contains an instance of <span class="custom-highlight">legal:LegalEntity</span></p>
 </li>
 <li>
-<p>An alignment file (<code>Alignment-CoreBusiness-2.2.0-schemaorg.ttl</code>) defines a mapping from legal:LegalEntity to schema:Organization.</p>
+<p>An alignment file (<code>Alignment-CoreBusiness-2.2.0-schemaorg.ttl</code>) defines a mapping from <span class="custom-highlight">legal:LegalEntity</span> to <span class="custom-highlight">schema:Organization</span>.</p>
 </li>
 </ul>
 </div>
@@ -3044,7 +3044,7 @@ WHERE {
 <p><strong>What This Query Does</strong></p>
 </div>
 <div class="paragraph">
-<p>It checks for instances of legal:LegalEntity in the data file, and if the alignment file contains a mapping for it, it infers the equivalent or related Schema.org class (schema:Organization).</p>
+<p>It checks for instances of <span class="custom-highlight">legal:LegalEntity</span> in the data file, and if the alignment file contains a mapping for it, it infers the equivalent or related Schema.org class (<span class="custom-highlight">schema:Organization</span>).</p>
 </div>
 <div class="paragraph">
 <p><strong>Output</strong></p>
@@ -3161,7 +3161,7 @@ WHERE {
 <p>Conceptual Mapping in semantic data integration–determining what elements from the source should correspond to those in the target–can be established at two distinct levels: the vocabulary level and the application profile level. These levels differ primarily in their complexity and specificity regarding the data context they address. A <strong>Vocabulary mapping</strong> is established  as the principal task: the XSD schema elements need to align to CV elements, focussing on terminological alignments.</p>
 </div>
 <div class="paragraph">
-<p>For the XSD file, they are the elements within the tags <code>&lt;xs:element ref=”<em>elementLabel</em>”&gt;</code> where the “elementLabel” first has to be contextually interpreted if no definition is given in the XSD file, and then mapped to a concept from the chosen CV. For instance, a <code>&lt;xs:element ref=”address”&gt;</code> nested within the concept <code>&lt;xs:element ref=”Person”&gt;</code> has a different meaning from “address” nested within the concept <code>&lt;xs:element ref=”Website”&gt;</code>. This thus also requires careful management of the mappings, where the whole XPath is documented, rather than only the name of the element, because the whole path is needed for disambiguation.</p>
+<p>For the XSD file, they are the elements within the tags <code>&lt;xs:element ref=”<em>elementLabel</em>”&gt;</code> where the “<span class="custom-highlight">elementLabel</span>” first has to be contextually interpreted if no definition is given in the XSD file, and then mapped to a concept from the chosen CV. For instance, a <code>&lt;xs:element ref=”address”&gt;</code> nested within the concept <code>&lt;xs:element ref=”Person”&gt;</code> has a different meaning from “<span class="custom-highlight">address</span>” nested within the concept <code>&lt;xs:element ref=”Website”&gt;</code>. This thus also requires careful management of the mappings, where the whole XPath is documented, rather than only the name of the element, because the whole path is needed for disambiguation.</p>
 </div>
 <div class="paragraph">
 <p><em>Option 2-i. Map XSD to a CV’s main format</em></p>
@@ -3309,13 +3309,13 @@ WHERE {
 <p><em>Phase 3.1 Conceptual Mapping development</em></p>
 </div>
 <div class="paragraph">
-<p>Besides the XSD to CV mappings, the XML elements can also be mapped in a <strong>Vocabulary mapping</strong>. For the XML files, an XML element or attribute is then directly mapped to an ontology class or property. For example, an XML element <code>&lt;PostalAddress&gt;</code> could be mapped to the locn:Address class in a CV, or an element <code>&lt;surname&gt;</code> could be mapped to a property foaf:familyName in the FOAF ontology. Such mappings can be established and written in a spreadsheet or mapping-specific software.</p>
+<p>Besides the XSD to CV mappings, the XML elements can also be mapped in a <strong>Vocabulary mapping</strong>. For the XML files, an XML element or attribute is then directly mapped to an ontology class or property. For example, an XML element <code>&lt;PostalAddress&gt;</code> could be mapped to the <span class="custom-highlight">locn:Address</span> class in a CV, or an element <code>&lt;surname&gt;</code> could be mapped to a property <span class="custom-highlight">foaf:familyName</span> in the FOAF ontology. Such mappings can be established and written in a spreadsheet or mapping-specific software.</p>
 </div>
 <div class="paragraph">
 <p>Alternatively, one can create an <strong>Application Profile mapping</strong>, which utilises XPath to guide access to data in XML tree structures, enabling extraction and contextualization of data before mapping it to an ontology fragment that is usually expressed as a SPARQL Property Path (or simply: a Property Path). This Property Path facilitates the description of instantiation patterns specific to the Application Profile.</p>
 </div>
 <div class="paragraph">
-<p>The tables below show two examples of mapping the organisation&#8217;s address, city and postal code: where the data is extracted from in the source, and how it can be mapped to targeted ontology, such as locn:postName, and locn:postCode in the vocabulary. To ensure that this address is linked to an organisation instance, and not, say, a person, the mapping is anchored in an instance represented by the variable <code>?this</code> of an owl:Organisation. Optionally, a class path can also be provided to explicitly state the class sequence, which otherwise can be deduced from the Application Profile definition.</p>
+<p>The tables below show two examples of mapping the organisation&#8217;s address, city and postal code: where the data is extracted from in the source, and how it can be mapped to targeted ontology, such as <span class="custom-highlight">locn:postName</span>, and <span class="custom-highlight">locn:postCode</span> in the vocabulary. To ensure that this address is linked to an organisation instance, and not, say, a person, the mapping is anchored in an instance represented by the variable <code>?this</code> of an <span class="custom-highlight">owl:Organisation</span>. Optionally, a class path can also be provided to explicitly state the class sequence, which otherwise can be deduced from the Application Profile definition.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3638,7 +3638,7 @@ We ensure that the XML data contains relevant elements, such as <code>&lt;LegalE
 </div>
 </div>
 <div class="paragraph">
-<p>This maps the XML element <strong><code>&lt;LegalName&gt;</code></strong> to the property <strong>legal:legalName</strong>.</p>
+<p>This maps the XML element <strong><code>&lt;LegalName&gt;</code></strong> to the property <strong><span class="custom-highlight">legal:legalName</span></strong>.</p>
 </div>
 <div class="paragraph">
 <p><em>Mapping Table (Partial)</em></p>
@@ -3681,14 +3681,14 @@ We ensure that the XML data contains relevant elements, such as <code>&lt;LegalE
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Vocabulary Level Mapping</strong>: This is a basic alignment, where each XSD and XML element is directly mapped to an ontology class or property. For XSD, this task should already have been completed in Phase 2. Taken together, one then obtains an orchestration where, for instance, <code>&lt;xs:element name="LegalEntity" type="LegalEntityType"/&gt;</code> from the XSD schema and the use of <code>&lt;LegalEntity&gt;</code> in the XML file are mapped to legal:LegalEntity.</p>
+<p><strong>Vocabulary Level Mapping</strong>: This is a basic alignment, where each XSD and XML element is directly mapped to an ontology class or property. For XSD, this task should already have been completed in Phase 2. Taken together, one then obtains an orchestration where, for instance, <code>&lt;xs:element name="LegalEntity" type="LegalEntityType"/&gt;</code> from the XSD schema and the use of <code>&lt;LegalEntity&gt;</code> in the XML file are mapped to <span class="custom-highlight">legal:LegalEntity</span>.</p>
 </li>
 <li>
 <p><strong>Application Profile Level Mapping</strong>: At this level, you use <strong>XPath</strong> expressions to extract specific data from the XML structure, ensuring a more precise mapping to the Core Vocabulary.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Example: Mapping the address fields from the XML to a specific property, such as locn:postCode or locn:postName. In both cases, the target is declared in two components: the target property path and the target class path, to ensure it is mapped in the right context. For instance, a locn:postName of a legal entity may well have different components compared to a locn:postName of the address of a physical building.</p>
+<p>Example: Mapping the address fields from the XML to a specific property, such as <span class="custom-highlight">locn:postCode</span> or <span class="custom-highlight">locn:postName</span>. In both cases, the target is declared in two components: the target property path and the target class path, to ensure it is mapped in the right context. For instance, a <span class="custom-highlight">locn:postName</span> of a legal entity may well have different components compared to a <span class="custom-highlight">locn:postName</span> of the address of a physical building.</p>
 </li>
 </ul>
 </div>
@@ -3696,7 +3696,7 @@ We ensure that the XML data contains relevant elements, such as <code>&lt;LegalE
 </ul>
 </div>
 <div class="paragraph">
-<p>Conceptually, we thus map between the same things across the files, as illustrated in the following figure, which links the XSD element <code>ContactPoint</code> (highlighted with a green oval) to the cv:ContactPoint that, in turn, makes the contact point of the data (that adheres to the XSD schema specification) an instance of that contact point:</p>
+<p>Conceptually, we thus map between the same things across the files, as illustrated in the following figure, which links the XSD element <code>ContactPoint</code> (highlighted with a green oval) to the <span class="custom-highlight">cv:ContactPoint</span> that, in turn, makes the contact point of the data (that adheres to the XSD schema specification) an instance of that contact point:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3746,7 +3746,7 @@ We ensure that the XML data contains relevant elements, such as <code>&lt;LegalE
 <p><em>Create the Technical Mapping</em></p>
 </div>
 <div class="paragraph">
-<p>The <a href="https://rml.io/docs/rml/introduction/">RDF Mapping Language (RML)</a> is suitable for the task of implementing the XML-to-RDF conceptual mappings as technical mappings. We will use RML to create machine-executable mapping rules as follows. First, the <code>rml:logicalSource</code> is declared, with the root of the tree in the XML file, which is <code>*/LegalEntity</code> in our use case that assumes there to be an <code>rml:source</code> called <code>SampleData_Business.xml</code> with instance data. Next, a <code>rr:subjectMap</code> is added to state how each <code>&lt;LegalEntity&gt;</code> node becomes the RDF subject—here we build an IRI from <code>generate-id(.)</code> and type it as legal:LegalEntity. Finally, one or more <code>rr:predicateObjectMap</code> blocks capture the properties we need; in the simplest case we map the child element <code>&lt;LegalName&gt;</code> to the vocabulary property legal:legalName. The complete example RML mapping code looks as follows, in Turtle syntax:</p>
+<p>The <a href="https://rml.io/docs/rml/introduction/">RDF Mapping Language (RML)</a> is suitable for the task of implementing the XML-to-RDF conceptual mappings as technical mappings. We will use RML to create machine-executable mapping rules as follows. First, the <code>rml:logicalSource</code> is declared, with the root of the tree in the XML file, which is <code>*/LegalEntity</code> in our use case that assumes there to be an <code>rml:source</code> called <code>SampleData_Business.xml</code> with instance data. Next, a <code>rr:subjectMap</code> is added to state how each <code>&lt;LegalEntity&gt;</code> node becomes the RDF subject—here we build an IRI from <code>generate-id(.)</code> and type it as <span class="custom-highlight">legal:LegalEntity</span>. Finally, one or more <code>rr:predicateObjectMap</code> blocks capture the properties we need; in the simplest case we map the child element <code>&lt;LegalName&gt;</code> to the vocabulary property <span class="custom-highlight">legal:legalName</span>. The complete example RML mapping code looks as follows, in Turtle syntax:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3792,7 +3792,7 @@ ex:Organization
 </div>
 <div class="paragraph">
 <p>The snippet below is a <strong>single triple set</strong> produced when the mapping is run over the sample file <code>SampleData_Business.xml</code> (see Phase 1).
-It shows that one of the XML <code>&lt;LegalEntity&gt;</code> records—the Belgian committee for UNICEF—has been converted into an RDF resource of type legal:LegalEntity with its legal:legalName correctly populated.</p>
+It shows that one of the XML <code>&lt;LegalEntity&gt;</code> records—the Belgian committee for UNICEF—has been converted into an RDF resource of type <span class="custom-highlight">legal:LegalEntity</span> with its <span class="custom-highlight">legal:legalName</span> correctly populated.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3810,7 +3810,7 @@ ex:Organization_1
 <p>We will validate the output in two ways: to check that the content transformed from XML into RDF exists in the graph and to check that it exists as intended also regarding any constraints on the shape of the graph.</p>
 </div>
 <div class="paragraph">
-<p>First, we validate the generated RDF using SPARQL queries to ensure that the transformation adheres to the defined conceptual mapping. Since we want to validate rather than retrieve information, we use SPARQL ASK queries, which will return either a ‘yes’ or a ‘no’. For our running example, the SPARQL query for validating the LegalEntity is:</p>
+<p>First, we validate the generated RDF using SPARQL queries to ensure that the transformation adheres to the defined conceptual mapping. Since we want to validate rather than retrieve information, we use SPARQL ASK queries, which will return either a ‘yes’ or a ‘no’. For our running example, the SPARQL query for validating the <span class="custom-highlight">LegalEntity</span> is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3824,10 +3824,10 @@ ex:Organization_1
 <p>SHACL validation can be applied to ensure that the RDF data conforms to the required shapes and structures regarding any constraints that must hold.</p>
 </div>
 <div class="paragraph">
-<p>To create a SHACL shape for the given RDF output, where the LegalEntity (legal:LegalEntity) has a legalName property, we need to define a SHACL shape that validates the type of the LegalEntity, the presence of the legalName property, and its datatype.</p>
+<p>To create a SHACL shape for the given RDF output, where the <span class="custom-highlight">LegalEntity</span> (<span class="custom-highlight">legal:LegalEntity</span>) has a <span class="custom-highlight">legalName</span> property, we need to define a SHACL shape that validates the type of the <span class="custom-highlight">LegalEntity</span>, the presence of the <span class="custom-highlight">legalName</span> property, and its datatype.</p>
 </div>
 <div class="paragraph">
-<p>An example SHACL shape for validating LegalEntity is:</p>
+<p>An example SHACL shape for validating <span class="custom-highlight">LegalEntity</span> is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3854,14 +3854,14 @@ ex:LegalEntityShape
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Target Class</strong>: The shape is applied to all resources of type legal:LegalEntity. This means it validates any LegalEntity instance in the selected RDF data.</p>
+<p><strong>Target Class</strong>: The shape is applied to all resources of type <span class="custom-highlight">legal:LegalEntity</span>. This means it validates any <span class="custom-highlight">LegalEntity</span> instance in the selected RDF data.</p>
 </li>
 <li>
 <p><strong>Property Constraints</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>legal:legalName</strong>: The property legalName is required to be of type <code>xsd:string</code>, and the minimum count is set to 1 (<code>sh:minCount 1</code>), meaning that the legalName property must appear at least once.
+<p><strong>legal:legalName</strong>: The property <span class="custom-highlight">legalName</span> is required to be of type <code>xsd:string</code>, and the minimum count is set to 1 (<code>sh:minCount 1</code>), meaning that the <span class="custom-highlight">legalName</span> property must appear at least once.
 Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.2.0/shacl">here</a>.</p>
 </li>
 </ul>

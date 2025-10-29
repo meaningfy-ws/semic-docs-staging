@@ -277,23 +277,23 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Technologies rise and decline in popularity, yet one of the red threads through the computational techniques over the decades is the <strong>management of structured data</strong>. Data needs to be stored, processed, acted upon, shared, integrated, presented, and more, all mediated by software. This also means that the structure of the data needs to be machine-readable far beyond the simple scanned hard-copy administrative forms or legal documents. Structured data mediates between entities in the real world and their representation in the software. <br>
-For instance, to represent the fact “govtDep#1 subcontracts comp#2”, we might have</p>
+For instance, to represent the fact “<span class="custom-highlight">govtDep#1 subcontracts comp#2</span>”, we might have</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>a table with government departments that also contains a row with govtDep#1;</p>
+<p>a table with government departments that also contains a row with <span class="custom-highlight">govtDep#1</span>;</p>
 </li>
 <li>
-<p>a table with companies and their identifying data including comp#2; and</p>
+<p>a table with companies and their identifying data including <span class="custom-highlight">comp#2</span>; and</p>
 </li>
 <li>
-<p>a table with subcontracting relationships between instances, including (GovtDep#1,Comp#2).</p>
+<p>a table with subcontracting relationships between instances, including <span class="custom-highlight">(GovtDep#1,Comp#2)</span>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A mechanism to capture the sort of structured and semi-structured data which may be stored and managed in the system is called a <strong>data model</strong> at the level of the technical implementation and <em>conceptual data model</em> or <em>vocabulary</em> as part of a <strong>semantic data specification</strong> when it is implementation-independent. Such models represent the entity types, such as GovernmentDepartment, Company, and its more generic type Organisation from our example, along with relationships between entity types, such as Subcontracting. Data models typically also implement business rules or constraints that apply to the particular organisation. For instance, one rule might state that each government department <em>is permitted to subcontract at most 15</em> companies in country#3 whereas there may be no upper bound to subcontracting in country#4 and a prohibition on subcontracting (i.e., <em>is permitted to subcontract at most 0</em>) in country#5. These variations require different data models or application profiles, although they may use the same vocabulary.</p>
+<p>A mechanism to capture the sort of structured and semi-structured data which may be stored and managed in the system is called a <strong>data model</strong> at the level of the technical implementation and <em>conceptual data model</em> or <em>vocabulary</em> as part of a <strong>semantic data specification</strong> when it is implementation-independent. Such models represent the entity types, such as <span class="custom-highlight">GovernmentDepartment</span>, <span class="custom-highlight">Company</span>, and its more generic type <span class="custom-highlight">Organisation</span> from our example, along with relationships between entity types, such as <span class="custom-highlight">Subcontracting</span>. Data models typically also implement business rules or constraints that apply to the particular organisation. For instance, one rule might state that each government department <em>is permitted to subcontract at most 15</em> companies in <span class="custom-highlight">country#3</span> whereas there may be no upper bound to subcontracting in <span class="custom-highlight">country#4</span> and a prohibition on subcontracting (i.e., <em>is permitted to subcontract at most 0</em>) in <span class="custom-highlight">country#5</span>. These variations require different data models or application profiles, although they may use the same vocabulary.</p>
 </div>
 <div class="paragraph">
 <p>This raises a number of questions:</p>
@@ -426,7 +426,7 @@ Unfortunately, not one of them made their schema available.</p>
 <p>Reusing elements and types from the Core Vocabulary improves interoperability and alignment with EU data standards, yet also imposes some limitations.</p>
 </div>
 <div class="paragraph">
-<p>Since reuse occurs at the syntactic level, element names and structures, including complex types, from the Core Vocabulary can be <strong>extended</strong>, but not easily <em>restricted</em> (for instance, limiting Organization to a single sub-organization would require creating a new complex type).</p>
+<p>Since reuse occurs at the syntactic level, element names and structures, including complex types, from the Core Vocabulary can be <strong>extended</strong>, but not easily <em>restricted</em> (for instance, limiting <span class="custom-highlight">Organization</span> to a single sub-organization would require creating a new complex type).</p>
 </div>
 <div class="paragraph">
 <p>These trade-offs between semantic interoperability and technical consistency are discussed in the <a href="introduction.html#sec:Why_Core_Vocabulary" class="xref page">Why Core Vocabularies</a> section.</p>
@@ -571,7 +571,7 @@ For example, CBV comes with <a href="https://github.com/SEMICeu/XML-schema/tree/
 <div class="paragraph">
 <p>If the XSD schema of the CV does not suffice, in that you need additional elements beyond the XSD schema, then you have to define those yourself in the XSD schema you are developing. This might be an element from the CV associated with the XSD, or possibly elements from another CV or semantic artefact.<br>
 These new elements need to <strong>adhere to the Core Vocabulary&#8217;s namespace</strong> to maintain consistency. <br>
-For example, the LegalEntity element could be defined as follows if no XSD is provided for it:</p>
+For example, the <span class="custom-highlight">LegalEntity</span> element could be defined as follows if no XSD is provided for it:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -591,8 +591,8 @@ For example, the LegalEntity element could be defined as follows if no XSD is pr
 <p><em>Venetian Blind Pattern</em></p>
 </div>
 <div class="paragraph">
-<p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as LegalEntity, serves as the entry point, as seen in CBV. This pattern fits well with API design, where you typically request information about a central concept (such as LegalEntity), and the response includes nested elements, including LegalName and RegisteredAddress, which are all organised under the main entity.<br>
-Here’s an example, where LegalEntity serves as the main entry point:</p>
+<p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as <span class="custom-highlight">LegalEntity</span>, serves as the entry point, as seen in CBV. This pattern fits well with API design, where you typically request information about a central concept (such as <span class="custom-highlight">LegalEntity</span>), and the response includes nested elements, including <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>, which are all organised under the main entity.<br>
+Here’s an example, where <span class="custom-highlight">LegalEntity</span> serves as the main entry point:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -621,7 +621,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <p>LegalEntity is the global entry point.</p>
 </li>
 <li>
-<p>It uses LegalEntityType, which contains various properties such as LegalName and RegisteredAddress.</p>
+<p>It uses <span class="custom-highlight">LegalEntityType</span>, which contains various properties such as <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>.</p>
 </li>
 </ul>
 </div>
@@ -629,7 +629,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <p><em>Garden of Eden Pattern</em></p>
 </div>
 <div class="paragraph">
-<p>In the Garden of Eden pattern, there are multiple entry points in the XML document. This is more flexible and is suitable when no central class is inherently the main starting point. The elements that are declared <em>directly under</em> <code>&lt;xs:schema&gt;</code> qualify as such entry points. In CBV these include LegalEntity, Organization etc., whereas nested elements, such as RegisteredAddress or ContactPoint, are defined <em>inside</em> those complex types and <em>cannot</em> start a document on their own.</p>
+<p>In the Garden of Eden pattern, there are multiple entry points in the XML document. This is more flexible and is suitable when no central class is inherently the main starting point. The elements that are declared <em>directly under</em> <code>&lt;xs:schema&gt;</code> qualify as such entry points. In CBV these include <span class="custom-highlight">LegalEntity</span>, <span class="custom-highlight">Organization</span> etc., whereas nested elements, such as <span class="custom-highlight">RegisteredAddress</span> or <span class="custom-highlight">ContactPoint</span>, are defined <em>inside</em> those complex types and <em>cannot</em> start a document on their own.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -643,10 +643,10 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <p><em>Define Complex Types</em></p>
 </div>
 <div class="paragraph">
-<p>After importing or defining the basic elements and structuring your XML document with patterns, the next step in creating an XSD schema is to define <strong>complex types</strong>. Complex types are used to represent business entities that contain multiple properties or relationships. For CBV, these types often model entities like LegalEntity or Organization, which have both simple and complex elements. For example, the LegalEntityType and OrganizationType, as follows.</p>
+<p>After importing or defining the basic elements and structuring your XML document with patterns, the next step in creating an XSD schema is to define <strong>complex types</strong>. Complex types are used to represent business entities that contain multiple properties or relationships. For CBV, these types often model entities like <span class="custom-highlight">LegalEntity</span> or <span class="custom-highlight">Organization</span>, which have both simple and complex elements. For example, the <span class="custom-highlight">LegalEntityType</span> and <span class="custom-highlight">OrganizationType</span>, as follows.</p>
 </div>
 <div class="paragraph">
-<p>A LegalEntity might contain multiple child elements, such as LegalName modelled as a simple string, RegisteredAddress (also a complex type), and other related elements. Here&#8217;s how LegalEntityType is defined:</p>
+<p>A <span class="custom-highlight">LegalEntity</span> might contain multiple child elements, such as <span class="custom-highlight">LegalName</span> modelled as a simple string, <span class="custom-highlight">RegisteredAddress</span> (also a complex type), and other related elements. Here&#8217;s how <span class="custom-highlight">LegalEntityType</span> is defined:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -683,7 +683,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Similar to the LegalEntityType complex type, the BusinessAgentType defines a concept with multiple properties and relationships. However, for BusinessAgentType, we define it as a complex type that contains hierarchical relationships, such as HeadOf and MemberOf.</p>
+<p>Similar to the <span class="custom-highlight">LegalEntityType</span> complex type, the <span class="custom-highlight">BusinessAgentType</span> defines a concept with multiple properties and relationships. However, for <span class="custom-highlight">BusinessAgentType</span>, we define it as a complex type that contains hierarchical relationships, such as <span class="custom-highlight">HeadOf</span> and <span class="custom-highlight">MemberOf</span>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -770,7 +770,7 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced RequiredEvidence, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
+<p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced <span class="custom-highlight">RequiredEvidence</span>, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
 </div>
 <div class="paragraph">
 <p>Happy with the outcome, Nora emailed the municipalities so that each city and town would be able to upgrade their system in the same way with CPSV-AP-NO, and so that DiTFor could still collect and integrate the data at the national level.</p>
@@ -997,7 +997,7 @@ A context can be defined per class, allowing property names such as <span class=
 </div>
 </div>
 <div class="paragraph">
-<p>If a context needs to be extended, define the new elements explicitly. For example, if we need new terms (classes), such as Service and RequiredEvidence, which are not in CPSV-AP these terms must be mapped to URIs (the examples are inspired by <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>):</p>
+<p>If a context needs to be extended, define the new elements explicitly. For example, if we need new terms (classes), such as <span class="custom-highlight">Service</span> and <span class="custom-highlight">RequiredEvidence</span>, which are not in CPSV-AP these terms must be mapped to URIs (the examples are inspired by <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1013,7 +1013,7 @@ A context can be defined per class, allowing property names such as <span class=
 <p>Once you’ve imported or defined the relevant terms, you need to structure your JSON-LD context to reflect the relationships between the classes and their properties. This allows you to describe public services and their details in a standardised and machine-readable format.</p>
 </div>
 <div class="paragraph">
-<p>Let’s look at an <a href="https://tinyurl.com/2794ygga">example</a> where we define a Service and some of its key properties, such as contactPoint, description, name and hasRequiredEvidence:</p>
+<p>Let’s look at an <a href="https://tinyurl.com/2794ygga">example</a> where we define a <span class="custom-highlight">Service</span> and some of its key properties, such as <span class="custom-highlight">contactPoint</span>, <span class="custom-highlight">description</span>, <span class="custom-highlight">name</span> and <span class="custom-highlight">hasRequiredEvidence</span>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1050,7 +1050,7 @@ A context can be defined per class, allowing property names such as <span class=
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>@context</code></strong>: Defines the mapping between terms (e.g., PublicService) and their corresponding IRIs.</p>
+<p><strong><code>@context</code></strong>: Defines the mapping between terms (e.g., <span class="custom-highlight">PublicService</span>) and their corresponding IRIs.</p>
 </li>
 <li>
 <p><strong><code>@container</code><strong></strong>:</strong> Specifies how values are structured. For instance,</p>
@@ -1077,7 +1077,7 @@ A context can be defined per class, allowing property names such as <span class=
 <p><em>Example of a simple service instance</em></p>
 </div>
 <div class="paragraph">
-<p>After defining the context and structure, you can now describe an actual Service instance by referencing the terms you defined earlier.</p>
+<p>After defining the context and structure, you can now describe an actual <span class="custom-highlight">Service</span> instance by referencing the terms you defined earlier.</p>
 </div>
 <div class="paragraph">
 <p><em>Example scenario</em></p>
@@ -1125,7 +1125,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Aliasing keywords for API compatibility (REST API example)</em></p>
 </div>
 <div class="paragraph">
-<p>When working with REST APIs, it is often beneficial to alias certain JSON-LD keywords for simpler or more consistent representations in client applications. For example, you might alias JSON-LD&#8217;s <code>@id</code> to url and <code>@type</code> to type to make the data more intuitive for API consumers, especially when working with legacy systems or client-side frameworks that use specific naming conventions.</p>
+<p>When working with REST APIs, it is often beneficial to alias certain JSON-LD keywords for simpler or more consistent representations in client applications. For example, you might alias JSON-LD&#8217;s <code>@id</code> to <span class="custom-highlight">url</span> and <code>@type</code> to <span class="custom-highlight">type</span> to make the data more intuitive for API consumers, especially when working with legacy systems or client-side frameworks that use specific naming conventions.</p>
 </div>
 <div class="paragraph">
 <p><em>Example of aliasing keywords</em></p>
@@ -1148,7 +1148,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 </div>
 <div class="paragraph">
-<p>In this example, url is an alias for <code>@id</code> and type is an alias for <code>@type</code>.</p>
+<p>In this example, <span class="custom-highlight">url</span> is an alias for <code>@id</code> and <span class="custom-highlight">type</span> is an alias for <code>@type</code>.</p>
 </div>
 <div class="paragraph">
 <p>By aliasing these terms, the API responses are simplified and more familiar to the developers interacting with the service, especially if they are accustomed to a different JSON structure.</p>
@@ -1157,7 +1157,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Extend the context by reusing terms from Core Vocabularies</em></p>
 </div>
 <div class="paragraph">
-<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organisation, and ContactPoint, to enrich your Service<strong> </strong>descriptions.</p>
+<p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as <span class="custom-highlight">LegalEntity</span>, <span class="custom-highlight">Organisation</span>, and <span class="custom-highlight">ContactPoint</span>, to enrich your <span class="custom-highlight">Service</span><strong> </strong>descriptions.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1177,7 +1177,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Define additional properties from the Core Business Vocabulary</em></p>
 </div>
 <div class="paragraph">
-<p>Add CBV terms to enhance the description of the Service entity by reusing existing concepts such as LegalEntity, which helps to specify who provided the service.</p>
+<p>Add CBV terms to enhance the description of the <span class="custom-highlight">Service</span> entity by reusing existing concepts such as <span class="custom-highlight">LegalEntity</span>, which helps to specify who provided the service.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1196,7 +1196,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><em>Map extended properties in a service instance</em></p>
 </div>
 <div class="paragraph">
-<p>Use the extended properties to describe more aspects of Service instances. For <a href="https://tinyurl.com/chtayj3h">example</a>:</p>
+<p>Use the extended properties to describe more aspects of <span class="custom-highlight">Service</span> instances. For <a href="https://tinyurl.com/chtayj3h">example</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
