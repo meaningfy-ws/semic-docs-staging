@@ -278,9 +278,9 @@ Unfortunately, not one of them made their schema available.</p>
 <div class="paragraph">
 <p>This is visualised in the following figure, together with key tasks and suggestions.</p>
 </div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="images/UC1.1.png" alt="UC1.1">
+<img src="_images/UC1.1.png" alt="UC1.1">
 </div>
 </div>
 <div class="sect4">
@@ -407,8 +407,9 @@ To recap the process, we first will import or define elements, shape the structu
 </div>
 <div class="sect4">
 <h5 id="_phase_1import_or_define_elements"><a class="anchor" href="#_phase_1import_or_define_elements"></a>Phase 1:Import or Define Elements</h5>
-<div class="sect5">
-<h6 id="_managing_imports_and_namespaces"><a class="anchor" href="#_managing_imports_and_namespaces"></a>Managing Imports and Namespaces</h6>
+<div class="paragraph">
+<p><em>Managing Imports and Namespaces</em></p>
+</div>
 <div class="paragraph">
 <p>In XML schema development, managing <strong>imports</strong> and <strong>namespaces</strong> is crucial to ensure that elements from external vocabularies are reused and integrated consistently. This step ensures that the schema obtains and maintains semantics, will be <strong>reusable</strong>, and is correctly aligned with the Core Business Vocabulary (CBV).<br>
 For example, CBV comes with <a href="https://github.com/SEMICeu/XML-schema/tree/main/models/CoreVoc_Business">its own XSD schema</a>, the following import statement imports all definitions related to CBV elements into your XSD schema (explained afterwards):</p>
@@ -449,9 +450,9 @@ For example, CBV comes with <a href="https://github.com/SEMICeu/XML-schema/tree/
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><em>Define elements</em></p>
 </div>
-<div class="sect5">
-<h6 id="_define_elements"><a class="anchor" href="#_define_elements"></a>Define elements</h6>
 <div class="paragraph">
 <p>If the XSD schema of the CV does not suffice, in that you need additional elements beyond the XSD schema, then you have to define those yourself in the XSD schema you are developing. This might be an element from the CV associated with the XSD, or possibly elements from another CV or semantic artefact.<br>
 These new elements need to <strong>adhere to the Core Vocabulary&#8217;s namespace</strong> to maintain consistency. <br>
@@ -466,14 +467,14 @@ For example, the LegalEntity element could be defined as follows if no XSD is pr
 <p>Make sure you declare the correct namespace (e.g., <a href="http://example.com/" class="bare">http://example.com/</a>) for all these custom elements.</p>
 </div>
 </div>
-</div>
 <div class="sect4">
 <h5 id="_phase_2_shape_xml_document_structure_with_patterns"><a class="anchor" href="#_phase_2_shape_xml_document_structure_with_patterns"></a>Phase 2: Shape XML Document Structure with Patterns</h5>
 <div class="paragraph">
 <p>At this phase, we focus on structuring the XML document using appropriate XML Schema Design Patterns [<a href="references.html#ref-44" class="xref page">dsg-ptr</a>]. The <strong>Venetian Blind</strong> and <strong>Garden of Eden</strong> patterns are two methods for organizing the schema.</p>
 </div>
-<div class="sect5">
-<h6 id="_venetian_blind_pattern"><a class="anchor" href="#_venetian_blind_pattern"></a>Venetian Blind Pattern</h6>
+<div class="paragraph">
+<p><em>Venetian Blind Pattern</em></p>
+</div>
 <div class="paragraph">
 <p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as LegalEntity, serves as the entry point, as seen in CBV. This pattern fits well with API design, where you typically request information about a central concept (such as LegalEntity), and the response includes nested elements, including LegalName and RegisteredAddress, which are all organised under the main entity.<br>
 Here’s an example, where LegalEntity serves as the main entry point:</p>
@@ -509,9 +510,9 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><em>Garden of Eden Pattern</em></p>
 </div>
-<div class="sect5">
-<h6 id="_garden_of_eden_pattern"><a class="anchor" href="#_garden_of_eden_pattern"></a>Garden of Eden Pattern</h6>
 <div class="paragraph">
 <p>In the Garden of Eden pattern, there are multiple entry points in the XML document. This is more flexible and is suitable when no central class is inherently the main starting point. The elements that are declared <em>directly under</em> &lt;xs:schema&gt; qualify as such entry points. In CBV these include LegalEntity, Organization etc., whereas nested elements, such as RegisteredAddress or ContactPoint, are defined <em>inside</em> those complex types and <em>cannot</em> start a document on their own.</p>
 </div>
@@ -523,9 +524,9 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 &lt;/xs:schema&gt;</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>Define Complex Types</em></p>
 </div>
-<div class="sect5">
-<h6 id="_define_complex_types"><a class="anchor" href="#_define_complex_types"></a>Define Complex Types</h6>
 <div class="paragraph">
 <p>After importing or defining the basic elements and structuring your XML document with patterns, the next step in creating an XSD schema is to define <strong>complex types</strong>. Complex types are used to represent business entities that contain multiple properties or relationships. For CBV, these types often model entities like LegalEntity or Organization, which have both simple and complex elements. For example, the LegalEntityType and OrganizationType, as follows.</p>
 </div>
@@ -606,9 +607,9 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 &lt;/xs:complexType&gt;</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>Finalise the XSD Schema</em></p>
 </div>
-<div class="sect5">
-<h6 id="_finalise_the_xsd_schema"><a class="anchor" href="#_finalise_the_xsd_schema"></a>Finalise the XSD Schema</h6>
 <div class="paragraph">
 <p>Adding <strong>annotations</strong> and <strong>documentation</strong> to each complex type and element helps to clarify their purpose and improve the readability of the schema. For instance:</p>
 </div>
@@ -625,23 +626,22 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 </div>
 </div>
 </div>
-</div>
 <div class="sect4">
 <h5 id="_phase_3_validation_and_best_practices"><a class="anchor" href="#_phase_3_validation_and_best_practices"></a>Phase 3: Validation and Best Practices</h5>
 <div class="paragraph">
 <p>Finally, test your new schema by validating <strong>sample XML documents</strong> using <strong>XML validation tools</strong> (e.g., <a href="https://www.xmlvalidation.com/">XMLValidation</a>) to ensure that the schema is syntactically correct and works as expected. The Core Business Vocabulary (CBV) follows several best practices and validation <a href="https://github.com/SEMICeu/XML-schema/blob/main/rules/rules.md">rules</a> to maintain consistency, clarity, and reusability across schemas. These rules include naming conventions, documentation standards, and structural rules.</p>
 </div>
-<div class="sect5">
-<h6 id="_schematron_validation_rules"><a class="anchor" href="#_schematron_validation_rules"></a>Schematron Validation Rules</h6>
+<div class="paragraph">
+<p><em>Schematron Validation Rules</em></p>
+</div>
 <div class="paragraph">
 <p>To ensure schema compliance, the <strong>Schematron rules</strong> provide automated checks. These rules cover key aspects such as type definitions, element declarations, metadata, and more. The detailed list of rules can be found <a href="https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch">here</a>.</p>
 </div>
+<div class="paragraph">
+<p><em>Running the Validation</em></p>
 </div>
-<div class="sect5">
-<h6 id="_running_the_validation"><a class="anchor" href="#_running_the_validation"></a>Running the Validation</h6>
 <div class="paragraph">
 <p>You can execute the rules using the provided <a href="https://github.com/SEMICeu/XML-schema/blob/main/build.xml">build.xml</a> file, which leverages <a href="https://ant.apache.org/">Apache Ant</a>. The process validates the schema against the Schematron rules and generates HTML reports for easy inspection.</p>
-</div>
 </div>
 </div>
 </div>
@@ -718,9 +718,9 @@ The three key phases are:</p>
 <div class="paragraph">
 <p>This is visualised in the following figure, together with key tasks and suggestions.</p>
 </div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="images/UC1.2.png" alt="UC1.2">
+<img src="_images/UC1.2.png" alt="UC1.2">
 </div>
 </div>
 <div class="sect4">
@@ -762,8 +762,9 @@ The three key phases are:</p>
 </div>
 <div class="sect4">
 <h5 id="_phase_2_shape_structure"><a class="anchor" href="#_phase_2_shape_structure"></a>Phase 2: Shape structure</h5>
-<div class="sect5">
-<h6 id="_main_shaping_of_the_structure"><a class="anchor" href="#_main_shaping_of_the_structure"></a>Main shaping of the structure</h6>
+<div class="paragraph">
+<p><em>Main shaping of the structure</em></p>
+</div>
 <div class="paragraph">
 <p>Start with defining the structure of the context by <strong>relating class terms with property terms</strong> and then, if necessary, property terms with other classes.</p>
 </div>
@@ -789,9 +790,9 @@ The three key phases are:</p>
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>Design note: Flat vs scoped context disambiguation</em></p>
 </div>
-<div class="sect5">
-<h6 id="_design_note_flat_vs_scoped_context_disambiguation"><a class="anchor" href="#_design_note_flat_vs_scoped_context_disambiguation"></a>Design note: Flat vs scoped context disambiguation</h6>
 <div class="paragraph">
 <p>When defining properties in a JSON-LD context, one has to consider how attribute names are disambiguated across different classes. Two main approaches can be adopted:</p>
 </div>
@@ -810,15 +811,14 @@ A context can be defined per class, allowing property names such as name or desc
 <div class="paragraph">
 <p>The choice between flat or scoped contexts should be motivated by the expected use of the data. When contexts are generated automatically or used for large-scale data exchange, the flat approach offers simplicity and reliability. When contexts are manually authored or designed for human-facing APIs, scoped contexts may be preferable for improved readability, provided that their additional complexity is manageable.</p>
 </div>
+<div class="paragraph">
+<p><em>Improvements to the structure</em></p>
 </div>
-<div class="sect5">
-<h6 id="_improvements_to_the_structure"><a class="anchor" href="#_improvements_to_the_structure"></a>Improvements to the structure</h6>
 <div class="paragraph">
 <p>To meet wishes from API consumers, one may use <strong>aliasing</strong> of keywords, where a JSON-LD context element is given a more easily recognisable string.</p>
 </div>
 <div class="paragraph">
 <p>One can also <strong>extend the context</strong> by reusing terms from Core Vocabularies, which can be achieved using the @import keyword if included as a whole. Also, single elements can be added, such as additional properties and mapping those to other vocabulary elements of other vocabularies.</p>
-</div>
 </div>
 </div>
 <div class="sect4">
@@ -952,8 +952,9 @@ A context can be defined per class, allowing property names such as name or desc
 </li>
 </ul>
 </div>
-<div class="sect5">
-<h6 id="_example_of_a_simple_service_instance"><a class="anchor" href="#_example_of_a_simple_service_instance"></a>Example of a simple service instance</h6>
+<div class="paragraph">
+<p><em>Example of a simple service instance</em></p>
+</div>
 <div class="paragraph">
 <p>After defining the context and structure, you can now describe an actual Service instance by referencing the terms you defined earlier.</p>
 </div>
@@ -999,9 +1000,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>Aliasing keywords for API compatibility (REST API example)</em></p>
 </div>
-<div class="sect5">
-<h6 id="_aliasing_keywords_for_api_compatibility_rest_api_example"><a class="anchor" href="#_aliasing_keywords_for_api_compatibility_rest_api_example"></a>Aliasing keywords for API compatibility (REST API example)</h6>
 <div class="paragraph">
 <p>When working with REST APIs, it is often beneficial to alias certain JSON-LD keywords for simpler or more consistent representations in client applications. For example, you might alias JSON-LD&#8217;s @id to url and @type to type to make the data more intuitive for API consumers, especially when working with legacy systems or client-side frameworks that use specific naming conventions.</p>
 </div>
@@ -1031,9 +1032,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <div class="paragraph">
 <p>By aliasing these terms, the API responses are simplified and more familiar to the developers interacting with the service, especially if they are accustomed to a different JSON structure.</p>
 </div>
+<div class="paragraph">
+<p><em>Extend the context by reusing terms from Core Vocabularies</em></p>
 </div>
-<div class="sect5">
-<h6 id="_extend_the_context_by_reusing_terms_from_core_vocabularies"><a class="anchor" href="#_extend_the_context_by_reusing_terms_from_core_vocabularies"></a>Extend the context by reusing terms from Core Vocabularies</h6>
 <div class="paragraph">
 <p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as LegalEntity, Organisation, and ContactPoint, to enrich your Service<strong> </strong>descriptions.</p>
 </div>
@@ -1051,9 +1052,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>Define additional properties from the Core Business Vocabulary</em></p>
 </div>
-<div class="sect5">
-<h6 id="_define_additional_properties_from_the_core_business_vocabulary"><a class="anchor" href="#_define_additional_properties_from_the_core_business_vocabulary"></a>Define additional properties from the Core Business Vocabulary</h6>
 <div class="paragraph">
 <p>Add CBV terms to enhance the description of the Service entity by reusing existing concepts such as LegalEntity, which helps to specify who provided the service.</p>
 </div>
@@ -1070,9 +1071,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>Map extended properties in a service instance</em></p>
 </div>
-<div class="sect5">
-<h6 id="_map_extended_properties_in_a_service_instance"><a class="anchor" href="#_map_extended_properties_in_a_service_instance"></a>Map extended properties in a service instance:</h6>
 <div class="paragraph">
 <p>Use the extended properties to describe more aspects of Service instances. For <a href="https://tinyurl.com/chtayj3h">example</a>:</p>
 </div>
@@ -1104,20 +1105,19 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 </div>
 </div>
-</div>
 <div class="sect4">
 <h5 id="_final_review_and_validation"><a class="anchor" href="#_final_review_and_validation"></a>Final review and validation</h5>
 <div class="paragraph">
 <p>Use a JSON-LD  validator (there are  online tools available, such as the <a href="https://json-ld.org/playground/">JSON-LD Playground</a>) to validate JSON-LD context and make sure there are no errors. They also offer visualisation features, noting that it can only be visualised if the syntax is correct. There is no standard for how RDF graphs are to be rendered, and therefore  different visualisation tools will result in different  JSON-LD  diagram-based visualisations. Below  are two examples generated from the same JSON-LD snippet, rendered by, <a href="https://json-ld.org/playground/">JSON-LD Playground</a> and <a href="https://issemantic.net/rdf-visualizer">:isSemantic</a>, respectively.</p>
 </div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="images/playgroundEx.png" alt="playgroundEx">
+<img src="_images/playgroundEx.png" alt="playgroundEx">
 </div>
 </div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="images/isSemanticEx.png" alt="isSemanticEx">
+<img src="_images/isSemanticEx.png" alt="isSemanticEx">
 </div>
 </div>
 <div class="paragraph">
@@ -1148,9 +1148,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <div class="paragraph">
 <p>These errors typically occur when the referenced context URL is malformed or unreachable, as shown in the following figure:</p>
 </div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<img src="images/errorEX.png" alt="errorEX">
+<img src="_images/errorEX.png" alt="errorEX">
 </div>
 </div>
 <div class="paragraph">

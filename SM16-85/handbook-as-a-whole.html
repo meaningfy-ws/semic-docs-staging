@@ -2284,7 +2284,7 @@ The type of asset—an ontology, controlled list, or data shape—dictates the n
 <div class="sect4">
 <h5 id="sec:tutorial:map-schema.org"><a class="anchor" href="#sec:tutorial:map-schema.org"></a>Tutorial: Map Schema.org to the Core Business Vocabulary</h5>
 <div class="paragraph">
-<p>This tutorial demonstrates how to map <a href="http://Schema.org">Schema.org</a> to the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary</a> <strong>(CBV)</strong>, addressing <strong>Use Case</strong> <a href="./introduction.adoc#sec:uc21">UC2.1</a>. By following the <a href="./how-to-map-existing-data-models.adoc#_guidelines_for_mapping_an_existing_xsd_schema_to_a_core_vocabulary">map an existing model</a> <strong>methodology</strong>,<br>
+<p>This tutorial demonstrates how to map <a href="http://Schema.org">Schema.org</a> to the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary</a> <strong>(CBV)</strong>, addressing <strong>Use Case</strong> <a href="./introduction.adoc#sec:uc21">UC2.1</a>. By following the <a href="./how-to-map-existing-data-models.adoc#_guidelines_on_how_to_map_an_existing_conceptual_model_to_a_core_vocabulary">map an existing model</a> <strong>methodology</strong>,<br>
 you’ll learn how to align these two vocabularies step-by-step—covering <strong>staging, characterisation, reuse, matching, alignment, and application</strong>—to ensure interoperability between the CBV and Schema.org.</p>
 </div>
 <div class="sect5">
@@ -2855,11 +2855,11 @@ WHERE {
 <div class="sect4">
 <h5 id="_use_case_description_4"><a class="anchor" href="#_use_case_description_4"></a>Use case description</h5>
 <div class="paragraph">
-<p>Let’s introduce the <strong>motivation for the use case</strong> for Use Case 2.2 with a scenario and structured user story.<br>
+<p>Let’s introduce the <strong>motivation for the use case</strong> for Use Case <a href="./introduction.adoc#sec:uc22">UC2.2</a> with a scenario and structured user story.<br>
 Ella works as a <strong>data integration specialist</strong> at the National Registry of Certified Legal Practitioners. For over a decade, her team has maintained a robust system for managing, among others, all law firms’ data in <strong>XML format</strong>, supported by an <strong>XSD schema</strong>. This schema defines the structure of all XML documents generated and processed by the registry, capturing details such as legal entities, addresses, and contact points. It’s stable, reliable, and embedded into the internal tool and data exchange interface the organisation uses.<strong><em> </em></strong>But governments across Europe are requested to align their digital data infrastructures with <strong>Semantic Web standards</strong> with the goal to make public sector data <strong>interoperable, discoverable, and reusable</strong> across borders. Ella&#8217;s National Registry has received a directive to publish its business data in <strong>RDF</strong>, using the SEMIC <strong>Core Business Vocabulary (CBV)</strong>, which is already used in EU-level platforms. <br>
 To meet this requirement, Ella must map the Registry’s <strong>existing XSD schema to the CBV</strong> and transform their XML data into RDF.<br>
 <strong>User Story: As a</strong> data integration specialist at a public sector organisation, <strong>I want to</strong> map our existing XML Schema Definition (XSD) to the Core Business Vocabulary (CBV), <strong>so that</strong> I can transform our XML data into semantically enriched RDF that complies with European interoperability standards, supports linked data publication, and enables cross-system data exchange.<br>
-This business case translates into the following <strong>use case specification</strong>, which is instantiated from the <a href="https://meaningfy-ws.github.io/semic-docs-staging/core-vocs-handbook/develop/use-cases.html#sec:uc22">general UC2.2 description</a>:</p>
+This business case translates into the following <strong>use case specification</strong>, which is instantiated from the <a href="./introduction.adoc#sec:uc22">general UC2.2 description</a>:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2885,7 +2885,7 @@ This business case translates into the following <strong>use case specification<
 <div class="sect4">
 <h5 id="_guidelines_for_mapping_an_existing_xsd_schema_to_a_core_vocabulary"><a class="anchor" href="#_guidelines_for_mapping_an_existing_xsd_schema_to_a_core_vocabulary"></a>Guidelines for Mapping an Existing XSD Schema to a Core Vocabulary</h5>
 <div class="paragraph">
-<p>This section provides detailed instructions for addressing use case <a href="https://github.com/SEMICeu/core-vocs-handbook/blob/develop/docs/modules/ROOT/pages/use-cases.adoc#:~:text=Use%20Case%20UC2.2%3A%20Map%20an%20existing%20XSD%20Schema%20to%20a%20Core%20Vocabulary">UC2.2</a>.</p>
+<p>This section provides detailed instructions for addressing use case <a href="./introduction.adoc#sec:uc22">UC2.2</a>.</p>
 </div>
 <div class="paragraph">
 <p>To create an XSD mapping, one needs to decide on the purpose and level of specificity of the XSD schema mapping. It can range from producing a lightweight alignment at the level of vocabulary down to a full-fledged executable set of rules for data transformation. In most cases, the reason why this mapping is done, is to also transform the corresponding XML files adhering to the XSD schema into RDF. Therefore, we include this step in the guideline.</p>
@@ -2940,7 +2940,7 @@ It may be that the XSD is outdated or partial with respect to the XML files that
 <p>Conceptual Mapping in semantic data integration–determining what elements from the source should correspond to those in the target–can be established at two distinct levels: the vocabulary level and the application profile level. These levels differ primarily in their complexity and specificity regarding the data context they address. A <strong>Vocabulary mapping</strong> is established  as the principal task: the XSD schema elements need to align to CV elements, focussing on terminological alignments.</p>
 </div>
 <div class="paragraph">
-<p>For the XSD file, they are the elements within the tags &lt;xs:element ref=”+_+elementLabel+_”&gt;+ where the “elementLabel” first has to be contextually interpreted if no definition is given in the XSD file, and then mapped to a concept from the chosen CV. For instance, a &lt;xs:element ref=”address”&gt; nested within the concept &lt;xs:element ref=”Person”&gt; has a different meaning from “address” nested within the concept &lt;xs:element ref=”Website”&gt;. This thus also requires careful management of the mappings, where the whole XPath is documented, rather than only the name of the element, because the whole path is needed for disambiguation.</p>
+<p>For the XSD file, they are the elements within the tags &lt;xs:element ref=”<em>elementLabel</em>”&gt; where the “elementLabel” first has to be contextually interpreted if no definition is given in the XSD file, and then mapped to a concept from the chosen CV. For instance, a &lt;xs:element ref=”address”&gt; nested within the concept &lt;xs:element ref=”Person”&gt; has a different meaning from “address” nested within the concept &lt;xs:element ref=”Website”&gt;. This thus also requires careful management of the mappings, where the whole XPath is documented, rather than only the name of the element, because the whole path is needed for disambiguation.</p>
 </div>
 <div class="sect6">
 <h7 id="_option_2a_map_xsd_to_a_cvs_main_format"><a class="anchor" href="#_option_2a_map_xsd_to_a_cvs_main_format"></a>Option 2a. Map XSD to a CV’s main format</h7>
@@ -3046,7 +3046,7 @@ It may be that the XSD is outdated or partial with respect to the XML files that
 </tbody>
 </table>
 <div class="paragraph">
-<p>This approach results in a basic 1:1 direct alignment, which lacks contextual depth and specificity. Another approach would be to embed semantic annotations into XSD schemas using standards such as Semantic Annotations for WSDL and XML Schema (SAWSDL) [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Bsawsdl%5D%20SAWSDL.%20Available%20at%3A%20https%3A//www.w3.org/TR/sawsdl/%23annotateXSD">sawsdl</a>] using the <strong>sawsdl:modelReference</strong> attribute to capture this mapping. Such an approach is appropriate in the context of WSDL services.</p>
+<p>This approach results in a basic 1:1 direct alignment, which lacks contextual depth and specificity. Another approach would be to embed semantic annotations into XSD schemas using standards such as Semantic Annotations for WSDL and XML Schema (SAWSDL) [<a href="references.html#ref-64" class="xref page">sawsdl</a>] using the <strong>sawsdl:modelReference</strong> attribute to capture this mapping. Such an approach is appropriate in the context of WSDL services.</p>
 </div>
 </div>
 <div class="sect6">
@@ -3162,10 +3162,10 @@ Both vocabulary and profile mappings are typically crafted and validated by doma
 <p>The technical mapping serves as the bridge between conceptual design and practical, machine-executable implementation. This step takes as input the conceptual mapping and establishes correspondences between XPath expressions and ontology fragments.</p>
 </div>
 <div class="paragraph">
-<p>Several technology options are available [ml-lr] to represent these mappings technically, such as XSLT [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Bxslt%5D%20XSL%20Transformations%20(XSLT)%20Version%203.0.%20Available%20at%3A%20https%3A//www.w3.org/TR/xslt%2D30/">xslt</a>], RML [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Brml%5D%20RDF%20Mapping%20Language%20(RML).%20Available%20at%3A%20https%3A//rml.io/specs/rml/">rml</a>] (extending R2RML), and <a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=sparql%2Danything%5D%20SPARQL%2DAnything.%20Available%20at%3A%20https%3A//github">SPARQLAnything</a>. RML allows for the representation of mappings from heterogeneous data formats, such as XML, JSON, relational databases, and CSV into RDF. The mapping rules can be expressed in Turtle RML or the YARRRML [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Byarrrml%5D%20YARRRML.%20Available%20at%3A%20https%3A//rml.io/yarrrml/spec">yarrrml</a>] dialect, a user-friendly text-based format based on YAML, making the mappings accessible to both machines and humans. RML is well-supported by robust implementations such as RMLMapper [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=rml%2Dmapper%5D%20RML%20Mapper.%20Available%20at%3A%20https%3A//github.com/RMLio/rmlmapper%2Djava">rml-map</a>] and RMLStreamer [rml-stream], which provide robust platforms for executing these mappings. RMLMapper is adept at handling batch processing of data and RMLStreamer suits streaming data scenarios, where data needs to be processed in real-time.</p>
+<p>Several technology options are available [<a href="references.html#ref-65" class="xref page">ml-lr</a>] to represent these mappings technically, such as XSLT [<a href="references.html#ref-66" class="xref page">xslt</a>], RML [<a href="references.html#ref-67" class="xref page">rml</a>] (extending R2RML), and [<a href="references.html#ref-86" class="xref page">SPARQLAnything</a>]. RML allows for the representation of mappings from heterogeneous data formats, such as XML, JSON, relational databases, and CSV into RDF. The mapping rules can be expressed in Turtle RML or the YARRRML [<a href="references.html#ref-69" class="xref page">yarrrml</a>] dialect, a user-friendly text-based format based on YAML, making the mappings accessible to both machines and humans. RML is well-supported by robust implementations such as RMLMapper [<a href="references.html#ref-70" class="xref page">rml-map</a>] and RMLStreamer [<a href="references.html#ref-71" class="xref page">rml-stream</a>], which provide robust platforms for executing these mappings. RMLMapper is adept at handling batch processing of data and RMLStreamer suits streaming data scenarios, where data needs to be processed in real-time.</p>
 </div>
 <div class="paragraph">
-<p>Provided one has mastered RML along with XML technologies such as XSD, XPath, and XQuery to implement the mappings effectively [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Brml%2Dgen%5D%20Generate%20RDF%20from%20an%20XML%20file.%20Available%20at%3A%20https%3A//rml.io/docs/rml/tutorials/xml/">rml-gen</a>], the development of the technical mapping rules is straightforward thanks to the conceptual mapping output from Phase 3.1. RML mapping statements are created for each class of the target ontology coupled with the property-object mapping statements specific to that class.</p>
+<p>Provided one has mastered RML along with XML technologies such as XSD, XPath, and XQuery to implement the mappings effectively [<a href="references.html#ref-72" class="xref page">rml-gen</a>], the development of the technical mapping rules is straightforward thanks to the conceptual mapping output from Phase 3.1. RML mapping statements are created for each class of the target ontology coupled with the property-object mapping statements specific to that class.</p>
 </div>
 <div class="paragraph">
 <p>An additional step involves deciding on a URI creation policy and designing a uniform scheme for use in the generated data, ensuring consistency and coherence in the data output.</p>
@@ -3174,7 +3174,7 @@ Both vocabulary and profile mappings are typically crafted and validated by doma
 <p>A viable alternative to RML is XSLT technology, which offers a powerful, but low-level method for defining technical mappings. While this approach allows for high expressiveness and complex transformations, it also increases the potential for errors due to its intricate syntax and operational complexity. This technology excels in scenarios requiring detailed manipulation and parameterisation of XML documents, surpassing the capabilities of RML in terms of flexibility and depth of transformation rules that can be implemented. However, the detailed control it affords means that developers must have a high level of expertise in semantic technologies and exercise caution and precision to avoid common pitfalls associated with its use.</p>
 </div>
 <div class="paragraph">
-<p>A pertinent example of XSLT&#8217;s application is the <a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Biso2dcat%2Dap%5D%20Reference%20XSLT%2Dbased%20implementation%20of%20GeoDCAT%2DAP.%20Available">tool</a> for transforming ISO-19139 metadata to the DCAT-AP geospatial profile GeoDCAT-AP [geo-dcat-ap] in the INSPIRE framework and the EU ISA Programme. This XSLT script is configurable to accommodate transformation with various operational parameters such as the selection between core or extended GeoDCAT-AP profiles and specific spatial reference systems for geometry encoding, showcasing its utility in precise and tailored data manipulation tasks.</p>
+<p>A pertinent example of XSLT&#8217;s application is the [tool] for transforming ISO-19139 metadata to the DCAT-AP geospatial profile GeoDCAT-AP [<a href="references.html#ref-74" class="xref page">geo-dcat-ap</a>] in the INSPIRE framework and the EU ISA Programme. This XSLT script is configurable to accommodate transformation with various operational parameters such as the selection between core or extended GeoDCAT-AP profiles and specific spatial reference systems for geometry encoding, showcasing its utility in precise and tailored data manipulation tasks.</p>
 </div>
 <div class="paragraph">
 <p><strong>Inputs</strong>: Conceptual Mapping spreadsheet</p>
@@ -3249,10 +3249,10 @@ Two primary methods of validation should be employed to test the integrity and a
 <p><strong>Conceptual Mapping Files</strong>: Serves as the core documentation, outlining the rationale and structure behind the mappings to ensure transparency and ease of understanding for both domain experts and engineers.</p>
 </li>
 <li>
-<p><strong>Technical Mapping Files</strong>: This contains all the mapping code files ([<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Bxslt%5D%20XSL%20Transformations%20(XSLT)%20Version%203.0.%20Available%20at%3A%20https%3A//www.w3.org/TR/xslt%2D30/">xslt</a>], [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Brml%5D%20RDF%20Mapping%20Language%20(RML).%20Available%20at%3A%20https%3A//rml.io/specs/rml/">rml</a>], [<a href="https://semiceu.github.io/core-vocs-handbook/develop/references.html#:~:text=%5Bsparql%2Danything%5D%20SPARQL%2DAnything.%20Available%20at%3A%20https%3A//github.com/SPARQL%2DAnything/sparql.anything">SPARQLAnything</a>], depending on the chosen mapping technology) for data transformation.</p>
+<p><strong>Technical Mapping Files</strong>: This contains all the mapping code files ([<a href="references.html#ref-66" class="xref page">xslt</a>], [<a href="references.html#ref-67" class="xref page">rml</a>], [<a href="references.html#ref-68" class="xref page">SPARQLAnything</a>], depending on the chosen mapping technology) for data transformation.</p>
 </li>
 <li>
-<p>*Additional Mapping Resources *(if applicable): Such as controlled lists, value mappings, or correspondence tables, which are crucial for the correct interpretation and application of the RML code.</p>
+<p><strong>Additional Mapping Resources</strong> (if applicable): Such as controlled lists, value mappings, or correspondence tables, which are crucial for the correct interpretation and application of the RML code.</p>
 </li>
 <li>
 <p><strong>Test Data</strong>: Carefully selected and representative XML files that cover various scenarios and cases. These test data are crucial for ensuring that the mappings perform as expected across a range of real-world data.</p>
@@ -3285,7 +3285,7 @@ Two primary methods of validation should be employed to test the integrity and a
 <div class="sect4">
 <h5 id="_tutorial_map_the_core_business_vocabulary_from_xsd_to_rdf"><a class="anchor" href="#_tutorial_map_the_core_business_vocabulary_from_xsd_to_rdf"></a>Tutorial: Map the Core Business Vocabulary from XSD to RDF</h5>
 <div class="paragraph">
-<p>This tutorial addresses <strong>Use Case</strong> <a href="https://github.com/SEMICeu/core-vocs-handbook/blob/develop/docs/modules/ROOT/pages/use-cases.adoc#:~:text=Use%20Case%20UC2.2%3A%20Map%20an%20existing%20XSD%20Schema%20to%20a%20Core%20Vocabulary">UC2.2</a>, focusing on enabling <strong>semantic interoperability</strong> by mapping an existing <strong>XSD schema</strong>—specifically, the <a href="https://github.com/SEMICeu/XML-schema/blob/main/models/CoreVoc_Business/CoreVoc_Business.xsd">Core Business Vocabulary (CBV) XSD schema</a>—to its corresponding <strong>RDF representation</strong>. This tutorial guides you through the key steps, involving:</p>
+<p>This tutorial addresses <strong>Use Case</strong> <a href="./introduction.adoc#sec:uc22">UC2.2</a>, focusing on enabling <strong>semantic interoperability</strong> by mapping an existing <strong>XSD schema</strong>—specifically, the <a href="https://github.com/SEMICeu/XML-schema/blob/main/models/CoreVoc_Business/CoreVoc_Business.xsd">Core Business Vocabulary (CBV) XSD schema</a>—to its corresponding <strong>RDF representation</strong>. This tutorial guides you through the key steps, involving:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3647,14 +3647,17 @@ ex:LegalEntityShape
 <ul>
 <li>
 <p><strong>legal:legalName</strong>: The property legalName is required to be of type xsd:string, and the minimum count is set to 1 (sh:minCount 1), meaning that the legalName property must appear at least once.
-Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.2.0/shacl">here</a>.
-===== Phase 4: Dissemination</p>
+Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.2.0/shacl">here</a>.</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_phase_4_dissemination_2"><a class="anchor" href="#_phase_4_dissemination_2"></a>Phase 4: Dissemination</h6>
 <div class="paragraph">
 <p>Once the mappings are validated, the next step is to disseminate the project with the mappings as a package of documentation together with the artefacts. The package includes:</p>
 </div>
@@ -3676,7 +3679,6 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 <p>Validation Reports: The SPARQL and SHACL validation results obtained from Phase 4.</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
