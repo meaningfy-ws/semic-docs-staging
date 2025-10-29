@@ -49,11 +49,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="introduction.html#sec:interoperability">Introduction to interoperability</a>
+    <a class="nav-link" href="introduction.html#sec:interoperability">Interoperability and Core Vocabularies</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="introduction.html#sec:interoperability-acts">Existing acts and frameworks related to interoperability</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="introduction.html#sec:achieve-interoperability">What is semantic interoperability and how to achieve it?</a>
   </li>
@@ -65,9 +62,6 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="introduction.html#sec:Why_Core_Vocabulary">Why Core Vocabularies?</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="introduction.html#sec:CV-lifecycle">Core Vocabularies lifecycle</a>
   </li>
 </ul>
   </li>
@@ -83,12 +77,6 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="introduction.html#sec:use-cases">Introduction to the use cases covered in the handbook</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="introduction.html#sec:uc1-create-cv">UC1: Create a new model from a Core Vocabulary</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="introduction.html#sec:uc2-map-cv">UC2: Map an existing model to a Core Vocabulary</a>
   </li>
 </ul>
   </li>
@@ -169,48 +157,32 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="Concluding-remarks.html#sec:concluding-remarks">Concluding remarks</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="appmenu.html#sec:app-menu">Appendix</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="Appendix.html#sec:additional-use-cases">Additional Use Cases</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="Appendix.html#sec:uc2.3">UC2.3: Map an existing JSON Schema to a Core Vocabulary</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="Appendix.html#sec:uc3">UC3: Create a new Semantic data specification</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc3.1-des">Use Case UC3.1: Create a new Core Vocabulary</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc3.2-des">Use Case UC3.2: Create a new Application Profile</a>
+    <a class="nav-link" href="Appendix.html#sec:uc4-des">UC4: Create a new data model</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="Appendix.html#sec:uc4-des">UC4: Create a new data model</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc4.1">Use Case UC4.1: Create a new ontology</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc4.2">Use Case UC4.2: Create a new data shape</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="glossary.html#sec:glossary">Glossary</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="references.html#sec:references">References</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="handbook-as-a-whole.html#sec:handbook">Handbook as a whole</a>
@@ -317,7 +289,7 @@ For instance, to represent the fact “govtDep#1 subcontracts comp#2”, we migh
 </ul>
 </div>
 <div class="paragraph">
-<p>A mechanism to capture the sort of structured and semi-structured data which may be stored and managed in the system is called a <strong>data model</strong> at the level of the technical implementation and <em>conceptual data model</em> or <em>vocabulary</em> as part of a <strong>semantic data specification</strong> when it is implementation-independent. Such models represent the entity types, such as GovernmentDepartment, Company, and its more generic type Organisation from our example, along with relationships between entity types, such as Subcontracting. Data models typically also implement business rules or constraints that apply to the particular organisation. For instance, one rule might state that each government department <em>is permitted to subcontract at most 15</em> companies in country#3 whereas there may be no upper bound to subcontracting in country#4 and a prohibition on subcontracting (i.e., <em>is permitted to subcontract at most 0</em>) in country#5. These variations require different data models or application profiles, although they may use the same vocabulary.</p>
+<p>A mechanism to capture the sort of structured and semi-structured data which may be stored and managed in the system is called a <strong>data model</strong> at the level of the technical implementation and <em>conceptual data model</em> or <em>vocabulary</em> as part of a <strong>semantic data specification</strong> when it is implementation-independent. Such models represent the entity types, such as <code>GovernmentDepartment</code>, Company, and its more generic type Organisation from our example, along with relationships between entity types, such as Subcontracting. Data models typically also implement business rules or constraints that apply to the particular organisation. For instance, one rule might state that each government department <em>is permitted to subcontract at most 15</em> companies in country#3 whereas there may be no upper bound to subcontracting in country#4 and a prohibition on subcontracting (i.e., <em>is permitted to subcontract at most 0</em>) in country#5. These variations require different data models or application profiles, although they may use the same vocabulary.</p>
 </div>
 <div class="paragraph">
 <p>This raises a number of questions:</p>
@@ -349,16 +321,20 @@ Each model type has its business case providing a rationale why one would want t
 <div class="paragraph">
 <p>We will introduce the <strong>motivation for the use case</strong> with a user story.</p>
 </div>
-<div class="paragraph indent">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
 <p>Imagine Jean-Luc, a semantic/software engineer assigned to develop a software application for  processing online forms for the Maltese Chamber of Commerce. Among the format options of online forms are Office365, CSV, and XML that each have their pros and cons. Jean-Luc chooses XML, since many other forms are already being stored in XML format.</p>
 </div>
-<div class="paragraph indent">
+<div class="paragraph">
 <p>He is aware that XML files should have a schema declared first, which contains the specifications of the sort of elements and fields that are permitted to be used in the forms, such as the company’s registration number, name, and address. However, analysing the data requirements from scratch is not the preferred option. Moreover, there are Chambers of Commerce in other EU countries, which   use forms to collect and update data. Perhaps he could reuse and adapt those schemas? <br>
 As Jean-Luc starts to search for existing models, called XML schemas in XSD format, he realises there are other places where businesses need to submit forms with company information, such as online registries and the tax office, that also may have XSD files available for reuse. <br>
 Unfortunately, not one of them made their schema available.</p>
 </div>
-<div class="paragraph indent">
+<div class="paragraph">
 <p>Given that such availability would be useful also at the EU level, he looks for guidance at the EU level. He finds The SEMIC Core Business Vocabulary, which has terminology he can reuse, not only saving time developing his own XSD schema but then also making it interoperable with all other XSD schemas that reuse the vocabulary.</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p><strong>User story:</strong> <strong>As a</strong> semantic engineer working in public sector IT, <strong>I want to</strong> create an XML schema (XSD) by reusing elements from the existing Core Business Vocabulary (CBV), <strong>so that</strong> I can reduce design time and ensure consistent, interoperable, and standards-compliant e-form validation across government systems.</p>
@@ -785,15 +761,19 @@ Here’s an example, where LegalEntity serves as the main entry point:</p>
 <div class="paragraph">
 <p>Public administrations often need to share information about their services with other organisations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases. This was also the case in Norway, which came to a fruitful solution. Let us imagine how that might have happened in the following scenario as <strong>motivation for the use case</strong>, which is followed by a user story that summarises it.</p>
 </div>
-<div class="paragraph indent">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
 <p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced RequiredEvidence, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>. <br>
 Happy with the outcome, Nora emailed the municipalities so that each city and town would be able to upgrade their system in the same way with CPSV-AP-NO, and so that DiTFor could still collect and integrate the data at the national level.</p>
 </div>
-<div class="paragraph indent">
+<div class="paragraph">
 <p>Meanwhile, the City of Oslo’s transportation services department had just learned of <em>smart data models</em> to manage the data about public road network maintenance, such as <a href="https://github.com/smart-data-models/dataModel.Transportation/tree/ed857c5d9c2e8dbb1c85208e22bbbc7c563017a7">dataModel.Transportation</a>, and their helpdesk for reporting road maintenance issues. That data, stored according to the smart data model, could then also be used for the public transport network management organisation to work towards the aim to make Oslo a Smart City. A popular language to specify smart data models is a JSON-LD context, because it helps structure the data so it can be easily shared and understood by different systems.</p>
 </div>
-<div class="paragraph indent">
+<div class="paragraph">
 <p>The City of Oslo received DiTFor’s notification about the CPSV-AP-NO: their data models needed to comply with the CPSV-AP-NO for the purposes of effective use and interoperability. Looking into the details, they realised that it should be possible to utilise CPSV-AP-NO for their smart data model in JSON-LD and, in fact, would save them time looking for other vocabularies and adapting those. The question became one of <em>how</em> to do it, and so they replied to Nora’s email inquiring whether she could also provide instructions for using the Application Profile.<br></p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p><strong>User Story: As a</strong> software engineer at a public sector department, <strong>I want to</strong> create a new JSON-LD context based on the Core Public Services Vocabulary Application profile (CPSV-AP), <strong>so that</strong> I can create interoperable smart data models that comply with national and European interoperability standards and support linked data publication to facilitate cross-system data exchange.<br></p>

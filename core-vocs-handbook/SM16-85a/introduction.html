@@ -49,11 +49,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="#sec:interoperability">Introduction to interoperability</a>
+    <a class="nav-link" href="#sec:interoperability">Interoperability and Core Vocabularies</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#sec:interoperability-acts">Existing acts and frameworks related to interoperability</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#sec:achieve-interoperability">What is semantic interoperability and how to achieve it?</a>
   </li>
@@ -65,9 +62,6 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#sec:Why_Core_Vocabulary">Why Core Vocabularies?</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#sec:CV-lifecycle">Core Vocabularies lifecycle</a>
   </li>
 </ul>
   </li>
@@ -83,12 +77,6 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#sec:use-cases">Introduction to the use cases covered in the handbook</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#sec:uc1-create-cv">UC1: Create a new model from a Core Vocabulary</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#sec:uc2-map-cv">UC2: Map an existing model to a Core Vocabulary</a>
   </li>
 </ul>
   </li>
@@ -169,48 +157,32 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="Concluding-remarks.html#sec:concluding-remarks">Concluding remarks</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="appmenu.html#sec:app-menu">Appendix</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="Appendix.html#sec:additional-use-cases">Additional Use Cases</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="Appendix.html#sec:uc2.3">UC2.3: Map an existing JSON Schema to a Core Vocabulary</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="Appendix.html#sec:uc3">UC3: Create a new Semantic data specification</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc3.1-des">Use Case UC3.1: Create a new Core Vocabulary</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc3.2-des">Use Case UC3.2: Create a new Application Profile</a>
+    <a class="nav-link" href="Appendix.html#sec:uc4-des">UC4: Create a new data model</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="Appendix.html#sec:uc4-des">UC4: Create a new data model</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc4.1">Use Case UC4.1: Create a new ontology</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="Appendix.html#sec:uc4.2">Use Case UC4.2: Create a new data shape</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="glossary.html#sec:glossary">Glossary</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="references.html#sec:references">References</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="handbook-as-a-whole.html#sec:handbook">Handbook as a whole</a>
@@ -390,19 +362,16 @@
 Finally, the appendix contains a <strong>glossary of terms</strong>, additional use cases not covered in this handbook, and the references.</p>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sec:Introduction_to_interoperability"><a class="anchor" href="#sec:Introduction_to_interoperability"></a>Interoperability and Cover Vocabularies</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="sec:interoperability"><a class="anchor" href="#sec:interoperability"></a>Interoperability and Core Vocabularies</h3>
 <div class="paragraph">
 <p>This section introduces what interoperability is, what makes it semantic, and how <strong><em>Core Vocabularies</em></strong>–which is where key concepts are specified in human-readable and machine-processable formats–contribute to it.</p>
 </div>
 <div class="paragraph">
 <p>Sharing data easily is indispensable for effective and efficient public services. Sharing may be done through offering one point of access, and often involves reusing the data in multiple applications across multiple departments and organisations. To make this work, the information systems need to be interoperable.</p>
 </div>
-<div class="sect2">
-<h3 id="sec:interoperability"><a class="anchor" href="#sec:interoperability"></a>What is interoperability?</h3>
+<div class="sect3">
+<h4 id="_what_is_interoperability"><a class="anchor" href="#_what_is_interoperability"></a>What is interoperability?</h4>
 <div class="paragraph">
 <p>Following the <a href="https://ec.europa.eu/isa2/sites/default/files/eif_brochure_final.pdf">European Interoperability Framework (EIF)</a> [<a href="references.html#ref-1" class="xref page">eif</a>], interoperability is defined as “the ability of organisations to interact towards mutually beneficial goals, involving the sharing of information and knowledge between these organisations, through the business processes they support, by means of the exchange of data between their ICT systems”, where, for the purpose of EIF, ‘organisations’ refers to “public administration units or any entity acting on their behalf, or EU institutions or bodies”. It is what “enables administrations to cooperate and make public services function across borders, across sectors and across organisational boundaries”, including enabling “public sector actors to connect, cooperate and exchange data while safeguarding sovereignty and subsidiarity”, as described in the EC communication accompanying the Interoperable Europe Act [<a href="references.html#ref-83" class="xref page">int-eu</a>].</p>
 </div>
@@ -477,6 +446,7 @@ Finally, the appendix contains a <strong>glossary of terms</strong>, additional 
 </div>
 </li>
 </ol>
+</div>
 </div>
 </div>
 </div>
