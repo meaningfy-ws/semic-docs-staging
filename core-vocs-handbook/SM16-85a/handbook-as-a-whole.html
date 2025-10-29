@@ -55,6 +55,9 @@
     <a class="nav-link" href="introduction.html#sec:interoperability">Interoperability and Core Vocabularies</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="introduction.html#sec:what-is-interoperability">What is interoperability?</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="introduction.html#sec:achieve-interoperability">What is semantic interoperability and how to achieve it?</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -285,7 +288,7 @@
 <li><a href="#sec:Structure_of_the_Handbook">1.2. Structure of the Handbook</a></li>
 <li><a href="#sec:interoperability">1.3. Interoperability and Core Vocabularies</a>
 <ul class="sectlevel4">
-<li><a href="#_what_is_interoperability">1.3.1. What is interoperability?</a></li>
+<li><a href="#sec:what-is-interoperability">1.3.1. What is interoperability?</a></li>
 <li><a href="#sec:achieve-interoperability">1.3.2. What is semantic interoperability and how to achieve it?</a></li>
 <li><a href="#sec:Core_Vocabulary">1.3.3. What is a Core Vocabulary?</a></li>
 <li><a href="#sec:SEMIC-Core-Vocabularies">1.3.4. SEMIC Core Vocabularies</a></li>
@@ -478,7 +481,7 @@ Finally, the appendix contains a <strong>glossary of terms</strong>, additional 
 <p>Sharing data easily is indispensable for effective and efficient public services. Sharing may be done through offering one point of access, and often involves reusing the data in multiple applications across multiple departments and organisations. To make this work, the information systems need to be interoperable.</p>
 </div>
 <div class="sect4">
-<h5 id="_what_is_interoperability"><a class="anchor" href="#_what_is_interoperability"></a>1.3.1. What is interoperability?</h5>
+<h5 id="sec:what-is-interoperability"><a class="anchor" href="#sec:what-is-interoperability"></a>1.3.1. What is interoperability?</h5>
 <div class="paragraph">
 <p>Following the <a href="https://ec.europa.eu/isa2/sites/default/files/eif_brochure_final.pdf">European Interoperability Framework (EIF)</a> [<a href="references.html#ref-1" class="xref page">eif</a>], interoperability is defined as “the ability of organisations to interact towards mutually beneficial goals, involving the sharing of information and knowledge between these organisations, through the business processes they support, by means of the exchange of data between their ICT systems”, where, for the purpose of EIF, ‘organisations’ refers to “public administration units or any entity acting on their behalf, or EU institutions or bodies”. It is what “enables administrations to cooperate and make public services function across borders, across sectors and across organisational boundaries”, including enabling “public sector actors to connect, cooperate and exchange data while safeguarding sovereignty and subsidiarity”, as described in the EC communication accompanying the Interoperable Europe Act [<a href="references.html#ref-83" class="xref page">int-eu</a>].</p>
 </div>
@@ -1220,7 +1223,7 @@ Unfortunately, not one of them made their schema available.</p>
 <div class="sect4">
 <h5 id="sec:uc1.1-guideline"><a class="anchor" href="#sec:uc1.1-guideline"></a>2.1.2. Guidelines to create a new XSD schema</h5>
 <div class="paragraph">
-<p>This section provides detailed instructions for addressing use case <a href="./introduction.adoc#sec:uc11">UC1.1</a>. To create a new XSD schema, the following main steps need to be carried out:</p>
+<p>This section provides detailed instructions for addressing use case <a href="introduction.html#sec:uc11" class="xref page">UC1.1</a>. To create a new XSD schema, the following main steps need to be carried out:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1362,7 +1365,7 @@ such as an informal description of the intended meaning of a concept.</p>
 <div class="sect4">
 <h5 id="sec:uc1.1-tutorial"><a class="anchor" href="#sec:uc1.1-tutorial"></a>2.1.3. Tutorial: Create an XSD schema using the Core Business Vocabulary</h5>
 <div class="paragraph">
-<p>Creating an <strong>XSD schema</strong> using the <strong>Core Business Vocabulary</strong> <strong>(CBV)</strong> involves defining the structure, data types, and relationships for the elements of the CBV, ensuring interoperability between systems. This tutorial follows the <a href="how-to-create-new-data-models.html#_guidelines_to_create_a_new_xsd_schema" class="xref page">guidelines</a> outlined for <strong>Use Case</strong>  <a href="introduction.html#sec:uc11" class="xref page"><strong>UC1.1</strong></a> "Create a New XSD Schema", showing how to design and create an XSD schema that integrates terms from the <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/e-government-core-vocabularies/core-business-vocabulary">Core Business Vocabulary</a> (CBV). This step-by-step guide focuses on the essential phases of the schema creation process, ensuring that the elements from CBV are correctly imported, the document structure is shaped properly, and all constraints are applied.<br>
+<p>Creating an <strong>XSD schema</strong> using the <strong>Core Business Vocabulary</strong> <strong>(CBV)</strong> involves defining the structure, data types, and relationships for the elements of the CBV, ensuring interoperability between systems. This tutorial follows the <a href="#sec:uc1.1-guideline">guidelines</a> outlined for <strong>Use Case</strong>  <a href="introduction.html#sec:uc11" class="xref page"><strong>UC1.1</strong></a> "Create a New XSD Schema", showing how to design and create an XSD schema that integrates terms from the <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/e-government-core-vocabularies/core-business-vocabulary">Core Business Vocabulary</a> (CBV). This step-by-step guide focuses on the essential phases of the schema creation process, ensuring that the elements from CBV are correctly imported, the document structure is shaped properly, and all constraints are applied.<br>
 To recap the process, we first will import or define elements, shape the structure with patterns, define complex types, and finalise the schema.</p>
 </div>
 <div class="sect5">
@@ -1810,7 +1813,7 @@ A context can be defined per class, allowing property names such as name or desc
 <div class="sect4">
 <h5 id="sec:uc1.2-tutorial"><a class="anchor" href="#sec:uc1.2-tutorial"></a>2.2.3. Tutorial: Create a JSON-LD context from the CPSV-AP Core Vocabulary</h5>
 <div class="paragraph">
-<p>This tutorial addresses the use case <a href="introduction.html#sec:uc21" class="xref page">UC1.2</a>, and will show how to create a JSON-LD context for an Application Profile that extends CPSV-AP with new concepts that are defined by reusing concepts from the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary (CBV)</a>, following ideas from <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
+<p>This tutorial addresses the use case <a href="introduction.html#sec:uc12" class="xref page">UC1.2</a>, and will show how to create a JSON-LD context for an Application Profile that extends CPSV-AP with new concepts that are defined by reusing concepts from the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary (CBV)</a>, following ideas from <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
 </div>
 <div class="sect5">
 <h6 id="_phase_1_import_or_define_elements_3"><a class="anchor" href="#_phase_1_import_or_define_elements_3"></a>Phase 1: Import or define elements</h6>
