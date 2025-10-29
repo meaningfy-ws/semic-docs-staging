@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>The SEMIC Core Vocabularies Handbook for Semantic Engineers :: SEMIC documentation</title>
+    <title>The SEMIC Core Vocabularies Handbook :: SEMIC documentation</title>
     <meta name="description" content="SEMIC Core Vocabularies Handbook">
+    <meta name="keywords" content="Core Vocabularies, SEMIC">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">  </head>
@@ -165,16 +166,115 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">The SEMIC Core Vocabularies Handbook for Semantic Engineers</h1>
+<h1 class="page">The SEMIC Core Vocabularies Handbook</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel2">
-<li><a href="#sec:Introduction">1. Introduction</a></li>
-<li><a href="#sec:Introduction_to_interoperability">2. Introduction to interoperability</a></li>
-<li><a href="#_creating_a_new_data_model_from_an_existing_core_vocabulary">3. Creating a new data model from an existing Core Vocabulary</a></li>
-<li><a href="#_mapping_an_existing_model_to_core_vocabularies">4. Mapping an existing model to Core Vocabularies</a></li>
-<li><a href="#_4_concluding_remarks">5. 4. Concluding remarks</a></li>
-<li><a href="#_appendix_additional_use_cases">6. Appendix: Additional Use Cases</a></li>
+<li><a href="#sec:Introduction">1. Introduction</a>
+<ul class="sectlevel3">
+<li><a href="#sec:Intended_audience">1.1. Intended audience</a>
+<ul class="sectlevel4">
+<li><a href="#_administrative_professionals_legal_experts">1.1.1. Administrative Professionals &amp; Legal Experts</a></li>
+<li><a href="#_technical_experts_it_professionals">1.1.2. Technical Experts &amp; IT Professionals</a></li>
+</ul>
+</li>
+<li><a href="#sec:Structure_of_the_Handbook">1.2. Structure of the Handbook</a></li>
+</ul>
+</li>
+<li><a href="#sec:Introduction_to_interoperability">2. Introduction to interoperability</a>
+<ul class="sectlevel3">
+<li><a href="#sec:interoperability">2.1. What is interoperability?</a>
+<ul class="sectlevel4">
+<li><a href="#_what_is_semantic_interoperability_and_how_to_achieve_it">2.1.1. What is semantic interoperability and how to achieve it?</a></li>
+<li><a href="#sec:Core_Vocabulary">2.1.2. What is a Core Vocabulary?</a></li>
+<li><a href="#sec:SEMIC-Core-Vocabularies">2.1.3. SEMIC Core Vocabularies</a></li>
+<li><a href="#sec:Why_Core_Vocabulary">2.1.4. Why Core Vocabularies?</a></li>
+</ul>
+</li>
+<li><a href="#_overview_of_use_cases_for_using_core_vocabularies">2.2. Overview of use cases for using Core Vocabularies</a>
+<ul class="sectlevel4">
+<li><a href="#_a_practical_example">2.2.1. A practical example</a></li>
+<li><a href="#_how_to_solve_the_scenario_with_semantic_data_specifications">2.2.2. How to solve the scenario with semantic data specifications</a></li>
+<li><a href="#sec:use-cases">2.2.3. Introduction to the use cases covered in the handbook</a></li>
+<li><a href="#_uc1_create_a_new_model_from_a_core_vocabulary">2.2.4. UC1: Create a new model from a Core Vocabulary</a></li>
+<li><a href="#_uc2_map_an_existing_model_to_a_core_vocabulary">2.2.5. UC2: Map an existing model to a Core Vocabulary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_creating_a_new_data_model_from_an_existing_core_vocabulary">3. Creating a new data model from an existing Core Vocabulary</a>
+<ul class="sectlevel3">
+<li><a href="#sec:create-a-new-xsd-schema">3.1. Create a new XSD schema from a Core Vocabulary (UC1.1)</a>
+<ul class="sectlevel4">
+<li><a href="#_use_case_description">3.1.1. Use case description</a></li>
+<li><a href="#_guidelines_to_create_a_new_xsd_schema">3.1.2. Guidelines to create a new XSD schema</a></li>
+<li><a href="#_tutorial_create_an_xsd_schema_using_the_core_business_vocabulary">3.1.3. Tutorial: Create an XSD schema using the Core Business Vocabulary</a></li>
+</ul>
+</li>
+<li><a href="#sec:create-a-new-json-ld-context-definition">3.2. Create a new JSON-LD context definition from a Core Vocabulary (UC1.2)</a>
+<ul class="sectlevel4">
+<li><a href="#_use_case_description_2">3.2.1. Use case description</a></li>
+<li><a href="#_guidelines_to_create_a_new_json_ld_context_definition">3.2.2. Guidelines to create a new JSON-LD context definition</a></li>
+<li><a href="#_tutorial_create_a_json_ld_context_from_the_cpsv_ap_core_vocabulary">3.2.3. Tutorial: Create a JSON-LD context from the CPSV-AP Core Vocabulary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_mapping_an_existing_model_to_core_vocabularies">4. Mapping an existing model to Core Vocabularies</a>
+<ul class="sectlevel3">
+<li><a href="#sec:map-existing-model-to-cv">4.1. Map an existing conceptual model to a Core Vocabulary (UC2.1)</a>
+<ul class="sectlevel4">
+<li><a href="#_use_case_description_3">4.1.1. Use case description</a></li>
+<li><a href="#_guidelines_on_how_to_map_an_existing_conceptual_model_to_a_core_vocabulary">4.1.2. Guidelines on how to map an existing conceptual model to a Core Vocabulary</a></li>
+<li><a href="#sec:tutorial:map-schema.org">4.1.3. Tutorial: Map Schema.org to the Core Business Vocabulary</a></li>
+</ul>
+</li>
+<li><a href="#sec:map-existing-shema">4.2. Map an existing XSD Schema to a Core Vocabulary (UC2.2)</a>
+<ul class="sectlevel4">
+<li><a href="#_use_case_description_4">4.2.1. Use case description</a></li>
+<li><a href="#_guidelines_for_mapping_an_existing_xsd_schema_to_a_core_vocabulary">4.2.2. Guidelines for Mapping an Existing XSD Schema to a Core Vocabulary</a></li>
+<li><a href="#_tutorial_map_the_core_business_vocabulary_from_xsd_to_rdf">4.2.3. Tutorial: Map the Core Business Vocabulary from XSD to RDF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_concluding_remarks">5. Concluding remarks</a></li>
+<li><a href="#_appendix_additional_use_cases">Appendix A: Appendix: Additional Use Cases</a>
+<ul class="sectlevel3">
+<li><a href="#_uc2_3_map_an_existing_json_schema_to_a_core_vocabulary">A.1. UC2.3: Map an existing JSON Schema to a Core Vocabulary</a></li>
+<li><a href="#_uc3_create_a_new_semantic_data_specification">A.2. UC3: Create a new Semantic data specification</a>
+<ul class="sectlevel4">
+<li><a href="#_use_case_uc3_1_create_a_new_core_vocabulary">A.2.1. Use Case UC3.1: Create a new Core Vocabulary</a></li>
+<li><a href="#_use_case_uc3_2_create_a_new_application_profile">A.2.2. Use Case UC3.2: Create a new Application Profile</a></li>
+</ul>
+</li>
+<li><a href="#_uc4_create_a_new_data_model">A.3. UC4: Create a new data model</a>
+<ul class="sectlevel4">
+<li><a href="#_use_case_uc4_1_create_a_new_ontology">A.3.1. Use Case UC4.1: Create a new ontology</a></li>
+<li><a href="#_use_case_uc4_2_create_a_new_data_shape">A.3.2. Use Case UC4.2: Create a new data shape</a></li>
+</ul>
+</li>
+<li><a href="#_glossary">A.4. Glossary</a>
+<ul class="sectlevel4">
+<li><a href="#_application_profile">A.4.1. Application Profile</a></li>
+<li><a href="#_conceptual_model">A.4.2. Conceptual model</a></li>
+<li><a href="#_constraint">A.4.3. Constraint</a></li>
+<li><a href="#_core_vocabulary">A.4.4. Core Vocabulary</a></li>
+<li><a href="#_data_model">A.4.5. Data model</a></li>
+<li><a href="#_data_shape_specification">A.4.6. Data shape specification</a></li>
+<li><a href="#_data_specification_artefact">A.4.7. Data specification artefact</a></li>
+<li><a href="#_data_specification_document">A.4.8. Data specification document</a></li>
+<li><a href="#_information_exchange_data_model">A.4.9. Information exchange data model</a></li>
+<li><a href="#_model">A.4.10. Model</a></li>
+<li><a href="#_ontology">A.4.11. Ontology</a></li>
+<li><a href="#_semantic_data_specification">A.4.12. Semantic data specification</a></li>
+<li><a href="#_upper_ontology">A.4.13. Upper Ontology</a></li>
+<li><a href="#_vocabulary">A.4.14. Vocabulary</a></li>
+</ul>
+</li>
+<li><a href="#_references">A.5. References</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="sect2">
@@ -3671,7 +3771,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect2">
-<h3 id="_4_concluding_remarks"><a class="anchor" href="#_4_concluding_remarks"></a>5. 4. Concluding remarks</h3>
+<h3 id="_concluding_remarks"><a class="anchor" href="#_concluding_remarks"></a>5. Concluding remarks</h3>
 <div class="paragraph">
 <p>This Handbook demonstrated how Core Vocabularies can be used both to create new models and to map to existing ones, and that this can be achieved using various types of models, regardless of the syntaxes. This is exemplified by the guidelines for use, which were illustrated in four tutorials with concrete examples for a selection of popular syntaxes, including XML, JSON-LD, and RDF. Through implementation in concrete use cases, the Core Vocabularies function as a shared central reference, fostering interoperability as well as reducing design time for data stores and software applications.</p>
 </div>
@@ -3705,7 +3805,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect2">
-<h3 id="_appendix_additional_use_cases"><a class="anchor" href="#_appendix_additional_use_cases"></a>6. Appendix: Additional Use Cases</h3>
+<h3 id="_appendix_additional_use_cases"><a class="anchor" href="#_appendix_additional_use_cases"></a>Appendix A: Appendix: Additional Use Cases</h3>
 <div id="sec:additional-use-cases" class="paragraph">
 <p>The additional business and use cases are depicted in the diagram below and briefly described afterwards.</p>
 </div>
@@ -3715,7 +3815,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect3">
-<h4 id="_uc2_3_map_an_existing_json_schema_to_a_core_vocabulary"><a class="anchor" href="#_uc2_3_map_an_existing_json_schema_to_a_core_vocabulary"></a>6.1. UC2.3: Map an existing JSON Schema to a Core Vocabulary</h4>
+<h4 id="_uc2_3_map_an_existing_json_schema_to_a_core_vocabulary"><a class="anchor" href="#_uc2_3_map_an_existing_json_schema_to_a_core_vocabulary"></a>A.1. UC2.3: Map an existing JSON Schema to a Core Vocabulary</h4>
 <div class="paragraph">
 <p>A concrete user story can be formulated as follows:<br></p>
 </div>
@@ -3743,7 +3843,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </table>
 </div>
 <div class="sect3">
-<h4 id="_uc3_create_a_new_semantic_data_specification"><a class="anchor" href="#_uc3_create_a_new_semantic_data_specification"></a>6.2. UC3: Create a new Semantic data specification</h4>
+<h4 id="_uc3_create_a_new_semantic_data_specification"><a class="anchor" href="#_uc3_create_a_new_semantic_data_specification"></a>A.2. UC3: Create a new Semantic data specification</h4>
 <div class="paragraph">
 <p>The general case for creating a new semantic data specification is shown in the table below.</p>
 </div>
@@ -3765,7 +3865,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_use_case_uc3_1_create_a_new_core_vocabulary"><a class="anchor" href="#_use_case_uc3_1_create_a_new_core_vocabulary"></a>6.2.1. Use Case UC3.1: Create a new Core Vocabulary</h5>
+<h5 id="_use_case_uc3_1_create_a_new_core_vocabulary"><a class="anchor" href="#_use_case_uc3_1_create_a_new_core_vocabulary"></a>A.2.1. Use Case UC3.1: Create a new Core Vocabulary</h5>
 <div class="paragraph">
 <p>A concrete user story can be formulated as follows:<br></p>
 </div>
@@ -3791,7 +3891,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </table>
 </div>
 <div class="sect4">
-<h5 id="_use_case_uc3_2_create_a_new_application_profile"><a class="anchor" href="#_use_case_uc3_2_create_a_new_application_profile"></a>6.2.2. Use Case UC3.2: Create a new Application Profile</h5>
+<h5 id="_use_case_uc3_2_create_a_new_application_profile"><a class="anchor" href="#_use_case_uc3_2_create_a_new_application_profile"></a>A.2.2. Use Case UC3.2: Create a new Application Profile</h5>
 <div class="paragraph">
 <p>A concrete user story can be formulated as follows.<br></p>
 </div>
@@ -3818,7 +3918,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect3">
-<h4 id="_uc4_create_a_new_data_model"><a class="anchor" href="#_uc4_create_a_new_data_model"></a>6.3. UC4: Create a new data model</h4>
+<h4 id="_uc4_create_a_new_data_model"><a class="anchor" href="#_uc4_create_a_new_data_model"></a>A.3. UC4: Create a new data model</h4>
 <div class="paragraph">
 <p>The main use case is as follows, which is refined into two specific ones afterwards.</p>
 </div>
@@ -3839,7 +3939,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_use_case_uc4_1_create_a_new_ontology"><a class="anchor" href="#_use_case_uc4_1_create_a_new_ontology"></a>6.3.1. Use Case UC4.1: Create a new ontology</h5>
+<h5 id="_use_case_uc4_1_create_a_new_ontology"><a class="anchor" href="#_use_case_uc4_1_create_a_new_ontology"></a>A.3.1. Use Case UC4.1: Create a new ontology</h5>
 <div class="paragraph">
 <p>A concrete user story can be formulated as follows.<br></p>
 </div>
@@ -3865,7 +3965,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </table>
 </div>
 <div class="sect4">
-<h5 id="_use_case_uc4_2_create_a_new_data_shape"><a class="anchor" href="#_use_case_uc4_2_create_a_new_data_shape"></a>6.3.2. Use Case UC4.2: Create a new data shape</h5>
+<h5 id="_use_case_uc4_2_create_a_new_data_shape"><a class="anchor" href="#_use_case_uc4_2_create_a_new_data_shape"></a>A.3.2. Use Case UC4.2: Create a new data shape</h5>
 <div class="paragraph">
 <p>A concrete user story can be formulated as follows.<br></p>
 </div>
@@ -3891,9 +3991,9 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect3">
-<h4 id="_glossary"><a class="anchor" href="#_glossary"></a>6.4. Glossary</h4>
+<h4 id="_glossary"><a class="anchor" href="#_glossary"></a>A.4. Glossary</h4>
 <div class="sect4">
-<h5 id="_application_profile"><a class="anchor" href="#_application_profile"></a>6.4.1. Application Profile</h5>
+<h5 id="_application_profile"><a class="anchor" href="#_application_profile"></a>A.4.1. Application Profile</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> AP, context-specific semantic data specification<br>
 <strong><em>Definition:</em></strong> Semantic data specification aimed to facilitate the data exchange in a well-defined application context.<br>
@@ -3902,7 +4002,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_conceptual_model"><a class="anchor" href="#_conceptual_model"></a>6.4.2. Conceptual model</h5>
+<h5 id="_conceptual_model"><a class="anchor" href="#_conceptual_model"></a>A.4.2. Conceptual model</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> conceptual model specification<br>
 <strong><em>Definition:</em></strong> An abstract representation of a system that comprises well-defined concepts, their qualities or attributes, and their relationships to other concepts.<br>
@@ -3911,7 +4011,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_constraint"><a class="anchor" href="#_constraint"></a>6.4.3. Constraint</h5>
+<h5 id="_constraint"><a class="anchor" href="#_constraint"></a>A.4.3. Constraint</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> restriction, axiom, shape<br>
 <strong><em>Definition:</em></strong> Restriction to which an entity or relation must adhere.<br>
@@ -3919,7 +4019,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_core_vocabulary"><a class="anchor" href="#_core_vocabulary"></a>6.4.4. Core Vocabulary</h5>
+<h5 id="_core_vocabulary"><a class="anchor" href="#_core_vocabulary"></a>A.4.4. Core Vocabulary</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> CV<br>
 <strong><em>Definition:</em></strong> A basic, reusable and extensible semantic data specification that captures the fundamental characteristics of an entity in a context-neutral fashion.<br>
@@ -3928,7 +4028,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_data_model"><a class="anchor" href="#_data_model"></a>6.4.5. Data model</h5>
+<h5 id="_data_model"><a class="anchor" href="#_data_model"></a>A.4.5. Data model</h5>
 <div class="paragraph">
 <p><strong><em>Definition:</em></strong> A structured representation of data elements and relationships used to facilitate semantic interoperability within and across domains.<br>
 <strong><em>Additional information:</em></strong> Data models are represented in common languages to facilitate semantic interoperability in a data space, including ontologies, data models, schema specifications, mappings and API specifications that can be used to annotate and describe data sets and data services. They are often domain-specific.<br>
@@ -3936,7 +4036,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_data_shape_specification"><a class="anchor" href="#_data_shape_specification"></a>6.4.6. Data shape specification</h5>
+<h5 id="_data_shape_specification"><a class="anchor" href="#_data_shape_specification"></a>A.4.6. Data shape specification</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em><strong></strong> </strong>data shape constraint specification, data shape constraint, data shape<br>
 <strong><em>Definition:</em></strong> A set of conditions on top of an ontology, limiting how the ontology can be instantiated.<br>
@@ -3945,7 +4045,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_data_specification_artefact"><a class="anchor" href="#_data_specification_artefact"></a>6.4.7. Data specification artefact</h5>
+<h5 id="_data_specification_artefact"><a class="anchor" href="#_data_specification_artefact"></a>A.4.7. Data specification artefact</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> specification artefact, artefact<br>
 <strong><em>Definition:</em></strong> A materialisation of a semantic data specification in a concrete representation that is appropriate for addressing one or more concerns (e.g. use cases, requirements).<br>
@@ -3953,7 +4053,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_data_specification_document"><a class="anchor" href="#_data_specification_document"></a>6.4.8. Data specification document</h5>
+<h5 id="_data_specification_document"><a class="anchor" href="#_data_specification_document"></a>A.4.8. Data specification document</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> specification document<br>
 <strong><em>Definition:</em></strong> The human-readable representation of an ontology, a data shape, or a combination of both.<br>
@@ -3962,7 +4062,7 @@ Note: The SHACL shapes of the CBV can be found <a href="https://github.com/SEMIC
 </div>
 </div>
 <div class="sect4">
-<h5 id="_information_exchange_data_model"><a class="anchor" href="#_information_exchange_data_model"></a>6.4.9. Information exchange data model</h5>
+<h5 id="_information_exchange_data_model"><a class="anchor" href="#_information_exchange_data_model"></a>A.4.9. Information exchange data model</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> data schema<br>
 <strong><em>Definition:</em></strong> Information exchange data model is a technology-specific framework for data exchange, detailing the syntax, structure, data types, and constraints necessary for effective data communication between systems. It serves as a practical blueprint for implementing an application profile in specific data exchange contexts.<br>
@@ -3973,13 +4073,13 @@ Thus, while exchange data models are essential for the technical realisation of 
 </div>
 </div>
 <div class="sect4">
-<h5 id="_model"><a class="anchor" href="#_model"></a>6.4.10. Model</h5>
+<h5 id="_model"><a class="anchor" href="#_model"></a>A.4.10. Model</h5>
 <div class="paragraph">
 <p><strong><em>Additional information:</em></strong> Generic term for any of the entries in this glossary, without the need for the existence of data and they may also serve purposes other than facilitating interoperability. SEMIC’s usage of models refers to structured information or knowledge that is represented in a suitable representation language, rather than to individual objects or the notion of ‘model’ in model-theoretic semantics of a logic.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_ontology"><a class="anchor" href="#_ontology"></a>6.4.11. Ontology</h5>
+<h5 id="_ontology"><a class="anchor" href="#_ontology"></a>A.4.11. Ontology</h5>
 <div class="paragraph">
 <p><strong><em>Definition:</em></strong> A formal specification describing the concepts and relationships that can formally exist for an agent or a community of agents (e.g. domain experts)<br>
 <strong><em>Additional information:</em></strong> It encompasses a representation, formal naming, and definition of the categories, properties, and relations between the concepts, data, and entities that substantiate one, many, or all domains of discourse.<br>
@@ -3987,7 +4087,7 @@ Thus, while exchange data models are essential for the technical realisation of 
 </div>
 </div>
 <div class="sect4">
-<h5 id="_semantic_data_specification"><a class="anchor" href="#_semantic_data_specification"></a>6.4.12. Semantic data specification</h5>
+<h5 id="_semantic_data_specification"><a class="anchor" href="#_semantic_data_specification"></a>A.4.12. Semantic data specification</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> data specification<br>
 <strong><em>Definition:</em></strong> An union of machine- and human-readable artefacts addressing clearly defined concerns, interoperability scope and use-cases.<br>
@@ -3996,7 +4096,7 @@ Thus, while exchange data models are essential for the technical realisation of 
 </div>
 </div>
 <div class="sect4">
-<h5 id="_upper_ontology"><a class="anchor" href="#_upper_ontology"></a>6.4.13. Upper Ontology</h5>
+<h5 id="_upper_ontology"><a class="anchor" href="#_upper_ontology"></a>A.4.13. Upper Ontology</h5>
 <div class="paragraph">
 <p><strong><em>Alternative names:</em></strong> top-level ontology, foundational ontology<br>
 <strong><em>Definition:</em></strong> An upper ontology is a highly generalised ontology that includes entities considered useful across all subject domains, such as “endurant”, “independent continuant”, “process”, and “participates in”. <br>
@@ -4004,14 +4104,14 @@ Thus, while exchange data models are essential for the technical realisation of 
 </div>
 </div>
 <div class="sect4">
-<h5 id="_vocabulary"><a class="anchor" href="#_vocabulary"></a>6.4.14. Vocabulary</h5>
+<h5 id="_vocabulary"><a class="anchor" href="#_vocabulary"></a>A.4.14. Vocabulary</h5>
 <div class="paragraph">
 <p><strong><em>Definition:</em></strong> An established list of preferred terms that signify concepts or relationships within a domain of discourse. All terms must have an unambiguous and non-redundant definition. Optionally it may include synonyms, notes and their translation to multiple languages.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_references"><a class="anchor" href="#_references"></a>6.5. References</h4>
+<h4 id="_references"><a class="anchor" href="#_references"></a>A.5. References</h4>
 <div id="ref-1" class="ulist">
 <ul>
 <li>

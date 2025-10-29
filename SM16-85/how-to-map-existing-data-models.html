@@ -38,7 +38,19 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="introduction.html">Introduction to interoperability</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="introduction.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="introduction.html#sec:Intended_audience">Intended audience</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="introduction.html#sec:Structure_of_the_Handbook">Structure of the handbook</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="introduction.html#sec:interoperability">introduction.adoc#sec:interoperability</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
@@ -476,7 +488,7 @@ The type of asset—an ontology, controlled list, or data shape—dictates the n
 <p>The <strong>Creation</strong> step is the execution of the mapping, entailing the selection of the relation, and assertion of the mapping. This activity involves human intervention and the selection is conducted manually according to the project’s objectives and semantic appropriateness of the candidate mapping.</p>
 </div>
 <div class="paragraph">
-<p><strong>Rendering</strong> translates the mapping in a machine-readable format so that it can be interpreted and executed by software agents. Typically, this is a straight-forward export of the alignment statements from the editing tool or the materialisation of the mapping in a triple store, using a common format, such as Alignment Format [af], EDOAL [edoal], Simple Standard for Sharing Ontological Mapping (SSSOM) [sssom], and the Semantic Mapping Vocabulary (SEMAPV) [semapv] for the mapping justification values. Multiple renderings may be created from the same alignment, accommodating the need for various formalisms.</p>
+<p><strong>Rendering</strong> translates the mapping in a machine-readable format so that it can be interpreted and executed by software agents. Typically, this is a straight-forward export of the alignment statements from the editing tool or the materialisation of the mapping in a triple store, using a common format, such as Alignment Format [<a href="references.html#ref-78" class="xref page">af</a>], EDOAL [<a href="references.html#ref-61" class="xref page">edoal</a>, Simple Standard for Sharing Ontological Mapping (SSSOM) [<a href="references.html#ref-79" class="xref page">sssom</a>], and the Semantic Mapping Vocabulary (SEMAPV) [semapv] for the mapping justification values. Multiple renderings may be created from the same alignment, accommodating the need for various formalisms.</p>
 </div>
 <div class="paragraph">
 <p><strong>Tools</strong>: Tools such as Vocbench [<a href="references.html#ref-63" class="xref page">vocbench</a>] can be used in this phase, or generic office tools, such as MS Excel, Google Sheets spreadsheets, or a LibreOffice spreadsheet.</p>
@@ -485,7 +497,7 @@ The type of asset—an ontology, controlled list, or data shape—dictates the n
 <p><strong>Inputs</strong>: Evaluated correspondences (the alignments), stakeholders' amendment plans, requirements for the formalism of the mapping so that the mapping assertions integrate with the modelling language used.</p>
 </div>
 <div class="paragraph">
-<p><strong>Outputs</strong>: Created mapping, stored versions in an alignment repository (e.g., [sem-map]).</p>
+<p><strong>Outputs</strong>: Created mapping, stored versions in an alignment repository (e.g., [<a href="references.html#ref-55" class="xref page">sem-map</a>]).</p>
 </div>
 </div>
 <div class="sect4">
@@ -524,7 +536,7 @@ you’ll learn how to align these two vocabularies step-by-step—covering <stro
 <h5 id="_phase_1_staging_defining_the_requirements"><a class="anchor" href="#_phase_1_staging_defining_the_requirements"></a>Phase 1: Staging (Defining the Requirements)</h5>
 <div class="paragraph">
 <p>In this phase, the aim is to understand what needs to be mapped and why.<br>
-For this tutorial, we aim to map Schema.org[Schema.org] to the Core Business Vocabulary (CBV), enabling data interoperability.</p>
+For this tutorial, we aim to map <a href="http://Schema.org">Schema.org</a> to the Core Business Vocabulary (CBV), enabling data interoperability.</p>
 </div>
 <div class="sect5">
 <h6 id="_steps"><a class="anchor" href="#_steps"></a>Steps</h6>
@@ -550,7 +562,7 @@ For this tutorial, we aim to map Schema.org[Schema.org] to the Core Business Voc
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Purpose</strong>: Enable semantic interoperability between business-related data models using CBV and Schema.org[Schema.org].</p>
+<p><strong>Purpose</strong>: Enable semantic interoperability between business-related data models using CBV and <a href="http://Schema.org">Schema.org</a>.</p>
 </li>
 <li>
 <p><strong>Scope</strong>: Map the CBV (source) concepts to <a href="http://Schema.org">Schema.org</a> (target):</p>
@@ -847,13 +859,11 @@ The selected features are presented  in a table below, where for each feature th
 <div class="ulist">
 <ul>
 <li>
-<p>Source entity: a URI from the target ontology (e.g., Schema.org[Schema.org]).</p>
+<p>Source entity: a URI from the target ontology (e.g., <a href="http://schema.org/">Schema.org</a>).</p>
 </li>
 <li>
-<p>Target entity: a URI from the source ontology (e.g., CBV).</p>
-</li>
-<li>
-<p>Similarity score: a numerical value (typically from 0 to 1) indicating the strength of the lexical similarity between the two entities.</p>
+<p>Target entity: a URI from the source ontology (e.g., CBV).
+= * Similarity score: a numerical value (typically from 0 to 1) indicating the strength of the lexical similarity between the two entities.</p>
 </li>
 </ul>
 </div>
@@ -1181,7 +1191,7 @@ It may be that the XSD is outdated or partial with respect to the XML files that
 <p>Mapping may be with the intent to transform, or simply align for interoperability. More tools have been proposed for the former, and more so explicitly to an OWL flavour (RDFS/OWL full or an OWL 2 in one of its serialisations).</p>
 </div>
 <div class="paragraph">
-<p>A quick overview of translations for the XML Schema constructs and OWL constructs [xsd-owl]  is included in the following table.</p>
+<p>A quick overview of translations for the XML Schema constructs and OWL constructs [<a href="references.html#ref-89" class="xref page">xsd-owl</a>]  is included in the following table.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
