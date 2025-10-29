@@ -377,7 +377,7 @@
 <p>This Handbook explains the role of Core Vocabularies in enabling semantic interoperability at the EU level and provides a practical guide for public administrations to use them. It is intended for business users who wish to understand how the Core Vocabularies can be useful, and for semantic engineers who seek straightforward guidance for specific use cases.</p>
 </div>
 <div class="paragraph">
-<p>For first-time readers of this Handbook, we recommend starting with the remainder of this section, where <a href="./introduction.adoc#sec:interoperability">interoperability</a> is introduced, the role of <a href="./introduction.adoc#sec:Core_Vocabulary">Core Vocabularies</a> is explained, and the important <a href="./introduction.adoc#sec:use-cases">use cases</a> are summarised.</p>
+<p>For first-time readers of this Handbook, we recommend starting with the remainder of this section, where <a href="#sec:interoperability">interoperability</a> is introduced, the role of  <a href="#sec:Core_Vocabulary">Core Vocabularies</a> is explained, and the important <a href="#sec:use-cases">use cases</a> are summarised.</p>
 </div>
 <div class="paragraph">
 <p>Readers familiar with the SEMIC Core Vocabularies and seeking practical guidance are advised to go directly to the main part of the Handbook, which describes use cases, methodology recommendations, and tutorials for:</p>
@@ -2169,7 +2169,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><strong>User Story: As a</strong> knowledge engineer at the Department of Agriculture, <strong>I want</strong> <strong>to</strong> map my division’s existing conceptual model to the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary</a> (CBV) and align CBV concepts with <a href="http://Schema.org">Schema.org</a>, <strong>so that</strong> our data can be interoperable with both EU semantic standards and global web vocabularies, enabling accurate data exchange.</p>
 </div>
 <div class="paragraph">
-<p>The business case translates into the following <strong>use case specification</strong>, which is instantiated from the <a href="./introduction.adoc#sec:uc21">general UC2.1 description</a>:</p>
+<p>The business case translates into the following <strong>use case specification</strong>, which is instantiated from the <a href="introduction.html#sec:uc21" class="xref page">general UC2.1 description</a>:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2194,7 +2194,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <div class="sect4">
 <h5 id="sec:uc2.1-guidline"><a class="anchor" href="#sec:uc2.1-guidline"></a>3.1.2. Guidelines on how to map an existing conceptual model to a Core Vocabulary</h5>
 <div class="paragraph">
-<p>This section provides general guidelines to address use case <a href="./introduction.adoc#sec:uc21">UC2.1</a>, mapping an ontology to a Core Vocabulary.</p>
+<p>This section provides general guidelines to address use case <a href="introduction.html#sec:uc21" class="xref page">UC2.1</a>, mapping an ontology to a Core Vocabulary.</p>
 </div>
 <div class="paragraph">
 <p>In this section we adopt the definitions from the ontology matching handbook [<a href="references.html#ref-54" class="xref page">om</a>] for the following concepts:</p>
@@ -2251,8 +2251,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <div class="paragraph">
 <p>This section provides an overview of the guideline, which will be demonstrated in the <a href="#sec:tutorial:map-schema.org">tutorial</a> section where we map the Core Business Vocabulary to Schema.org. The reader familiar with ontology matching could skim or skip it and proceed swiftly to the tutorial section.</p>
 </div>
-<div class="sect5">
-<h6 id="_phase_1_staging"><a class="anchor" href="#_phase_1_staging"></a>Phase 1: Staging</h6>
+<div class="paragraph">
+<p><strong><em>Phase 1: Staging</em></strong></p>
+</div>
 <div class="paragraph">
 <p>This initial phase involves a comprehensive understanding of the project’s scope, identifying the specific goals of the mapping exercise, and the key requirements it must fulfil. Stakeholders collaborate to articulate the purpose of the alignment between the models, setting clear objectives that will guide the process. Defining these requirements upfront ensures that subsequent steps are aligned with the model matching process’ overarching goals, stakeholder expectations, and fitting the use cases.</p>
 </div>
@@ -2260,9 +2261,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p><strong>Inputs</strong>: Stakeholder knowledge, project goals, available resources, domain expertise. <br>
 <strong>Outputs</strong>: Mapping project specification document comprising a well-defined scope and comprehensive list of requirements.</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 2: Characterisation</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_2_characterisation"><a class="anchor" href="#_phase_2_characterisation"></a>Phase 2: Characterisation</h6>
 <div class="paragraph">
 <p>In this phase, a thorough analysis of both source and target ontologies is conducted to ascertain their structures, vocabularies, and the semantics they encapsulate. This involves an in-depth examination of the conceptual frameworks, representation languages, and the models. Understanding the models’ respective nuances is critical for identifying potential challenges and opportunities in the matching process to determine whether the process will be feasible and meaningful.</p>
 </div>
@@ -2281,9 +2282,9 @@ An infrequently updated <strong>version</strong> can indicate either that it is 
 <p><strong>Inputs</strong>: Source and target ontologies, requirements, and any business or domain constraints.<br>
 <strong>Outputs</strong>: Analysis reports comprising a comparative characterisation table, identified difficulties, risks and amenability assessments, selected source and target for mapping.</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 3: Reuse</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_3_reuse"><a class="anchor" href="#_phase_3_reuse"></a>Phase 3: Reuse</h6>
 <div class="paragraph">
 <p>In the ontology matching lifecycle, the reuse phase is important in that it can facilitate the integration of already existing mappings into the project&#8217;s workflow, thereby saving work and positioning one’s ontology better within the existing ecosystem. Following the initial characterisation, this phase entails the discovery and evaluation of available mappings against the project&#8217;s defined requirements. These requirements are instrumental in appraising whether an existing alignment can be directly adopted, requires modifications for reuse, or if a new alignment should be declared.</p>
 </div>
@@ -2313,9 +2314,9 @@ An infrequently updated <strong>version</strong> can indicate either that it is 
 <p><strong>Inputs</strong>: Repository of existing alignments for the source and target ontologies, evaluation criteria based on requirements.<br>
 <strong>Outputs</strong>: Assessment report on existing alignments, decisions on reuse, adaptation, or creation of a new alignment.</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 4: Execute the Matching</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_4_execute_the_matching"><a class="anchor" href="#_phase_4_execute_the_matching"></a>Phase 4: Execute the Matching</h6>
 <div class="paragraph">
 <p>This section summarises automatic and semi-automatic approaches to finding the alignment candidates. In case of small vocabularies and ontologies, a fully manual effort is likely more efficient.</p>
 </div>
@@ -2337,7 +2338,7 @@ An infrequently updated <strong>version</strong> can indicate either that it is 
 <p><strong>Structural</strong> techniques analyse the relationships and constraints between ontology entities, using methods like graph matching to explore the topology of ontology structures.</p>
 </li>
 <li>
-<p>*Semantic *techniques apply formal logic and inference to deduce the implications of proposed alignments, aiding in the expansion of alignments or detection of conflicts.</p>
+<p><strong>Semantic</strong> techniques apply formal logic and inference to deduce the implications of proposed alignments, aiding in the expansion of alignments or detection of conflicts.</p>
 </li>
 <li>
 <p><strong>Extensional</strong> techniques compare entity sets, or instances, potentially involving analysis of shared resources across ontologies to establish similarity measures.</p>
@@ -2351,13 +2352,13 @@ An infrequently updated <strong>version</strong> can indicate either that it is 
 <p>Finally, in the <strong>evaluation</strong> activity, the alignments found are rigorously assessed on their suitability. The evaluation measures the alignments against the project’s specific needs, scrutinising their accuracy, relevance, and alignment with the predefined requirements, so that  only the most suitable alignments are carried forward for the creation of a mapping, thereby upholding the integrity and logical soundness of the matching process.</p>
 </div>
 <div class="paragraph">
-<p><strong>Tools</strong>: Tools such as SILK [<a href="references.html#ref-62" class="xref page">silk</a>], LIMES [<a href="references.html#ref-67" class="xref page">limes</a>], and LogMap [<a href="references.html#ref-83" class="xref page">logmap</a>] may be used in this phase.
+<p><strong>Tools</strong>: Tools such as SILK [<a href="references.html#ref-62" class="xref page">silk</a>], LIMES [<a href="references.html#ref-76" class="xref page">limes</a>], and LogMap [<a href="references.html#ref-77" class="xref page">logmap</a>] may be used in this phase.
 <strong>Inputs</strong>: Matcher configurations, additional resources (if any), correspondences from previous matching iterations (if any).<br>
 <strong>Outputs</strong>: Generated alignments, evaluation reports.</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 5: Validate Alignments</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_5_validate_alignments"><a class="anchor" href="#_phase_5_validate_alignments"></a>Phase 5: Validate Alignments</h6>
 <div class="paragraph">
 <p>Following the identification of alignments, this step involves the formal creation of the alignment and the rendering (generation) of specific mappings between the source and target models. This phase involves preparing, creating, and rendering activities that establish coherent actionable mappings between ontology entities. The resulting alignment is then documented, detailing the rationale, methods used, and any assumptions made during the mapping process.</p>
 </div>
@@ -2442,16 +2443,16 @@ The type of asset—an ontology, controlled list, or data shape—dictates the n
 <p>The <strong>Creation</strong> step is the execution of the mapping, entailing the selection of the relation, and assertion of the mapping. This activity involves human intervention and the selection is conducted manually according to the project’s objectives and semantic appropriateness of the candidate mapping.</p>
 </div>
 <div class="paragraph">
-<p><strong>Rendering</strong> translates the mapping in a machine-readable format so that it can be interpreted and executed by software agents. Typically, this is a straight-forward export of the alignment statements from the editing tool or the materialisation of the mapping in a triple store, using a common format, such as Alignment Format [<a href="references.html#ref-78" class="xref page">af</a>], EDOAL [<a href="references.html#ref-61" class="xref page">edoal</a>, Simple Standard for Sharing Ontological Mapping (SSSOM) [<a href="references.html#ref-79" class="xref page">sssom</a>], and the Semantic Mapping Vocabulary (SEMAPV) [semapv] for the mapping justification values. Multiple renderings may be created from the same alignment, accommodating the need for various formalisms.</p>
+<p><strong>Rendering</strong> translates the mapping in a machine-readable format so that it can be interpreted and executed by software agents. Typically, this is a straight-forward export of the alignment statements from the editing tool or the materialisation of the mapping in a triple store, using a common format, such as Alignment Format [<a href="references.html#ref-78" class="xref page">af</a>], EDOAL [<a href="references.html#ref-61" class="xref page">edoal</a>], Simple Standard for Sharing Ontological Mapping (SSSOM) [<a href="references.html#ref-79" class="xref page">sssom</a>], and the Semantic Mapping Vocabulary (SEMAPV) [<a href="references.html#ref-80" class="xref page">semapv</a>] for the mapping justification values. Multiple renderings may be created from the same alignment, accommodating the need for various formalisms.</p>
 </div>
 <div class="paragraph">
 <p><strong>Tools</strong>: Tools such as VocBench3 [<a href="references.html#ref-63" class="xref page">vocbench</a>] can be used in this phase, or generic office tools, such as MS Excel, Google Sheets spreadsheets, or a LibreOffice spreadsheet. <br>
 <strong>Inputs</strong>: Evaluated correspondences (the alignments), stakeholders' amendment plans, requirements for the formalism of the mapping so that the mapping assertions integrate with the modelling language used.<br>
 <strong>Outputs</strong>: Created mapping, stored versions in an alignment repository (e.g., [<a href="references.html#ref-55" class="xref page">sem-map</a>]).</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 6: Application</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_6_application"><a class="anchor" href="#_phase_6_application"></a>Phase 6: Application</h6>
 <div class="paragraph">
 <p>The final phase focuses on operationalising the created mappings, ensuring it is accessible and usable by applications that require semantic interoperability between the mapped models. This involves carrying out the following tasks:</p>
 </div>
@@ -2473,15 +2474,14 @@ The type of asset—an ontology, controlled list, or data shape—dictates the n
 <strong>Outputs</strong>: Applied mappings in use, insights from application, triggers for potential updates, governance actions for lifecycle management.</p>
 </div>
 </div>
-</div>
 <div class="sect4">
 <h5 id="sec:tutorial:map-schema.org"><a class="anchor" href="#sec:tutorial:map-schema.org"></a>3.1.3. Tutorial: Map Schema.org to the Core Business Vocabulary</h5>
 <div class="paragraph">
-<p>This tutorial demonstrates how to map <a href="http://Schema.org">Schema.org</a> to the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary</a> <strong>(CBV)</strong>, addressing <strong>Use Case</strong> <a href="./introduction.adoc#sec:uc21">UC2.1</a>. By following the <a href="./how-to-map-existing-data-models.adoc#_guidelines_on_how_to_map_an_existing_conceptual_model_to_a_core_vocabulary">map an existing model</a> <strong>methodology</strong>,<br>
-you’ll learn how to align these two vocabularies step-by-step—covering <strong>staging, characterisation, reuse, matching, alignment, and application</strong>—to ensure interoperability between the CBV and Schema.org.</p>
+<p>This tutorial demonstrates how to map <a href="http://Schema.org">Schema.org</a> to the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary</a> <strong>(CBV)</strong>, addressing <strong>Use Case</strong> <a href="introduction.html#sec:uc21" class="xref page">UC2.1</a>. By following <a href="#sec:uc2.1-guidline">Guidelines on how to map an existing conceptual model to a Core Vocabulary</a>[map an existing model] <strong>methodology</strong>, you’ll learn how to align these two vocabularies step-by-step—covering <strong>staging, characterisation, reuse, matching, alignment, and application</strong>—to ensure interoperability between the CBV and Schema.org.</p>
 </div>
-<div class="sect5">
-<h6 id="_phase_1_staging_defining_the_requirements"><a class="anchor" href="#_phase_1_staging_defining_the_requirements"></a>Phase 1: Staging (Defining the Requirements)</h6>
+<div class="paragraph">
+<p><strong><em>Phase 1: Staging (Defining the Requirements)</em></strong></p>
+</div>
 <div class="paragraph">
 <p>In this phase, the aim is to understand what needs to be mapped and why.<br>
 For this tutorial, we aim to map <a href="http://Schema.org">Schema.org</a> to the Core Business Vocabulary (CBV), enabling data interoperability.</p>
@@ -2540,9 +2540,9 @@ For this tutorial, we aim to map <a href="http://Schema.org">Schema.org</a> to t
 <div class="paragraph">
 <p>The purpose, scope, and goals are determined by the stakeholders, including domain experts and knowledge engineers. First, the domain experts’ input is needed to demarcate the scope especially, indicating what the (sub-)topic of interest is, ideally augmented with key terms. For CBV and Schema.org, these may include terms such as: legal:LegalEntity versus schema:Organization. It may also need to take into account ‘externalities’, such as regulatory compliance that may dictate the use of one version of a schema over another for some business reason. For the current exercise, there are no regulatory compliance requirements in place. Therefore, the latest official releases of both vocabularies will be used (Schema.org version 29.1 and CBV version 2.2.0). Next, clear mapping goals should be established. For this exercise, the primary goal is to identify direct relationships between the two vocabularies. These relationships will then be expressed in a machine-readable format, enabling seamless data transformation between the CBV and Schema.org.</p>
 </div>
+<div id="sec:Characterisation" class="paragraph">
+<p><strong><em>Phase 2: Characterisation (Defining Source and Target models)</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="sec:Characterisation"><a class="anchor" href="#sec:Characterisation"></a>Phase 2: Characterisation (Defining Source and Target models)</h6>
 <div class="paragraph">
 <p>The aim of this phase is to analyse the structure, vocabulary, and semantics of the Core Business Vocabulary that we shall take as <strong>Target ontology</strong> and Schema.org that will be set as <strong>Source ontology</strong>. The key steps and outputs are as follows.</p>
 </div>
@@ -2663,9 +2663,9 @@ The selected features are presented  in a table below, where for each feature th
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p><strong><em>Phase 3: Reuse of Existing Mappings</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_3_reuse_of_existing_mappings"><a class="anchor" href="#_phase_3_reuse_of_existing_mappings"></a>Phase 3: Reuse of Existing Mappings</h6>
 <div class="paragraph">
 <p>The aim of this phase is to avoid doing duplicate work by checking if any existing mappings between CBV and Schema.org are available for reuse, or if there are any alignments that can be adapted for this project.</p>
 </div>
@@ -2751,9 +2751,9 @@ The selected features are presented  in a table below, where for each feature th
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 4: Matching (Execute and Filter Matching Candidates)</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_4_matching_execute_and_filter_matching_candidates"><a class="anchor" href="#_phase_4_matching_execute_and_filter_matching_candidates"></a>Phase 4: Matching (Execute and Filter Matching Candidates)</h6>
 <div class="paragraph">
 <p>At this step, we will perform the actual mapping, which we shall bootstrap by producing candidate mappings between classes and between properties, typically automatically, semi-automatically, or manually, and then assess the results.</p>
 </div>
@@ -2831,9 +2831,9 @@ The selected features are presented  in a table below, where for each feature th
 <div class="paragraph">
 <p>Even though the automated tool did not produce any alignments, we can use our domain knowledge to suggest potential mappings based on the descriptions and attributes of the entities. For example, CBV’s LegalEntity (that is an org:Organization) maps to Schema.org’s Organization based on their similar roles in representing business-related concepts, and likewise for CBV’s Address (imported from Core Location Vocabulary) with Schema.org PostalAddress. These kinds of alignments are made by examining the entity definitions and considering the context of their use in each ontology.</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 5: Validate Alignments</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_5_validate_alignments_2"><a class="anchor" href="#_phase_5_validate_alignments_2"></a>Phase 5: Validate Alignments</h6>
 <div class="paragraph">
 <p>After the alignments (i.e., candidate mappings) have been generated—either by automated tools or through manual assessment—each proposed mapping must be <strong>validated</strong> to assess if  the candidate links represent semantically meaningful relationships between classes or properties from the two ontologies.</p>
 </div>
@@ -2942,9 +2942,9 @@ sssom:mapping_justification semapv:MappingReview .</code></pre>
 <p>where it can be seen that the “&lt;” relation corresponds to rdfs:subClassOf and the mapping justification is MappingReview, which is as approved as it can be in SEMAPV terminology. <br>
 Other alignment examples and a complete file including prefixes can be viewed <a href="https://github.com/SEMICeu/Semantic-Mappings/blob/main/Core%20Business/Schema.org/Alignment-CoreBusiness-2.2.0-schemaorg.ttl">here</a>.</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Phase 6: Application (Operationalise the Mappings)</em></strong></p>
 </div>
-<div class="sect5">
-<h6 id="_phase_6_application_operationalise_the_mappings"><a class="anchor" href="#_phase_6_application_operationalise_the_mappings"></a>Phase 6: Application (Operationalise the Mappings)</h6>
 <div class="paragraph">
 <p>After alignments have been validated, the final step is to <strong>apply</strong> them in practice. This involves both <strong>technical integration</strong> and the establishment of a <strong>governance framework</strong> to ensure the mappings remain up to date and useful over time.</p>
 </div>
@@ -3044,7 +3044,6 @@ WHERE {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">&lt;http://example.org/entities/Company123&gt; a &lt;https://schema.org/Organization&gt; .</code></pre>
-</div>
 </div>
 </div>
 </div>
