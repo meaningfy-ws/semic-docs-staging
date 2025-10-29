@@ -372,7 +372,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/UC21guidelineOverview.png" alt="UC21guidelineOverview">
+<img src="_images/UC21guidelineOverview.png" alt="500">
 </div>
 </div>
 <div class="olist arabic">
@@ -1058,15 +1058,15 @@ The selected features are presented  in a table below, where for each feature th
 </div>
 <div class="paragraph">
 <p>Once the relation is chosen, each alignment is encoded as a <strong>machine-readable RDF triple</strong>, typically in RDF/XML or Turtle format, suitable for integration and reuse. <br>
-The <strong>result</strong> is a validated alignment file, where each mapping is represented based on the <a href="https://moex.gitlabpages.inria.fr/alignapi/format.html">Alignment Format</a> or an extension thereof, such as <a href="https://moex.gitlabpages.inria.fr/alignapi/edoal.html">EDOAL</a>, as an align:Cell with:</p>
+The <strong>result</strong> is a validated alignment file, where each mapping is represented based on the <a href="https://moex.gitlabpages.inria.fr/alignapi/format.html">Alignment Format</a> or an extension thereof, such as <a href="https://moex.gitlabpages.inria.fr/alignapi/edoal.html">EDOAL</a>, as an <code>align:Cell</code> with:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The aligned entities (align:entity1 and align:entity2)</p>
+<p>The aligned entities (<code>align:entity1</code> and <code>align:entity2</code>)</p>
 </li>
 <li>
-<p>The chosen relation (align:relation), being either subsumption “&lt;” or equivalence “=”</p>
+<p>The chosen relation (<code>align:relation</code>), being either subsumption “&lt;” or equivalence “=”</p>
 </li>
 <li>
 <p>An optional confidence measure</p>
@@ -1151,10 +1151,10 @@ We assume:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A data file (core-business-ap.ttl) contains an instance of legal:LegalEntity</p>
+<p>A data file (<code>core-business-ap.ttl</code>) contains an instance of legal:LegalEntity</p>
 </li>
 <li>
-<p>An alignment file (Alignment-CoreBusiness-2.2.0-schemaorg.ttl) defines a mapping from legal:LegalEntity to schema:Organization.</p>
+<p>An alignment file (<code>Alignment-CoreBusiness-2.2.0-schemaorg.ttl</code>) defines a mapping from legal:LegalEntity to schema:Organization.</p>
 </li>
 </ul>
 </div>
@@ -1602,7 +1602,7 @@ Two primary methods of validation should be employed to test the integrity and a
 <p><strong>Technical Mapping Files</strong>: This contains all the mapping code files ([<a href="references.html#ref-66" class="xref page">xslt</a>], [<a href="references.html#ref-67" class="xref page">rml</a>], [<a href="references.html#ref-68" class="xref page">SPARQLAnything</a>], depending on the chosen mapping technology) for data transformation.</p>
 </li>
 <li>
-<p>*Additional Mapping Resources *(if applicable): Such as controlled lists, value mappings, or correspondence tables, which are crucial for the correct interpretation and application of the RML code.</p>
+<p><strong>Additional Mapping Resources</strong> (if applicable): Such as controlled lists, value mappings, or correspondence tables, which are crucial for the correct interpretation and application of the RML code.</p>
 </li>
 <li>
 <p><strong>Test Data</strong>: Carefully selected and representative XML files that cover various scenarios and cases. These test data are crucial for ensuring that the mappings perform as expected across a range of real-world data.</p>
@@ -1717,7 +1717,7 @@ Two primary methods of validation should be employed to test the integrity and a
 <p><em>Preparing the Test Data</em></p>
 </div>
 <div class="paragraph">
-<p>Since we will also map data and proceed through Steps 3.1-3.3 further below, it is essential to prepare representative test data in this Phase 1. This data should align with the structure defined in the XSD schema and cover various use cases and scenarios that might occur in production data. For this tutorial, we will use the <a href="https://github.com/SEMICeu/XML-schema/blob/main/samples/SampleData_Business.xml">SampleData_Business.xml</a> file available on the <a href="https://github.com/SEMICeu/XML-schema/tree/main">SEMIC GitHub repository</a>. <br>
+<p>Since we will also map data and proceed through Steps 3.1-3.3 further below, it is essential to prepare representative test data in this Phase 1. This data should align with the structure defined in the XSD schema and cover various use cases and scenarios that might occur in production data. For this tutorial, we will use the <a href="https://github.com/SEMICeu/XML-schema/blob/main/samples/SampleData_Business.xml"><code>SampleData_Business.xml</code></a> file available on the <a href="https://github.com/SEMICeu/XML-schema/tree/main">SEMIC GitHub repository</a>. <br>
 We ensure that the XML data contains relevant elements, such as <code>&lt;LegalEntity&gt;</code>, <code>&lt;LegalName&gt;</code>, <code>&lt;ContactPoint&gt;</code>, and <code>&lt;RegisteredAddress&gt;</code>, which you will later map to the CBV terms. Among other content, it has the following data for <code>&lt;LegalName&gt;</code>:</p>
 </div>
 <div class="listingblock">
@@ -1767,7 +1767,7 @@ We ensure that the XML data contains relevant elements, such as <code>&lt;LegalE
 </tbody>
 </table>
 <div class="paragraph">
-<p>Use the <a href="https://www.w3.org/TR/sawsdl/"><strong>sawsdl:modelReference</strong></a> attribute to capture this mapping.</p>
+<p>Use the <a href="https://www.w3.org/TR/sawsdl/"><strong><code>sawsdl:modelReference</code></strong></a> attribute to capture this mapping.</p>
 </div>
 <div class="paragraph">
 <p><em>Example Mapping Rules</em></p>
