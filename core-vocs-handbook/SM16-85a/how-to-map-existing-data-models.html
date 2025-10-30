@@ -503,7 +503,7 @@ An infrequently updated <strong>version</strong> can indicate either that it is 
 <p>Finally, in the <strong>evaluation</strong> activity, the alignments found are rigorously assessed on their suitability. The evaluation measures the alignments against the project’s specific needs, scrutinising their accuracy, relevance, and alignment with the predefined requirements, so that  only the most suitable alignments are carried forward for the creation of a mapping, thereby upholding the integrity and logical soundness of the matching process.</p>
 </div>
 <div class="paragraph">
-<p><strong>Tools</strong>: Tools such as SILK [<a href="references.html#ref-62" class="xref page">silk</a>], LIMES [<a href="references.html#ref-76" class="xref page">limes</a>], and LogMap [<a href="references.html#ref-77" class="xref page">logmap</a>] may be used in this phase.
+<p><strong>Tools</strong>: Tools such as SILK [<a href="references.html#ref-62" class="xref page">silk</a>], LIMES [<a href="references.html#ref-76" class="xref page">limes</a>], and LogMap [<a href="references.html#ref-77" class="xref page">logmap</a>] may be used in this phase.<br>
 <strong>Inputs</strong>: Matcher configurations, additional resources (if any), correspondences from previous matching iterations (if any).<br>
 <strong>Outputs</strong>: Generated alignments, evaluation reports.</p>
 </div>
@@ -649,7 +649,7 @@ For this tutorial, we aim to map <a href="http://Schema.org">Schema.org</a> to t
 <p><strong>Define scope of the mapping for the model and selected CV</strong>: What parts of the Core Business Vocabulary need to be mapped to Schema.org? Are there specific concepts (e.g., contact point, organisation) that must be represented? Which version of each ontology or vocabulary will be mapped?</p>
 </li>
 <li>
-<p><strong>Set specific goals of what the mapping needs to achieve</strong>: Define the intended specific outcomes of the mapping. Besides ensuring semantic alignment between CBV and Schema.org entities, a key goal may be to clarify the relationship between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/#Legal%20Entity">legal:LegalEntity</a>  and <a href="https://schema.org/Organization">schema:Organization</a> (Issue <a href="https://github.com/SEMICeu/Core-Business-Vocabulary/issues/38">#38</a>), or to declare a particular equivalence between a CBV and a Schema.org entity to query across information systems to retrieve data.</p>
+<p><strong>Set specific goals of what the mapping needs to achieve</strong>: Define the intended specific outcomes of the mapping. Besides ensuring semantic alignment between CBV and Schema.org entities, a key goal may be to clarify the relationship between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/" class="bare">https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/</a><mark>Legal%20Entity[[.custom-highlight]#legal:LegalEntity</mark>]  and <a href="https://schema.org/Organization"><span class="custom-highlight">schema:Organization</span></a> (Issue <a href="https://github.com/SEMICeu/Core-Business-Vocabulary/issues/38">#38</a>), or to declare a particular equivalence between a CBV and a Schema.org entity to query across information systems to retrieve data.</p>
 </li>
 </ol>
 </div>
@@ -669,10 +669,10 @@ For this tutorial, we aim to map <a href="http://Schema.org">Schema.org</a> to t
 <div class="ulist">
 <ul>
 <li>
-<p>legal:LegalEntity → schema:Organization</p>
+<p><span class="custom-highlight">legal:LegalEntity</span> → <span class="custom-highlight">schema:Organization</span></p>
 </li>
 <li>
-<p>m8g:Address → schema:PostalAddress</p>
+<p><span class="custom-highlight">m8g:Address</span> → <span class="custom-highlight">schema:PostalAddress</span></p>
 </li>
 </ul>
 </div>
@@ -898,7 +898,7 @@ The selected features are presented  in a table below, where for each feature th
 <p>Example: An existing alignment for LegalEntity to Organization was evaluated. However, it was missing relationships for properties like <span class="custom-highlight">schema:legalName</span> and <span class="custom-highlight">schema:taxID</span>. So, the original alignment was extended to include new mappings for these properties. There may also be new alignments when existing resources are not suitable, which is the case for this tutorial.</p>
 </li>
 <li>
-<p>Example: Add alignment to answer the question: What is the relation between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/#Legal%20Entity">legal:LegalEntity</a> and <a href="https://schema.org/Organization">schema:Organization</a>?</p>
+<p>Example: Add alignment to answer the question: What is the relation between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/" class="bare">https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/</a><mark>Legal%20Entity[[.custom-highlight]#legal:LegalEntity</mark>] and <a href="https://schema.org/Organization"><span class="custom-highlight">schema:Organization</span></a>?</p>
 </li>
 </ul>
 </div>
@@ -1074,7 +1074,7 @@ The <strong>result</strong> is a validated alignment file, where each mapping is
 <p>Its corresponding meaning in the ontology (owl:annotatedProperty)</p>
 </li>
 <li>
-<p>Further information on a mapping justification, which reuses the Simple Standard for Sharing Ontological Mapping <a href="https://w3id.org/sssom/">SSSOM </a>that, in turn, reuses the Semantic Mapping Vocabulary <a href="https://mapping-commons.github.io/semantic-mapping-vocabulary/">SEMAPV</a> for the mapping justification values. Example output of adding an alignment between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/#Legal%20Entity"> legal:LegalEntity</a> and <a href="https://schema.org/Organization">schema:Organization</a>:</p>
+<p>Further information on a mapping justification, which reuses the Simple Standard for Sharing Ontological Mapping <a href="https://w3id.org/sssom/">SSSOM </a>that, in turn, reuses the Semantic Mapping Vocabulary <a href="https://mapping-commons.github.io/semantic-mapping-vocabulary/">SEMAPV</a> for the mapping justification values. Example output of adding an alignment between <a href="https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/" class="bare">https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00/</a><mark>Legal%20Entity[[.custom-highlight]#legal:LegalEntity</mark>] and <a href="https://schema.org/Organization"><span class="custom-highlight">schema:Organization</span></a>:</p>
 </li>
 </ul>
 </div>

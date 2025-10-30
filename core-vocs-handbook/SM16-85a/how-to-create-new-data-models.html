@@ -516,8 +516,10 @@ such as an informal description of the intended meaning of a concept.</p>
 <div class="sect3">
 <h4 id="sec:uc1.1-tutorial"><a class="anchor" href="#sec:uc1.1-tutorial"></a>Tutorial: Create an XSD schema using the Core Business Vocabulary</h4>
 <div class="paragraph">
-<p>Creating an <strong>XSD schema</strong> using the <strong>Core Business Vocabulary</strong> <strong>(CBV)</strong> involves defining the structure, data types, and relationships for the elements of the CBV, ensuring interoperability between systems. This tutorial follows the <a href="#sec:uc1.1-guideline">guidelines</a> outlined for <strong>Use Case</strong>  <a href="introduction.html#sec:uc11" class="xref page"><strong>UC1.1</strong></a> "Create a New XSD Schema", showing how to design and create an XSD schema that integrates terms from the <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/e-government-core-vocabularies/core-business-vocabulary">Core Business Vocabulary</a> (CBV). This step-by-step guide focuses on the essential phases of the schema creation process, ensuring that the elements from CBV are correctly imported, the document structure is shaped properly, and all constraints are applied.<br>
-To recap the process, we first will import or define elements, shape the structure with patterns, define complex types, and finalise the schema.</p>
+<p>Creating an <strong>XSD schema</strong> using the <strong>Core Business Vocabulary</strong> <strong>(CBV)</strong> involves defining the structure, data types, and relationships for the elements of the CBV, ensuring interoperability between systems. This tutorial follows the <a href="#sec:uc1.1-guideline">guidelines</a> outlined for <strong>Use Case</strong>  <a href="introduction.html#sec:uc11" class="xref page"><strong>UC1.1</strong></a> "Create a New XSD Schema", showing how to design and create an XSD schema that integrates terms from the <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/e-government-core-vocabularies/core-business-vocabulary">Core Business Vocabulary</a> (CBV). This step-by-step guide focuses on the essential phases of the schema creation process, ensuring that the elements from CBV are correctly imported, the document structure is shaped properly, and all constraints are applied.</p>
+</div>
+<div class="paragraph">
+<p>To recap the process, we first will import or define elements, shape the structure with patterns, define complex types, and finalise the schema.</p>
 </div>
 <div class="paragraph">
 <p><strong><em>Phase 1: Import or Define Elements</em></strong></p>
@@ -591,8 +593,8 @@ For example, the <span class="custom-highlight">LegalEntity</span> element could
 <p><em>Venetian Blind Pattern</em></p>
 </div>
 <div class="paragraph">
-<p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as <span class="custom-highlight">LegalEntity</span>, serves as the entry point, as seen in CBV. This pattern fits well with API design, where you typically request information about a central concept (such as <span class="custom-highlight">LegalEntity</span>), and the response includes nested elements, including <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>, which are all organised under the main entity.<br>
-Here’s an example, where <span class="custom-highlight">LegalEntity</span> serves as the main entry point:</p>
+<p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as <code>LegalEntity</code>, serves as the entry point, as seen in CBV&#8217;s XSD. This pattern fits well with API design, where you typically request information about a central concept (such as <span class="custom-highlight">LegalEntity</span>), and the response includes nested properties, including <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>, which are all organised under the main entity.<br>
+Here’s an example, where <code>LegalEntity</code> serves as the main entry point:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -618,10 +620,10 @@ Here’s an example, where <span class="custom-highlight">LegalEntity</span> ser
 <div class="ulist">
 <ul>
 <li>
-<p>LegalEntity is the global entry point.</p>
+<p><code>LegalEntity</code> is the global entry point.</p>
 </li>
 <li>
-<p>It uses <span class="custom-highlight">LegalEntityType</span>, which contains various properties such as <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>.</p>
+<p>It uses <code>LegalEntityType</code>, which contains various properties such as <code>LegalName</code> and <code>RegisteredAddress</code>.</p>
 </li>
 </ul>
 </div>
@@ -646,7 +648,7 @@ Here’s an example, where <span class="custom-highlight">LegalEntity</span> ser
 <p>After importing or defining the basic elements and structuring your XML document with patterns, the next step in creating an XSD schema is to define <strong>complex types</strong>. Complex types are used to represent business entities that contain multiple properties or relationships. For CBV, these types often model entities like <span class="custom-highlight">LegalEntity</span> or <span class="custom-highlight">Organization</span>, which have both simple and complex elements. For example, the <span class="custom-highlight">LegalEntityType</span> and <span class="custom-highlight">OrganizationType</span>, as follows.</p>
 </div>
 <div class="paragraph">
-<p>A <span class="custom-highlight">LegalEntity</span> might contain multiple child elements, such as <span class="custom-highlight">LegalName</span> modelled as a simple string, <span class="custom-highlight">RegisteredAddress</span> (also a complex type), and other related elements. Here&#8217;s how <span class="custom-highlight">LegalEntityType</span> is defined:</p>
+<p>An implemented <span class="custom-highlight">LegalEntity</span> might contain multiple child elements, such as <code>LegalName</code> modelled as a simple string, <code>RegisteredAddress</code> (also a complex type), and other related elements. Here&#8217;s how <code>LegalEntityType</code> is defined in the XSD schema:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -683,7 +685,7 @@ Here’s an example, where <span class="custom-highlight">LegalEntity</span> ser
 </table>
 </div>
 <div class="paragraph">
-<p>Similar to the <span class="custom-highlight">LegalEntityType</span> complex type, the <span class="custom-highlight">BusinessAgentType</span> defines a concept with multiple properties and relationships. However, for <span class="custom-highlight">BusinessAgentType</span>, we define it as a complex type that contains hierarchical relationships, such as <span class="custom-highlight">HeadOf</span> and <span class="custom-highlight">MemberOf</span>.</p>
+<p>Similar to the <span class="custom-highlight">LegalEntityType</span> complex type, the <span class="custom-highlight">BusinessAgentType</span> defines a concept with multiple properties and relationships. However, for <code>BusinessAgentType</code> in the XSD schema, we define it as a complex type that contains hierarchical relationships, such as <code>HeadOf</code> and <code>MemberOf</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -707,7 +709,7 @@ Here’s an example, where <span class="custom-highlight">LegalEntity</span> ser
 </div>
 </div>
 <div class="paragraph">
-<p>It’s important to observe that in this context, LegalEntityType is defined as an extension of FormalOrganizationType (which, in turn, extends OrganizationType), declared using an <code>&lt;xs:extension base="&#8230;&#8203;"&gt;</code> element, as shown in the following snippet.</p>
+<p>It’s important to observe that in this context, <span class="custom-highlight">LegalEntityType</span> is defined as an extension of <span class="custom-highlight">FormalOrganizationType</span> (which, in turn, extends <span class="custom-highlight">OrganizationType</span>), declared using an <code>&lt;xs:extension base="&#8230;&#8203;"&gt;</code> element, as shown in the following snippet.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -984,7 +986,7 @@ A context can be defined per class, allowing property names such as <span class=
 </div>
 </div>
 <div class="paragraph">
-<p>If a context does not exist, define the elements explicitly. For example, CPSV-AP uses specific terms such as PublicService and ContactPoint. These terms must be mapped to URIs.</p>
+<p>If a context does not exist, define the elements explicitly. For example, CPSV-AP uses specific terms such as <span class="custom-highlight">PublicService</span> and <span class="custom-highlight">ContactPoint</span>. These terms must be mapped to URIs.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1066,7 +1068,7 @@ A context can be defined per class, allowing property names such as <span class=
 <p><strong><code>@id</code></strong>: Provides the unique identifier (IRI) for a term or property.</p>
 </li>
 <li>
-<p><strong><code>@type</code></strong>: Specifies the type of a value. Commonly used for linking to classes or data types.</p>
+<p><strong><code>@type</code></strong>: Specifies the type of a value, which is commonly used for linking to classes or data types.</p>
 </li>
 <li>
 <p><strong><code>@import</code></strong>: Imports another JSON-LD context, allowing reuse of its terms.</p>
@@ -1225,8 +1227,9 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 }</code></pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_final_review_and_validation"><a class="anchor" href="#_final_review_and_validation"></a>Final review and validation</h5>
+<div class="paragraph">
+<p><em>Final review and validation</em></p>
+</div>
 <div class="paragraph">
 <p>Use a JSON-LD  validator (there are  online tools available, such as the <a href="https://json-ld.org/playground/">JSON-LD Playground</a>) to validate JSON-LD context and make sure there are no errors. They also offer visualisation features, noting that it can only be visualised if the syntax is correct. There is no standard for how RDF graphs are to be rendered, and therefore  different visualisation tools will result in different  JSON-LD  diagram-based visualisations. Below  are two examples generated from the same JSON-LD snippet, rendered by, <a href="https://json-ld.org/playground/">JSON-LD Playground</a> and <a href="https://issemantic.net/rdf-visualizer">:isSemantic</a>, respectively.</p>
 </div>
@@ -1278,7 +1281,6 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 <div class="paragraph">
 <p>Ensure that the <code>@import</code> URLs point to valid and accessible JSON-LD contexts. Verify the links in a browser or test them in a <a href="https://curl.se/">cURL</a> command to ensure they return the correct JSON-LD data  (cURL is used in command lines or scripts to transfer data). Update the URLs to the correct ones.</p>
-</div>
 </div>
 </div>
 </div>
