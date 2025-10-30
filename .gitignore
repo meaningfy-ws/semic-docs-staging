@@ -1,0 +1,14 @@
+target
+antora-playbook-local.yml
+build
+node_modules
+.vscode
+.node
+.yarn
+yarn.lock
+scripts
+.idea
+.asciidoctor
+.asciidoctorconfig
+
+
