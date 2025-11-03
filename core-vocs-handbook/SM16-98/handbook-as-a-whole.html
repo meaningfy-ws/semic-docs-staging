@@ -30,7 +30,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="core-vocs-handbook" data-version="SM16-97">
+<div class="nav-container" data-component="core-vocs-handbook" data-version="SM16-98">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -201,7 +201,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">SEMIC Core Vocabularies Handbook</span>
-    <span class="version">SM16-97</span>
+    <span class="version">SM16-98</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -211,7 +211,7 @@
       <div class="title"><a href="index.html">SEMIC Core Vocabularies Handbook</a></div>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">SM16-97</a>
+          <a href="index.html">SM16-98</a>
         </li>
         <li class="version">
           <a href="../develop/index.html">develop</a>
@@ -245,13 +245,13 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">SM16-97</button>
+  <button class="version-menu-toggle" title="Show other versions of page">SM16-98</button>
   <div class="version-menu">
-    <a class="version is-current" href="handbook-as-a-whole.html">SM16-97</a>
+    <a class="version is-current" href="handbook-as-a-whole.html">SM16-98</a>
     <a class="version" href="../develop/handbook-as-a-whole.html">develop</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/meaningfy-ws/semic-docs-staging/edit/main/sources/core-vocs-handbook/SM16-97/docs/modules/ROOT/pages/handbook-as-a-whole.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/meaningfy-ws/semic-docs-staging/edit/main/sources/core-vocs-handbook/SM16-98/docs/modules/ROOT/pages/handbook-as-a-whole.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -1212,7 +1212,7 @@ Each model type has its business case providing a rationale why one would want t
 <div class="paragraph">
 <p>We will introduce the <strong>motivation for the use case</strong> with a user story.</p>
 </div>
-<div class="sidebarblock">
+<div class="openblock indentation">
 <div class="content">
 <div class="paragraph">
 <p>Imagine Jean-Luc, a semantic/software engineer assigned to develop a software application for  processing online forms for the Maltese Chamber of Commerce. Among the format options of online forms are Office365, CSV, and XML that each have their pros and cons. Jean-Luc chooses XML, since many other forms are already being stored in XML format.</p>
@@ -1657,7 +1657,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 <div class="paragraph">
 <p>Public administrations often need to share information about their services with other organisations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases. This was also the case in Norway, which came to a fruitful solution. Let us imagine how that might have happened in the following scenario as <strong>motivation for the use case</strong>, which is followed by a user story that summarises it.</p>
 </div>
-<div class="sidebarblock">
+<div class="openblock indentation">
 <div class="content">
 <div class="paragraph">
 <p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced <span class="custom-highlight">RequiredEvidence</span>, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
@@ -2209,7 +2209,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <div class="paragraph">
 <p>Let’s consider a scenario as <strong>motivation for the use case</strong> and the corresponding structured user story.</p>
 </div>
-<div class="sidebarblock">
+<div class="openblock indentation">
 <div class="content">
 <div class="paragraph">
 <p>Sofía, a knowledge engineer working in the Department of Agriculture and Natural Resources, faces the problem of terminological overloading and mismatches. Her Fruits division uses a conceptual model that was developed to represent companies, directors, and contact details of fruit orchards and industrial forest agribusinesses, while a different one is used by the Vegetables division that needs to be aligned at a later date. To solve this, Sofía leads a project that <strong>maps her Fruits division’s model to the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary</a> (CBV)</strong>, a semantic standard developed by SEMIC.</p>
@@ -3117,7 +3117,7 @@ WHERE {
 <div class="paragraph">
 <p>Let’s introduce the <strong>motivation for the use case</strong> for Use Case 2.2 with a scenario and structured user story.<br></p>
 </div>
-<div class="sidebarblock">
+<div class="openblock indentation">
 <div class="content">
 <div class="paragraph">
 <p>Ella works as a <strong>data integration specialist</strong> at the National Registry of Certified Legal Practitioners. For over a decade, her team has maintained a robust system for managing, among others, all law firms’ data in <strong>XML format</strong>, supported by an <strong>XSD schema</strong>. This schema defines the structure of all XML documents generated and processed by the registry, capturing details such as legal entities, addresses, and contact points. It’s stable, reliable, and embedded into the internal tool and data exchange interface the organisation uses. But governments across Europe are requested to align their digital data infrastructures with <strong>Semantic Web standards</strong> with the goal to make public sector data <strong>interoperable, discoverable, and reusable</strong> across borders. Ella&#8217;s National Registry has received a directive to publish its business data in <strong>RDF</strong>, using the SEMIC <strong>Core Business Vocabulary (CBV)</strong>, which is already used in EU-level platforms.</p>
