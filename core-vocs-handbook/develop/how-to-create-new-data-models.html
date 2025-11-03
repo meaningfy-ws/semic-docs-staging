@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: SEMIC documentation</title>
+    <title>Creating a new data model from an existing Core Vocabulary :: SEMIC documentation</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">  </head>
@@ -206,15 +206,9 @@
       <div class="title"><a href="../../index.html">Home</a></div>
     </li>
     <li class="component is-current">
-      <div class="title"><a href="../SM16-99/index.html">SEMIC Core Vocabularies Handbook</a></div>
+      <div class="title"><a href="index.html">SEMIC Core Vocabularies Handbook</a></div>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../SM16-99/index.html">SM16-99</a>
-        </li>
-        <li class="version">
-          <a href="../SM16-94/index.html">SM16-94</a>
-        </li>
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="index.html">develop</a>
         </li>
       </ul>
@@ -245,14 +239,6 @@
     <li><a href="#sec:create-data-model-from-cv">Creating a new data model from an existing Core Vocabulary</a></li>
   </ul>
 </nav>
-<div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">develop</button>
-  <div class="version-menu">
-    <a class="version" href="../SM16-99/how-to-create-new-data-models.html">SM16-99</a>
-    <a class="version" href="../SM16-94/how-to-create-new-data-models.html">SM16-94</a>
-    <a class="version is-current" href="how-to-create-new-data-models.html">develop</a>
-  </div>
-</div>
 <div class="edit-this-page"><a href="https://github.com/meaningfy-ws/semic-docs-staging/edit/main/sources/core-vocs-handbook/develop/docs/modules/ROOT/pages/how-to-create-new-data-models.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
@@ -260,8 +246,8 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="sec:create-data-model-from-cv"><a class="anchor" href="#sec:create-data-model-from-cv"></a>Creating a new data model from an existing Core Vocabulary</h2>
+<h1 class="page">Creating a new data model from an existing Core Vocabulary</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Technologies rise and decline in popularity, yet one of the red threads through the computational techniques over the decades is the <strong>management of structured data</strong>. Data needs to be stored, processed, acted upon, shared, integrated, presented, and more, all mediated by software. This also means that the structure of the data needs to be machine-readable far beyond the simple scanned hard-copy administrative forms or legal documents. Structured data mediates between entities in the real world and their representation in the software. <br>
@@ -306,15 +292,18 @@ For instance, to represent the fact “<span class="custom-highlight">govtDep#1 
 <p>There are a number of languages to declare data models, which are normally developed by data modellers and database designers. While they may develop a data model from scratch, increasingly, they try to reuse existing specifications to speed up the development and foster interoperability. For use case 1, we address these questions from the perspective of creating new data models that <strong>reuse Core Vocabularies</strong>, either in full or in part, depending on the specific needs. In this chapter we focus on <strong>creating two types of data models: XSD schemas and JSON-LD contexts</strong>.<br>
 Each model type has its business case providing a rationale why one would want to do this, which is described in the respective “Use case description” sections. The respective “Guidelines” sections then walk the reader through the creation process (addressing mixed technical and non-technical audience), and finally the respective “Tutorial” sections target technical staff with a step-by-step example that implements the guideline.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD schema from a Core Vocabulary (UC1.1)</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD schema from a Core Vocabulary (UC1.1)</h3>
-<div class="sect3">
-<h4 id="sec:uc1.1-description"><a class="anchor" href="#sec:uc1.1-description"></a>Use case description</h4>
+<h3 id="sec:uc1.1-description"><a class="anchor" href="#sec:uc1.1-description"></a>Use case description</h3>
 <div class="paragraph">
 <p>We will introduce the <strong>motivation for the use case</strong> with a user story.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>Imagine Jean-Luc, a semantic/software engineer assigned to develop a software application for  processing online forms for the Maltese Chamber of Commerce. Among the format options of online forms are Office365, CSV, and XML that each have their pros and cons. Jean-Luc chooses XML, since many other forms are already being stored in XML format.</p>
 </div>
@@ -328,7 +317,7 @@ Unfortunately, not one of them made their schema available.</p>
 <div class="paragraph">
 <p>Given that such availability would be useful also at the EU level, he looks for guidance at the EU level. He finds The SEMIC Core Business Vocabulary, which has terminology he can reuse, not only saving time developing his own XSD schema but then also making it interoperable with all other XSD schemas that reuse the vocabulary.</p>
 </div>
-</blockquote>
+</div>
 </div>
 <div class="paragraph">
 <p><strong>User story:</strong> <strong>As a</strong> semantic engineer working in public sector IT, <strong>I want to</strong> create an XML schema (XSD) by reusing elements from the existing Core Business Vocabulary (CBV), <strong>so that</strong> I can reduce design time and ensure consistent, interoperable, and standards-compliant e-form validation across government systems.</p>
@@ -359,8 +348,8 @@ Unfortunately, not one of them made their schema available.</p>
 <p>Having established the who, what, and why, the next step is <em>how</em> to accomplish this. An established guideline of good practice for XSD schema development from a vocabulary is consulted to guide the process. This guideline is described in the next section.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.1-guideline"><a class="anchor" href="#sec:uc1.1-guideline"></a>Guidelines to create a new XSD schema</h4>
+<div class="sect2">
+<h3 id="sec:uc1.1-guideline"><a class="anchor" href="#sec:uc1.1-guideline"></a>Guidelines to create a new XSD schema</h3>
 <div class="paragraph">
 <p>This section provides detailed instructions for addressing use case <a href="introduction.html#sec:uc11" class="xref page">UC1.1</a>. To create a new XSD schema, the following main steps need to be carried out:</p>
 </div>
@@ -386,9 +375,8 @@ Unfortunately, not one of them made their schema available.</p>
 </div>
 <div class="title">Figure 1. Overview of the guidelines to create a new XSD schema</div>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 1: Import or define elements</em></strong></p>
-</div>
+<div class="sect3">
+<h4 id="_phase_1_import_or_define_elements"><a class="anchor" href="#_phase_1_import_or_define_elements"></a>Phase 1: Import or define elements</h4>
 <div class="paragraph">
 <p>When working with XML schemas, particularly in relation to semantic artefacts like ontologies or data shapes, managing the imports and namespaces are vital considerations that ensure clarity, reusability, and proper integration of various data models.</p>
 </div>
@@ -424,9 +412,9 @@ Unfortunately, not one of them made their schema available.</p>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 2: Shape XML document structure</em></strong></p>
 </div>
+<div class="sect3">
+<h4 id="_phase_2_shape_xml_document_structure"><a class="anchor" href="#_phase_2_shape_xml_document_structure"></a>Phase 2: Shape XML document structure</h4>
 <div class="paragraph">
 <p>In designing XML schemas, the selection of a design pattern has implications for the reusability and extension of the schema. The <em>Venetian Blind</em> and <em>Garden of Eden</em> patterns stand out as preferable for their ability to allow complex types to be reused by different elements [<a href="references.html#ref-44" class="xref page">dsg-ptr</a>].</p>
 </div>
@@ -492,9 +480,9 @@ such as an informal description of the intended meaning of a concept.</p>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 3: Validation</em></strong></p>
 </div>
+<div class="sect3">
+<h4 id="_phase_3_validation"><a class="anchor" href="#_phase_3_validation"></a>Phase 3: Validation</h4>
 <div class="paragraph">
 <p>The schema should be validated with at least one sample XML document, to verify that it is syntactically correct, semantically as intended, and that it has adequate coverage. SEMIC XSD schemas adhere to best practices and the resulting XSD schemas should also adhere to best practices, the SEMIC Style Guide, validation <a href="https://github.com/SEMICeu/XML-schema/blob/main/rules/rules.md">rules</a> to maintain consistency, clarity, and reusability across schemas. These rules include naming conventions, documentation standards, and structural rules.</p>
 </div>
@@ -502,19 +490,19 @@ such as an informal description of the intended meaning of a concept.</p>
 <p>Having created the XML representation from the Core Vocabulary, we thus created a binding between the technical and semantic layer for the interoperability of the data. Either may possibly evolve over time and changes initiated from either direction should be consulted with the other, and may require re-validation of the binding. Strategies to avoid problematic divergence are to be put in place.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.1-tutorial"><a class="anchor" href="#sec:uc1.1-tutorial"></a>Tutorial: Create an XSD schema using the Core Business Vocabulary</h4>
+</div>
+<div class="sect2">
+<h3 id="sec:uc1.1-tutorial"><a class="anchor" href="#sec:uc1.1-tutorial"></a>Tutorial: Create an XSD schema using the Core Business Vocabulary</h3>
 <div class="paragraph">
 <p>Creating an <strong>XSD schema</strong> using the <strong>Core Business Vocabulary</strong> <strong>(CBV)</strong> involves defining the structure, data types, and relationships for the elements of the CBV, ensuring interoperability between systems. This tutorial follows the <a href="#sec:uc1.1-guideline">guidelines</a> outlined for <strong>Use Case</strong>  <a href="introduction.html#sec:uc11" class="xref page"><strong>UC1.1</strong></a> "Create a New XSD Schema", showing how to design and create an XSD schema that integrates terms from the <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/e-government-core-vocabularies/core-business-vocabulary">Core Business Vocabulary</a> (CBV). This step-by-step guide focuses on the essential phases of the schema creation process, ensuring that the elements from CBV are correctly imported, the document structure is shaped properly, and all constraints are applied.</p>
 </div>
 <div class="paragraph">
 <p>To recap the process, we first will import or define elements, shape the structure with patterns, define complex types, and finalise the schema.</p>
 </div>
+<div class="sect3">
+<h4 id="_phase_1_import_or_define_elements_2"><a class="anchor" href="#_phase_1_import_or_define_elements_2"></a>Phase 1: Import or Define Elements</h4>
 <div class="paragraph">
-<p><strong><em>Phase 1: Import or Define Elements</em></strong></p>
-</div>
-<div class="paragraph">
-<p><em>Managing Imports and Namespaces</em></p>
+<p><strong>Managing Imports and Namespaces</strong></p>
 </div>
 <div class="paragraph">
 <p>In XML schema development, managing <strong>imports</strong> and <strong>namespaces</strong> is crucial to ensure that elements from external vocabularies are reused and integrated consistently. This step ensures that the schema obtains and maintains semantics, will be <strong>reusable</strong>, and is correctly aligned with the Core Business Vocabulary (CBV).<br>
@@ -557,7 +545,7 @@ For example, CBV comes with <a href="https://github.com/SEMICeu/XML-schema/tree/
 </ul>
 </div>
 <div class="paragraph">
-<p><em>Define elements</em></p>
+<p><strong>Define elements</strong></p>
 </div>
 <div class="paragraph">
 <p>If the XSD schema of the CV does not suffice, in that you need additional elements beyond the XSD schema, then you have to define those yourself in the XSD schema you are developing. This might be an element from the CV associated with the XSD, or possibly elements from another CV or semantic artefact.<br>
@@ -572,14 +560,14 @@ For example, the <span class="custom-highlight">LegalEntity</span> element could
 <div class="paragraph">
 <p>Make sure you declare the correct namespace (e.g., <a href="http://example.com/" class="bare">http://example.com/</a>) for all these custom elements.</p>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 2: Shape XML Document Structure with Patterns</em></strong></p>
 </div>
+<div class="sect3">
+<h4 id="_phase_2_shape_xml_document_structure_with_patterns"><a class="anchor" href="#_phase_2_shape_xml_document_structure_with_patterns"></a>Phase 2: Shape XML Document Structure with Patterns</h4>
 <div class="paragraph">
 <p>At this phase, we focus on structuring the XML document using appropriate XML Schema Design Patterns [<a href="references.html#ref-44" class="xref page">dsg-ptr</a>]. The <strong>Venetian Blind</strong> and <strong>Garden of Eden</strong> patterns are two methods for organizing the schema.</p>
 </div>
 <div class="paragraph">
-<p><em>Venetian Blind Pattern</em></p>
+<p><strong>Venetian Blind Pattern</strong></p>
 </div>
 <div class="paragraph">
 <p>In the Venetian Blind pattern, there is one primary global element, and all other elements are nested inside it. This approach is ideal when a central entity, such as <code>LegalEntity</code>, serves as the entry point, as seen in CBV&#8217;s XSD. This pattern fits well with API design, where you typically request information about a central concept (such as <span class="custom-highlight">LegalEntity</span>), and the response includes nested properties, including <span class="custom-highlight">LegalName</span> and <span class="custom-highlight">RegisteredAddress</span>, which are all organised under the main entity.<br>
@@ -617,7 +605,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 </ul>
 </div>
 <div class="paragraph">
-<p><em>Garden of Eden Pattern</em></p>
+<p><strong>Garden of Eden Pattern</strong></p>
 </div>
 <div class="paragraph">
 <p>In the Garden of Eden pattern, there are multiple entry points in the XML document. This is more flexible and is suitable when no central class is inherently the main starting point. The elements that are declared <em>directly under</em> <code>&lt;xs:schema&gt;</code> qualify as such entry points. In CBV these include <span class="custom-highlight">LegalEntity</span>, <span class="custom-highlight">Organization</span> etc., whereas nested elements, such as <span class="custom-highlight">RegisteredAddress</span> or <span class="custom-highlight">ContactPoint</span>, are defined <em>inside</em> those complex types and <em>cannot</em> start a document on their own.</p>
@@ -631,7 +619,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 </div>
 </div>
 <div class="paragraph">
-<p><em>Define Complex Types</em></p>
+<p><strong>Define Complex Types</strong></p>
 </div>
 <div class="paragraph">
 <p>After importing or defining the basic elements and structuring your XML document with patterns, the next step in creating an XSD schema is to define <strong>complex types</strong>. Complex types are used to represent business entities that contain multiple properties or relationships. For CBV, these types often model entities like <span class="custom-highlight">LegalEntity</span> or <span class="custom-highlight">Organization</span>, which have both simple and complex elements. For example, the <span class="custom-highlight">LegalEntityType</span> and <span class="custom-highlight">OrganizationType</span>, as follows.</p>
@@ -714,7 +702,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 </div>
 </div>
 <div class="paragraph">
-<p><em>Finalise the XSD Schema</em></p>
+<p><strong>Finalise the XSD Schema</strong></p>
 </div>
 <div class="paragraph">
 <p>Adding <strong>annotations</strong> and <strong>documentation</strong> to each complex type and element helps to clarify their purpose and improve the readability of the schema. For instance:</p>
@@ -731,35 +719,38 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 &lt;/xs:complexType&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 3: Validation and Best Practices</em></strong></p>
 </div>
+<div class="sect3">
+<h4 id="_phase_3_validation_and_best_practices"><a class="anchor" href="#_phase_3_validation_and_best_practices"></a>Phase 3: Validation and Best Practices</h4>
 <div class="paragraph">
 <p>Finally, test your new schema by validating <strong>sample XML documents</strong> using <strong>XML validation tools</strong> (e.g., <a href="https://www.xmlvalidation.com/">XMLValidation</a>) to ensure that the schema is syntactically correct and works as expected. The Core Business Vocabulary (CBV) follows several best practices and validation <a href="https://github.com/SEMICeu/XML-schema/blob/main/rules/rules.md">rules</a> to maintain consistency, clarity, and reusability across schemas. These rules include naming conventions, documentation standards, and structural rules.</p>
 </div>
 <div class="paragraph">
-<p><em>Schematron Validation Rules</em></p>
+<p><strong>Schematron Validation Rules</strong></p>
 </div>
 <div class="paragraph">
 <p>To ensure schema compliance, the <strong>Schematron rules</strong> provide automated checks. These rules cover key aspects such as type definitions, element declarations, metadata, and more. The detailed list of rules can be found <a href="https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch">here</a>.</p>
 </div>
 <div class="paragraph">
-<p><em>Running the Validation</em></p>
+<p><strong>Running the Validation</strong></p>
 </div>
 <div class="paragraph">
 <p>You can execute the rules using the provided <a href="https://github.com/SEMICeu/XML-schema/blob/main/build.xml"><code>build.xml</code></a> file, which leverages <a href="https://ant.apache.org/">Apache Ant</a>. The process validates the schema against the Schematron rules and generates HTML reports for easy inspection.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec:create-a-new-json-ld-context-definition"><a class="anchor" href="#sec:create-a-new-json-ld-context-definition"></a>Create a new JSON-LD context definition from a Core Vocabulary (UC1.2)</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="sec:create-a-new-json-ld-context-definition"><a class="anchor" href="#sec:create-a-new-json-ld-context-definition"></a>Create a new JSON-LD context definition from a Core Vocabulary (UC1.2)</h3>
-<div class="sect3">
-<h4 id="sec:uc1.2-description"><a class="anchor" href="#sec:uc1.2-description"></a>Use case description</h4>
+<h3 id="sec:uc1.2-description"><a class="anchor" href="#sec:uc1.2-description"></a>Use case description</h3>
 <div class="paragraph">
 <p>Public administrations often need to share information about their services with other organisations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases. This was also the case in Norway, which came to a fruitful solution. Let us imagine how that might have happened in the following scenario as <strong>motivation for the use case</strong>, which is followed by a user story that summarises it.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced <span class="custom-highlight">RequiredEvidence</span>, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
 </div>
@@ -772,7 +763,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 <div class="paragraph">
 <p>The City of Oslo received DiTFor’s notification about the CPSV-AP-NO: their data models needed to comply with the CPSV-AP-NO for the purposes of effective use and interoperability. Looking into the details, they realised that it should be possible to utilise CPSV-AP-NO for their smart data model in JSON-LD and, in fact, would save them time looking for other vocabularies and adapting those. The question became one of <em>how</em> to do it, and so they replied to Nora’s email inquiring whether she could also provide instructions for using the Application Profile.<br></p>
 </div>
-</blockquote>
+</div>
 </div>
 <div class="paragraph">
 <p><strong>User Story: As a</strong> software engineer at a public sector department, <strong>I want to</strong> create a new JSON-LD context based on the Core Public Services Vocabulary Application profile (CPSV-AP), <strong>so that</strong> I can create interoperable smart data models that comply with national and European interoperability standards and support linked data publication to facilitate cross-system data exchange.<br></p>
@@ -804,8 +795,8 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 <p>Having established the who, what, and why, the next step is <em>how</em> to accomplish this. The <em>semantic engineer</em> specifies the guidelines for JSON-LD context development from a vocabulary, which makes it easier for the <em>software engineer</em> to implement it. The guideline is described in the next section.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.2-guideline"><a class="anchor" href="#sec:uc1.2-guideline"></a>Guidelines to create a new JSON-LD context definition</h4>
+<div class="sect2">
+<h3 id="sec:uc1.2-guideline"><a class="anchor" href="#sec:uc1.2-guideline"></a>Guidelines to create a new JSON-LD context definition</h3>
 <div class="paragraph">
 <p>This section provides guidelines for addressing use case  <a href="introduction.html#sec:uc12" class="xref page">UC1.2</a>.</p>
 </div>
@@ -835,9 +826,8 @@ The three key phases are:</p>
 </div>
 <div class="title">Figure 2. Overview of the guidelines to create a new JSON-LD context definition</div>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 1: Import or define elements</em></strong></p>
-</div>
+<div class="sect3">
+<h4 id="_phase_1_import_or_define_elements_3"><a class="anchor" href="#_phase_1_import_or_define_elements_3"></a>Phase 1: Import or define elements</h4>
 <div class="paragraph">
 <p>When a Core Vocabulary has an associated JSON-LD context already defined, it is not only easy, but also advisable to <strong>directly import this context</strong> using the <code>@import</code> keyword. This enables seamless reuse and guarantees that any complex types or elements defined within the vocabulary are integrated correctly and transparently within new schemas.</p>
 </div>
@@ -872,11 +862,11 @@ The three key phases are:</p>
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 2: Shape structure</em></strong></p>
 </div>
+<div class="sect3">
+<h4 id="_phase_2_shape_structure"><a class="anchor" href="#_phase_2_shape_structure"></a>Phase 2: Shape structure</h4>
 <div class="paragraph">
-<p><em>Main shaping of the structure</em></p>
+<p><strong>Main shaping of the structure</strong></p>
 </div>
 <div class="paragraph">
 <p>Start with defining the structure of the context by <strong>relating class terms with property terms</strong> and then, if necessary, property terms with other classes.</p>
@@ -925,7 +915,7 @@ A context can be defined per class, allowing property names such as <span class=
 <p>The choice between flat or scoped contexts should be motivated by the expected use of the data. When contexts are generated automatically or used for large-scale data exchange, the flat approach offers simplicity and reliability. When contexts are manually authored or designed for human-facing APIs, scoped contexts may be preferable for improved readability, provided that their additional complexity is manageable.</p>
 </div>
 <div class="paragraph">
-<p><em>Improvements to the structure</em></p>
+<p><strong>Improvements to the structure</strong></p>
 </div>
 <div class="paragraph">
 <p>To meet wishes from API consumers, one may use <strong>aliasing</strong> of keywords, where a JSON-LD context element is given a more easily recognisable string.</p>
@@ -933,9 +923,9 @@ A context can be defined per class, allowing property names such as <span class=
 <div class="paragraph">
 <p>One can also <strong>extend the context</strong> by reusing terms from Core Vocabularies, which can be achieved using the <code>@import</code> keyword if included as a whole. Also, single elements can be added, such as additional properties and mapping those to other vocabulary elements of other vocabularies.</p>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 3: Review and validate</em></strong></p>
 </div>
+<div class="sect3">
+<h4 id="_phase_3_review_and_validate"><a class="anchor" href="#_phase_3_review_and_validate"></a>Phase 3: Review and validate</h4>
 <div class="paragraph">
 <p>First, one should review the created context against any prior requirements that may have been described: is all prospected content indeed included in the context?</p>
 </div>
@@ -955,14 +945,14 @@ A context can be defined per class, allowing property names such as <span class=
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.2-tutorial"><a class="anchor" href="#sec:uc1.2-tutorial"></a>Tutorial: Create a JSON-LD context from the CPSV-AP Core Vocabulary</h4>
+</div>
+<div class="sect2">
+<h3 id="sec:uc1.2-tutorial"><a class="anchor" href="#sec:uc1.2-tutorial"></a>Tutorial: Create a JSON-LD context from the CPSV-AP Core Vocabulary</h3>
 <div class="paragraph">
 <p>This tutorial addresses the use case <a href="introduction.html#sec:uc12" class="xref page">UC1.2</a>, and will show how to create a JSON-LD context for an Application Profile that extends CPSV-AP with new concepts that are defined by reusing concepts from the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary (CBV)</a>, following ideas from <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
 </div>
-<div class="paragraph">
-<p><strong><em>Phase 1: Import or define elements</em></strong></p>
-</div>
+<div class="sect3">
+<h4 id="_phase_1_import_or_define_elements_4"><a class="anchor" href="#_phase_1_import_or_define_elements_4"></a>Phase 1: Import or define elements</h4>
 <div class="paragraph">
 <p>Since CPSV-AP provides an existing JSON-LD context, we can import it in our own JSON-LD context using the <code>@import</code> statement. For example, in case of <a href="https://github.com/SEMICeu/CPSV-AP/blob/master/releases/3.2.0/context/cpsv-ap.jsonld">CPSV-AP version 3.2.0</a>, the context can be directly reused like this:</p>
 </div>
@@ -1066,7 +1056,7 @@ A context can be defined per class, allowing property names such as <span class=
 </ul>
 </div>
 <div class="paragraph">
-<p><em>Example of a simple service instance</em></p>
+<p><strong>Example of a simple service instance</strong></p>
 </div>
 <div class="paragraph">
 <p>After defining the context and structure, you can now describe an actual <span class="custom-highlight">Service</span> instance by referencing the terms you defined earlier.</p>
@@ -1114,7 +1104,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 </div>
 <div class="paragraph">
-<p><em>Aliasing keywords for API compatibility (REST API example)</em></p>
+<p><strong>Aliasing keywords for API compatibility (REST API example)</strong></p>
 </div>
 <div class="paragraph">
 <p>When working with REST APIs, it is often beneficial to alias certain JSON-LD keywords for simpler or more consistent representations in client applications. For example, you might alias JSON-LD&#8217;s <code>@id</code> to <span class="custom-highlight">url</span> and <code>@type</code> to <span class="custom-highlight">type</span> to make the data more intuitive for API consumers, especially when working with legacy systems or client-side frameworks that use specific naming conventions.</p>
@@ -1146,7 +1136,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 <p>By aliasing these terms, the API responses are simplified and more familiar to the developers interacting with the service, especially if they are accustomed to a different JSON structure.</p>
 </div>
 <div class="paragraph">
-<p><em>Extend the context by reusing terms from Core Vocabularies</em></p>
+<p><strong>Extend the context by reusing terms from Core Vocabularies</strong></p>
 </div>
 <div class="paragraph">
 <p>To highlight the reuse of terms from existing CVs, we can import the <strong>Core Business Vocabulary (CBV)</strong> context alongside the <strong>CPSV-AP context</strong> to gain access to business-related terms. This step ensures that you can use the additional terms from <strong>CBV</strong>, such as <span class="custom-highlight">LegalEntity</span>, <span class="custom-highlight">Organisation</span>, and <span class="custom-highlight">ContactPoint</span>, to enrich your <span class="custom-highlight">Service</span><strong> </strong>descriptions.</p>
@@ -1166,7 +1156,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 </div>
 <div class="paragraph">
-<p><em>Define additional properties from the Core Business Vocabulary</em></p>
+<p><strong>Define additional properties from the Core Business Vocabulary</strong></p>
 </div>
 <div class="paragraph">
 <p>Add CBV terms to enhance the description of the <span class="custom-highlight">Service</span> entity by reusing existing concepts such as <span class="custom-highlight">LegalEntity</span>, which helps to specify who provided the service.</p>
@@ -1185,7 +1175,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 </div>
 <div class="paragraph">
-<p><em>Map extended properties in a service instance</em></p>
+<p><strong>Map extended properties in a service instance</strong></p>
 </div>
 <div class="paragraph">
 <p>Use the extended properties to describe more aspects of <span class="custom-highlight">Service</span> instances. For <a href="https://tinyurl.com/chtayj3h">example</a>:</p>
@@ -1218,7 +1208,7 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 </div>
 <div class="paragraph">
-<p><em>Final review and validation</em></p>
+<p><strong>Final review and validation</strong></p>
 </div>
 <div class="paragraph">
 <p>Use a JSON-LD  validator (there are  online tools available, such as the <a href="https://json-ld.org/playground/">JSON-LD Playground</a>) to validate JSON-LD context and make sure there are no errors. They also offer visualisation features, noting that it can only be visualised if the syntax is correct. There is no standard for how RDF graphs are to be rendered, and therefore  different visualisation tools will result in different  JSON-LD  diagram-based visualisations. Below  are two examples generated from the same JSON-LD snippet, rendered by, <a href="https://json-ld.org/playground/">JSON-LD Playground</a> and <a href="https://issemantic.net/rdf-visualizer">:isSemantic</a>, respectively.</p>
