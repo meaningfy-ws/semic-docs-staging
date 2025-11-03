@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: SEMIC documentation</title>
+    <title>Creating a new data model from an existing Core Vocabulary :: SEMIC documentation</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">  </head>
@@ -211,9 +211,6 @@
         <li class="version is-latest">
           <a href="../SM16-99/index.html">SM16-99</a>
         </li>
-        <li class="version">
-          <a href="../SM16-95/index.html">SM16-95</a>
-        </li>
         <li class="version is-current">
           <a href="index.html">SM16-94</a>
         </li>
@@ -252,7 +249,6 @@
   <button class="version-menu-toggle" title="Show other versions of page">SM16-94</button>
   <div class="version-menu">
     <a class="version" href="../SM16-99/how-to-create-new-data-models.html">SM16-99</a>
-    <a class="version" href="../SM16-95/how-to-create-new-data-models.html">SM16-95</a>
     <a class="version is-current" href="how-to-create-new-data-models.html">SM16-94</a>
     <a class="version" href="../develop/how-to-create-new-data-models.html">develop</a>
   </div>
@@ -264,8 +260,8 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="sec:create-data-model-from-cv"><a class="anchor" href="#sec:create-data-model-from-cv"></a>Creating a new data model from an existing Core Vocabulary</h2>
+<h1 class="page">Creating a new data model from an existing Core Vocabulary</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Technologies rise and decline in popularity, yet one of the red threads through the computational techniques over the decades is the <strong>management of structured data</strong>. Data needs to be stored, processed, acted upon, shared, integrated, presented, and more, all mediated by software. This also means that the structure of the data needs to be machine-readable far beyond the simple scanned hard-copy administrative forms or legal documents. Structured data mediates between entities in the real world and their representation in the software. <br>
@@ -310,15 +306,18 @@ For instance, to represent the fact “<span class="custom-highlight">govtDep#1 
 <p>There are a number of languages to declare data models, which are normally developed by data modellers and database designers. While they may develop a data model from scratch, increasingly, they try to reuse existing specifications to speed up the development and foster interoperability. For use case 1, we address these questions from the perspective of creating new data models that <strong>reuse Core Vocabularies</strong>, either in full or in part, depending on the specific needs. In this chapter we focus on <strong>creating two types of data models: XSD schemas and JSON-LD contexts</strong>.<br>
 Each model type has its business case providing a rationale why one would want to do this, which is described in the respective “Use case description” sections. The respective “Guidelines” sections then walk the reader through the creation process (addressing mixed technical and non-technical audience), and finally the respective “Tutorial” sections target technical staff with a step-by-step example that implements the guideline.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD schema from a Core Vocabulary (UC1.1)</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD schema from a Core Vocabulary (UC1.1)</h3>
-<div class="sect3">
-<h4 id="sec:uc1.1-description"><a class="anchor" href="#sec:uc1.1-description"></a>Use case description</h4>
+<h3 id="sec:uc1.1-description"><a class="anchor" href="#sec:uc1.1-description"></a>Use case description</h3>
 <div class="paragraph">
 <p>We will introduce the <strong>motivation for the use case</strong> with a user story.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>Imagine Jean-Luc, a semantic/software engineer assigned to develop a software application for  processing online forms for the Maltese Chamber of Commerce. Among the format options of online forms are Office365, CSV, and XML that each have their pros and cons. Jean-Luc chooses XML, since many other forms are already being stored in XML format.</p>
 </div>
@@ -332,7 +331,7 @@ Unfortunately, not one of them made their schema available.</p>
 <div class="paragraph">
 <p>Given that such availability would be useful also at the EU level, he looks for guidance at the EU level. He finds The SEMIC Core Business Vocabulary, which has terminology he can reuse, not only saving time developing his own XSD schema but then also making it interoperable with all other XSD schemas that reuse the vocabulary.</p>
 </div>
-</blockquote>
+</div>
 </div>
 <div class="paragraph">
 <p><strong>User story:</strong> <strong>As a</strong> semantic engineer working in public sector IT, <strong>I want to</strong> create an XML schema (XSD) by reusing elements from the existing Core Business Vocabulary (CBV), <strong>so that</strong> I can reduce design time and ensure consistent, interoperable, and standards-compliant e-form validation across government systems.</p>
@@ -363,8 +362,8 @@ Unfortunately, not one of them made their schema available.</p>
 <p>Having established the who, what, and why, the next step is <em>how</em> to accomplish this. An established guideline of good practice for XSD schema development from a vocabulary is consulted to guide the process. This guideline is described in the next section.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.1-guideline"><a class="anchor" href="#sec:uc1.1-guideline"></a>Guidelines to create a new XSD schema</h4>
+<div class="sect2">
+<h3 id="sec:uc1.1-guideline"><a class="anchor" href="#sec:uc1.1-guideline"></a>Guidelines to create a new XSD schema</h3>
 <div class="paragraph">
 <p>This section provides detailed instructions for addressing use case <a href="introduction.html#sec:uc11" class="xref page">UC1.1</a>. To create a new XSD schema, the following main steps need to be carried out:</p>
 </div>
@@ -506,8 +505,8 @@ such as an informal description of the intended meaning of a concept.</p>
 <p>Having created the XML representation from the Core Vocabulary, we thus created a binding between the technical and semantic layer for the interoperability of the data. Either may possibly evolve over time and changes initiated from either direction should be consulted with the other, and may require re-validation of the binding. Strategies to avoid problematic divergence are to be put in place.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.1-tutorial"><a class="anchor" href="#sec:uc1.1-tutorial"></a>Tutorial: Create an XSD schema using the Core Business Vocabulary</h4>
+<div class="sect2">
+<h3 id="sec:uc1.1-tutorial"><a class="anchor" href="#sec:uc1.1-tutorial"></a>Tutorial: Create an XSD schema using the Core Business Vocabulary</h3>
 <div class="paragraph">
 <p>Creating an <strong>XSD schema</strong> using the <strong>Core Business Vocabulary</strong> <strong>(CBV)</strong> involves defining the structure, data types, and relationships for the elements of the CBV, ensuring interoperability between systems. This tutorial follows the <a href="#sec:uc1.1-guideline">guidelines</a> outlined for <strong>Use Case</strong>  <a href="introduction.html#sec:uc11" class="xref page"><strong>UC1.1</strong></a> "Create a New XSD Schema", showing how to design and create an XSD schema that integrates terms from the <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/e-government-core-vocabularies/core-business-vocabulary">Core Business Vocabulary</a> (CBV). This step-by-step guide focuses on the essential phases of the schema creation process, ensuring that the elements from CBV are correctly imported, the document structure is shaped properly, and all constraints are applied.</p>
 </div>
@@ -755,15 +754,17 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="sec:create-a-new-json-ld-context-definition"><a class="anchor" href="#sec:create-a-new-json-ld-context-definition"></a>Create a new JSON-LD context definition from a Core Vocabulary (UC1.2)</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="sec:create-a-new-json-ld-context-definition"><a class="anchor" href="#sec:create-a-new-json-ld-context-definition"></a>Create a new JSON-LD context definition from a Core Vocabulary (UC1.2)</h3>
-<div class="sect3">
-<h4 id="sec:uc1.2-description"><a class="anchor" href="#sec:uc1.2-description"></a>Use case description</h4>
+<h3 id="sec:uc1.2-description"><a class="anchor" href="#sec:uc1.2-description"></a>Use case description</h3>
 <div class="paragraph">
 <p>Public administrations often need to share information about their services with other organisations and the public. To do this effectively, the data must be easy to understand and work seamlessly across different systems. However, public services are becoming more complex, which means we need to capture more details, concepts, and relationships to handle various use cases. This was also the case in Norway, which came to a fruitful solution. Let us imagine how that might have happened in the following scenario as <strong>motivation for the use case</strong>, which is followed by a user story that summarises it.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>Consider Nora, who works for the DiTFor, the Norwegian Digitalisation Task Force. Although Norway is not a member of the EU, it is closely associated with the EU through its membership in the <strong>European Economic Area (EEA)</strong> and the <strong>Schengen Area</strong>. As part of the EEA, Norway participates in the EU&#8217;s internal market and adopts many EU laws and regulations. Therefore there is a lot of cross-border collaboration with other member states and there is a number of publicly available resources for use and reuse to facilitate interoperable  exchange, including a vocabulary that could be used for their generic framework for their digitalisation of administration of public services: the <strong>Core Public Service Vocabulary Application Profile</strong> (<a href="https://github.com/SEMICeu/CPSV-AP/tree/master"><strong>CPSV-AP</a></strong>). They extended it to fit better with their context and needs, such as having introduced <span class="custom-highlight">RequiredEvidence</span>, which provides a way to explicitly define the documentation or credentials needed to access a service, such as proof of address for a library card. The extension was published publicly as <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
 </div>
@@ -776,7 +777,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 <div class="paragraph">
 <p>The City of Oslo received DiTFor’s notification about the CPSV-AP-NO: their data models needed to comply with the CPSV-AP-NO for the purposes of effective use and interoperability. Looking into the details, they realised that it should be possible to utilise CPSV-AP-NO for their smart data model in JSON-LD and, in fact, would save them time looking for other vocabularies and adapting those. The question became one of <em>how</em> to do it, and so they replied to Nora’s email inquiring whether she could also provide instructions for using the Application Profile.<br></p>
 </div>
-</blockquote>
+</div>
 </div>
 <div class="paragraph">
 <p><strong>User Story: As a</strong> software engineer at a public sector department, <strong>I want to</strong> create a new JSON-LD context based on the Core Public Services Vocabulary Application profile (CPSV-AP), <strong>so that</strong> I can create interoperable smart data models that comply with national and European interoperability standards and support linked data publication to facilitate cross-system data exchange.<br></p>
@@ -808,8 +809,8 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 <p>Having established the who, what, and why, the next step is <em>how</em> to accomplish this. The <em>semantic engineer</em> specifies the guidelines for JSON-LD context development from a vocabulary, which makes it easier for the <em>software engineer</em> to implement it. The guideline is described in the next section.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.2-guideline"><a class="anchor" href="#sec:uc1.2-guideline"></a>Guidelines to create a new JSON-LD context definition</h4>
+<div class="sect2">
+<h3 id="sec:uc1.2-guideline"><a class="anchor" href="#sec:uc1.2-guideline"></a>Guidelines to create a new JSON-LD context definition</h3>
 <div class="paragraph">
 <p>This section provides guidelines for addressing use case  <a href="introduction.html#sec:uc12" class="xref page">UC1.2</a>.</p>
 </div>
@@ -959,8 +960,8 @@ A context can be defined per class, allowing property names such as <span class=
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="sec:uc1.2-tutorial"><a class="anchor" href="#sec:uc1.2-tutorial"></a>Tutorial: Create a JSON-LD context from the CPSV-AP Core Vocabulary</h4>
+<div class="sect2">
+<h3 id="sec:uc1.2-tutorial"><a class="anchor" href="#sec:uc1.2-tutorial"></a>Tutorial: Create a JSON-LD context from the CPSV-AP Core Vocabulary</h3>
 <div class="paragraph">
 <p>This tutorial addresses the use case <a href="introduction.html#sec:uc12" class="xref page">UC1.2</a>, and will show how to create a JSON-LD context for an Application Profile that extends CPSV-AP with new concepts that are defined by reusing concepts from the <a href="https://github.com/SEMICeu/Core-Business-Vocabulary">Core Business Vocabulary (CBV)</a>, following ideas from <a href="https://github.com/Informasjonsforvaltning/cpsv-ap-no">CPSV-AP-NO</a>.</p>
 </div>
@@ -1278,7 +1279,6 @@ To illustrate this, we need to create a JSON-LD context representation of this s
 </div>
 <div class="paragraph">
 <p>Ensure that the <code>@import</code> URLs point to valid and accessible JSON-LD contexts. Verify the links in a browser or test them in a <a href="https://curl.se/">cURL</a> command to ensure they return the correct JSON-LD data  (cURL is used in command lines or scripts to transfer data). Update the URLs to the correct ones.</p>
-</div>
 </div>
 </div>
 </div>
