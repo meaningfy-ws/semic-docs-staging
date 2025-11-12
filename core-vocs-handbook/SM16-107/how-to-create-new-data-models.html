@@ -305,7 +305,7 @@ Each model type has its business case providing a rationale why one would want t
 </div>
 </div>
 <div class="sect1">
-<h2 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD schema from a Core Vocabulary (UC1.1)</h2>
+<h2 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD Schema from a Core Vocabulary (UC1.1)</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="sec:uc1.1-description"><a class="anchor" href="#sec:uc1.1-description"></a>Use case description</h3>
@@ -355,7 +355,7 @@ Unfortunately, not one of them made their schema available.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Having established the who, what, and why, the next step is <em>how</em> to accomplish this. An established guideline of good practice for XSD schema development from a vocabulary is consulted to guide the process. This guideline is described in the next section.</p>
+<p>Having established the who, what, and why, the next step is <em>how</em> to accomplish this. An established guideline of good practice for XSD Schema development from a vocabulary is consulted to guide the process. This guideline is described in the next section.</p>
 </div>
 </div>
 <div class="sect2">
@@ -400,7 +400,7 @@ Unfortunately, not one of them made their schema available.</p>
 <p>In cases where the Core Vocabulary does not provide an XSD schema, it is necessary to create the XML element definitions in the new XSD schema corresponding to the reused URIs. Crucially, these new elements must adhere to the namespace defined by the Core Vocabulary to maintain consistency; for the Core Vocabularies, they must be defined within the <a href="http://data.europa.eu/m8g/%E2%80%9D">http://data.europa.eu/m8g/</a> namespace.</p>
 </div>
 <div class="paragraph">
-<p>Furthermore, when integrating these elements into a new schema, it is essential to reflect the constraints from the Core Vocabulary’s data shape—specifically, which properties are optional and which are mandatory–within the XSD schema element definitions.</p>
+<p>Furthermore, when integrating these elements into a new schema, it is essential to reflect the constraints from the Core Vocabulary’s data shape—specifically, which properties are optional and which are mandatory–within the XSD Schema element definitions.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -515,7 +515,7 @@ such as an informal description of the intended meaning of a concept.</p>
 <p><strong>Managing Imports and Namespaces</strong></p>
 </div>
 <div class="paragraph">
-<p>In XML schema development, managing <strong>imports</strong> and <strong>namespaces</strong> is crucial to ensure that elements from external vocabularies are reused and integrated consistently. This step ensures that the schema obtains and maintains semantics, will be <strong>reusable</strong>, and is correctly aligned with the Core Business Vocabulary (CBV).<br>
+<p>In XML Schema development, managing <strong>imports</strong> and <strong>namespaces</strong> is crucial to ensure that elements from external vocabularies are reused and integrated consistently. This step ensures that the schema obtains and maintains semantics, will be <strong>reusable</strong>, and is correctly aligned with the Core Business Vocabulary (CBV).<br>
 For example, CBV comes with <a href="https://github.com/SEMICeu/XML-schema/tree/main/models/CoreVoc_Business">its own XSD schema</a>, the following import statement imports all definitions related to CBV elements into your XSD schema (explained afterwards):</p>
 </div>
 <div class="listingblock">
@@ -712,7 +712,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Finalise the XSD Schema</strong></p>
+<p><strong>Finalise the XSD schema</strong></p>
 </div>
 <div class="paragraph">
 <p>Adding <strong>annotations</strong> and <strong>documentation</strong> to each complex type and element helps to clarify their purpose and improve the readability of the schema. For instance:</p>
