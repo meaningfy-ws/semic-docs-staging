@@ -305,7 +305,7 @@ Each model type has its business case providing a rationale why one would want t
 </div>
 </div>
 <div class="sect1">
-<h2 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD Schema from a Core Vocabulary (UC1.1)</h2>
+<h2 id="sec:create-a-new-xsd-schema"><a class="anchor" href="#sec:create-a-new-xsd-schema"></a>Create a new XSD schema from a Core Vocabulary (UC1.1)</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="sec:uc1.1-description"><a class="anchor" href="#sec:uc1.1-description"></a>Use case description</h3>
@@ -438,7 +438,7 @@ Unfortunately, not one of them made their schema available.</p>
 <p>On the other hand, the <strong>Garden of Eden pattern</strong> allows for multiple global elements, providing various entry points into the XML document. This pattern accommodates ontologies where no single class is inherently central, mirroring the flexibility of graph representations in ontologies that do not have a strict hierarchical starting point.</p>
 </div>
 <div class="paragraph">
-<p>Adopting the Garden of Eden pattern provides a less constrained approach, enabling users to represent information starting from different elements that may hold significance in different contexts. This approach has been adopted by standardisation initiatives such as NIEM [<a href="references.html#ref-82" class="xref page">niem</a>] and UBL [<a href="references.html#ref-47" class="xref page">ubl</a>], which recommend such flexibility for broader applicability and ease of information representation.</p>
+<p>Adopting the Garden of Eden pattern provides a less constrained approach, enabling users to represent information starting from different elements that may hold significance in different contexts. This approach has been adopted by standardisation initiatives such as NIEM [<a href="references.html#ref-46" class="xref page">niem</a>] and UBL [<a href="references.html#ref-47" class="xref page">ubl</a>], which recommend such flexibility for broader applicability and ease of information representation.</p>
 </div>
 <div class="paragraph">
 <p>However, the Garden of Eden pattern does not lead to a schema that can be used in final application scenarios, because it does not ensure a single stable document structure but leaves the possibility for variations. This schema pattern requires an additional composition specification. For example, if it is used in a SOAP API [<a href="references.html#ref-48" class="xref page">soap-api</a>], the developers can decide on using multiple starting points to facilitate exchange of granular messages specific per API endpoint. This way the XSD schema remains reusable for different API endpoints and even API implementations.</p>
@@ -510,7 +510,7 @@ such as an informal description of the intended meaning of a concept.</p>
 <p>To recap the process, we first will import or define elements, shape the structure with patterns, define complex types, and finalise the schema.</p>
 </div>
 <div class="sect3">
-<h4 id="_phase_1_import_or_define_elements_2"><a class="anchor" href="#_phase_1_import_or_define_elements_2"></a>Phase 1: Import or Define Elements</h4>
+<h4 id="_phase_1_import_or_define_elements_2"><a class="anchor" href="#_phase_1_import_or_define_elements_2"></a>Phase 1: Import or define elements</h4>
 <div class="paragraph">
 <p><strong>Managing Imports and Namespaces</strong></p>
 </div>
@@ -572,7 +572,7 @@ For example, the <span class="custom-highlight">LegalEntity</span> element could
 </div>
 </div>
 <div class="sect3">
-<h4 id="_phase_2_shape_xml_document_structure_with_patterns"><a class="anchor" href="#_phase_2_shape_xml_document_structure_with_patterns"></a>Phase 2: Shape XML Document Structure with Patterns</h4>
+<h4 id="_phase_2_shape_the_xml_document_structure_with_patterns"><a class="anchor" href="#_phase_2_shape_the_xml_document_structure_with_patterns"></a>Phase 2: Shape the XML document structure with patterns</h4>
 <div class="paragraph">
 <p>At this phase, we focus on structuring the XML document using appropriate XML Schema Design Patterns [<a href="references.html#ref-44" class="xref page">dsg-ptr</a>]. The <strong>Venetian Blind</strong> and <strong>Garden of Eden</strong> patterns are two methods for organizing the schema.</p>
 </div>
@@ -731,7 +731,7 @@ Here’s an example, where <code>LegalEntity</code> serves as the main entry poi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_phase_3_validation_and_best_practices"><a class="anchor" href="#_phase_3_validation_and_best_practices"></a>Phase 3: Validation and Best Practices</h4>
+<h4 id="_phase_3_validation_and_best_practices"><a class="anchor" href="#_phase_3_validation_and_best_practices"></a>Phase 3: Validation and best practices</h4>
 <div class="paragraph">
 <p>Finally, test your new schema by validating <strong>sample XML documents</strong> using <strong>XML validation tools</strong> (e.g., <a href="https://www.xmlvalidation.com/">XMLValidation</a>) to ensure that the schema is syntactically correct and works as expected. The Core Business Vocabulary (CBV) follows several best practices and validation <a href="https://github.com/SEMICeu/XML-schema/blob/main/rules/rules.md">rules</a> to maintain consistency, clarity, and reusability across schemas. These rules include naming conventions, documentation standards, and structural rules.</p>
 </div>
