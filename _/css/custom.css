@@ -29,3 +29,16 @@
 .indentation {
     margin-left: 3.5em;
 }
+
+.doc h4 {
+  font-size: 1.1em;
+}
+
+.doc h5 {
+  font-size: 1.1em;
+}
+
+.doc h6 {
+  font-size: 0.98em;
+  font-weight: 450;
+}
